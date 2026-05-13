@@ -104,9 +104,9 @@ $$
 
 ## 形式成分消融
 
-表 2 不只报告总体 scaffold gain，还报告相对 `nl` 的预测变化率、rescue 和 harm。这样做是必要的，因为仅看总体 accuracy 会掩盖样本级迁移。例如，`nl_var_graph` 在 Qwen3-4B 和 Qwen3-8B 上的总体 gain 都是 0，但这并不表示输出完全不变；Qwen3-4B 有 46 个样本改变预测，rescue=23、harm=23，Qwen3-8B 有 48 个样本改变预测，rescue=24、harm=24。也就是说，causal graph 成分造成了可见的样本级扰动，只是正负效应在总体 accuracy 上完全抵消。
+表 2 展示了不同形式成分引入后的样本级变化。`nl_var_graph` 在 Qwen3-4B 和 Qwen3-8B 上的总体 accuracy 与 `nl` 相同，但两者均产生了预测迁移：Qwen3-4B 中 46 个样本改变预测，rescue 与 harm 均为 23；Qwen3-8B 中 48 个样本改变预测，rescue 与 harm 均为 24。这表明 causal graph 成分主要表现为正负效应相互抵消的结构扰动，而不是稳定的总体增益。
 
-相比之下，`nl_var_query`、`nl_formal` 和 `formula_only` 的扰动更容易呈现负净效应。Qwen3-4B 的 `nl_var_query` 改变 49 个样本，其中 rescue=16、harm=33；`nl_formal` 改变 69 个样本，其中 rescue=26、harm=43；`formula_only` 改变 92 个样本，其中 rescue=36、harm=56。Qwen3-8B 中也出现类似模式，尤其 `formula_only` 改变 127 个样本。消融实验的意义因此不是证明某个形式成分能提高总体 accuracy，而是定位不同形式成分对答案稳定性的扰动方式：graph 更接近“抵消型扰动”，formal query 和完整形式包装更接近“负净效应扰动”。
+`nl_var_query`、`nl_formal` 和 `formula_only` 则呈现更明显的负净效应。Qwen3-4B 的 `nl_var_query` 改变 49 个样本，其中 rescue=16、harm=33；`nl_formal` 改变 69 个样本，其中 rescue=26、harm=43；`formula_only` 改变 92 个样本，其中 rescue=36、harm=56。Qwen3-8B 中，`formula_only` 改变 127 个样本，rescue=61、harm=66。由此可见，formal query 和完整形式包装相比 graph 成分更容易引入不稳定答案迁移。
 
 **表 2. 形式成分消融的样本级诊断结果**
 
