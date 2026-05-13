@@ -56,7 +56,31 @@ def selected_subset_path(paths: base.RunPaths) -> Path:
     raise FileNotFoundError(f"没有找到主评测子集：{direct}")
 
 
-def select_symbolic_patch_candidates(paths: base.RunPaths, model_key: str, limit: int) -> pd.DataFrame:
+def stratified_candidate_head(candidates: pd.DataFrame, limit: int, seed: int) -> pd.DataFrame:
+    if candidates.empty or len(candidates) <= limit:
+        return candidates.reset_index(drop=True)
+    shuffled_groups = []
+    for group_idx, (query_type, group) in enumerate(candidates.groupby("query_type", sort=True)):
+        shuffled = group.sample(frac=1.0, random_state=seed + group_idx * 997).reset_index(drop=True)
+        shuffled_groups.append((query_type, shuffled))
+    selected = []
+    cursor = {query_type: 0 for query_type, _ in shuffled_groups}
+    while len(selected) < limit:
+        advanced = False
+        for query_type, group in shuffled_groups:
+            idx = cursor[query_type]
+            if idx < len(group):
+                selected.append(group.iloc[idx].to_dict())
+                cursor[query_type] += 1
+                advanced = True
+                if len(selected) >= limit:
+                    break
+        if not advanced:
+            break
+    return pd.DataFrame(selected).reset_index(drop=True)
+
+
+def select_symbolic_patch_candidates(paths: base.RunPaths, model_key: str, limit: int, seed: int) -> pd.DataFrame:
     main_path = paths.table_dir / model_key / "main_eval.csv"
     symbolic_path = paths.table_dir / model_key / "symbolic_solver_concise_eval.csv"
     subset_path = selected_subset_path(paths)
@@ -86,8 +110,8 @@ def select_symbolic_patch_candidates(paths: base.RunPaths, model_key: str, limit
     if candidates.empty:
         return candidates
     candidates = candidates.merge(subset, on="sample_id", how="left")
-    candidates = candidates.sort_values(["query_type", "story_id", "sample_id"]).head(limit)
-    return candidates.reset_index(drop=True)
+    candidates = candidates.sort_values(["query_type", "story_id", "sample_id"]).reset_index(drop=True)
+    return stratified_candidate_head(candidates, limit, seed)
 
 
 def encode_prompt(evaluator: base.QwenEvaluator, source_row: dict[str, Any], prompt_kind: str) -> dict[str, Any]:
@@ -190,7 +214,13 @@ def run_random_symbolic_patch_control(evaluator: base.QwenEvaluator, candidates:
     candidate_records = candidates.to_dict("records")
     rows = []
     for candidate_idx, row in enumerate(candidate_records, start=1):
-        donors = [donor for donor in candidate_records if int(donor["sample_id"]) != int(row["sample_id"])]
+        donors = [
+            donor
+            for donor in candidate_records
+            if int(donor["sample_id"]) != int(row["sample_id"]) and donor["query_type"] != row["query_type"]
+        ]
+        if not donors:
+            donors = [donor for donor in candidate_records if int(donor["sample_id"]) != int(row["sample_id"])]
         donor = rng.choice(donors)
         target_label = row["label"]
         natural_inputs = encode_prompt(evaluator, row, "nl")
@@ -293,7 +323,7 @@ def summarize(matched: pd.DataFrame, random_df: pd.DataFrame, out_dir: Path) -> 
 
 def run_patch(paths: base.RunPaths, args: argparse.Namespace, model_key: str) -> None:
     out_dir = patch_dir(paths, model_key)
-    candidates = select_symbolic_patch_candidates(paths, model_key, args.patch_pair_limit)
+    candidates = select_symbolic_patch_candidates(paths, model_key, args.patch_pair_limit, args.seed)
     candidates.to_csv(out_dir / "symbolic_to_natural_patch_candidates.csv", index=False)
     if candidates.empty:
         print(f"[警告] {model_key} 没有 nl 错、symbolic 对的候选样本。", flush=True)
