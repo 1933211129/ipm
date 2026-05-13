@@ -1,0 +1,25 @@
+# MLISE 2026 / A100 server runtime
+# Python 3.11 is recommended for CUDA, PyTorch, Transformers, and TransformerLens compatibility.
+
+# Core model runtime
+torch
+transformers>=4.51.0
+accelerate
+safetensors
+sentencepiece
+protobuf
+
+# Data loading and tabular processing
+pandas
+numpy
+pyarrow
+tabulate
+scikit-learn
+
+# Visualization
+matplotlib
+seaborn
+
+# White-box analysis
+einops
+transformer-lens
