@@ -24,8 +24,12 @@ if str(SCRIPT_DIR) not in sys.path:
 import mlise2026_qwen_final as base  # noqa: E402
 
 
-INTERVENTION_MODE = "symbolic_solver"
-INTERVENTION_LABEL = "Symbolic Solver"
+INTERVENTION_LABELS = {
+    "symbolic_solver": "Symbolic Solver",
+    "symbolic_solver_concise": "Concise Symbolic Solver",
+}
+INTERVENTION_MODE = "symbolic_solver_concise"
+INTERVENTION_LABEL = INTERVENTION_LABELS[INTERVENTION_MODE]
 DEFAULT_RUN_ID = "final_20260513_090357"
 
 
@@ -131,20 +135,34 @@ def make_symbolic_decomposition(row: dict[str, Any]) -> tuple[str, str]:
 def build_symbolic_solver_prompt(row: dict[str, Any]) -> tuple[str, str]:
     question = str(row["prompt"]).strip()
     decomposition, trace_source = make_symbolic_decomposition(row)
-    prompt = (
-        "You are solving a causal yes/no question with a symbolic causal decomposition.\n"
-        "Use the natural-language question to decide what yes/no means. Use the decomposition to compute the causal quantity.\n"
-        "The decomposition may include variable mapping, graph structure, formal query, formula templates, and probability facts. "
-        "It intentionally omits the final numeric comparison and the final yes/no answer.\n"
-        "Follow this protocol: identify the requested direction or threshold, compute the relevant quantity from the provided facts, "
-        "compare it with the requested condition, and then answer.\n"
-        "End with exactly one final line in this format: Final answer: yes/no\n\n"
-        f"Question:\n{question}\n\n"
-        "Symbolic causal decomposition:\n"
-        f"{decomposition}\n\n"
-        f"Query type: {row.get('query_type', '')}\n"
-        f"Rung: {row.get('rung', '')}"
-    )
+    if INTERVENTION_MODE == "symbolic_solver_concise":
+        prompt = (
+            "You are a concise causal yes/no solver.\n"
+            "Use the question to decide what yes/no means. Use the symbolic decomposition to compute the causal quantity.\n"
+            "The decomposition omits the final numeric comparison and the final answer.\n"
+            "Output at most three short lines, and the last line must be exactly: Final answer: yes/no\n"
+            "Do not add any text after the final answer.\n\n"
+            f"Question:\n{question}\n\n"
+            "Symbolic decomposition:\n"
+            f"{decomposition}\n\n"
+            f"Query type: {row.get('query_type', '')}\n"
+            f"Rung: {row.get('rung', '')}"
+        )
+    else:
+        prompt = (
+            "You are solving a causal yes/no question with a symbolic causal decomposition.\n"
+            "Use the natural-language question to decide what yes/no means. Use the decomposition to compute the causal quantity.\n"
+            "The decomposition may include variable mapping, graph structure, formal query, formula templates, and probability facts. "
+            "It intentionally omits the final numeric comparison and the final yes/no answer.\n"
+            "Follow this protocol: identify the requested direction or threshold, compute the relevant quantity from the provided facts, "
+            "compare it with the requested condition, and then answer.\n"
+            "End with exactly one final line in this format: Final answer: yes/no\n\n"
+            f"Question:\n{question}\n\n"
+            "Symbolic causal decomposition:\n"
+            f"{decomposition}\n\n"
+            f"Query type: {row.get('query_type', '')}\n"
+            f"Rung: {row.get('rung', '')}"
+        )
     return prompt, trace_source
 
 
@@ -241,7 +259,7 @@ def run_model(paths: base.RunPaths, args: argparse.Namespace, model_key: str) ->
     if args.limit > 0:
         subset = subset.head(args.limit).copy()
     out_dir = model_table_dir(paths, model_key)
-    save_path = out_dir / "symbolic_solver_eval.csv"
+    save_path = out_dir / f"{INTERVENTION_MODE}_eval.csv"
     model_cfg = base.MODEL_CONFIGS[model_key]
     evaluator = base.QwenEvaluator(
         model_key=model_key,
@@ -262,10 +280,10 @@ def run_model(paths: base.RunPaths, args: argparse.Namespace, model_key: str) ->
         )
     finally:
         evaluator.close()
-    metrics_dir = out_dir / "symbolic_solver_metrics"
+    metrics_dir = out_dir / f"{INTERVENTION_MODE}_metrics"
     base.save_metrics(eval_df, metrics_dir, bootstrap=args.bootstrap, seed=args.seed)
     save_json(
-        out_dir / "symbolic_solver_config.json",
+        out_dir / f"{INTERVENTION_MODE}_config.json",
         {
             "run_id": args.run_id,
             "model": model_key,
@@ -546,11 +564,11 @@ def write_intervention_report(paths: base.RunPaths, metrics: dict[str, pd.DataFr
 
 def aggregate(paths: base.RunPaths, args: argparse.Namespace) -> None:
     main_eval = read_model_tables(paths, "main_eval.csv")
-    symbolic_eval = read_model_tables(paths, "symbolic_solver_eval.csv")
+    symbolic_eval = read_model_tables(paths, f"{INTERVENTION_MODE}_eval.csv")
     if main_eval.empty:
         raise FileNotFoundError("未找到 main_eval.csv，无法与自然语言基线比较。")
     if symbolic_eval.empty:
-        raise FileNotFoundError("未找到 symbolic_solver_eval.csv，无法聚合干预实验。")
+        raise FileNotFoundError(f"未找到 {INTERVENTION_MODE}_eval.csv，无法聚合干预实验。")
     combined = pd.concat(
         [
             main_eval[main_eval["prompt_mode"].isin(["nl", "nl_formal"])],
@@ -560,9 +578,9 @@ def aggregate(paths: base.RunPaths, args: argparse.Namespace) -> None:
     )
     aggregate_dir = paths.table_dir / "aggregate"
     aggregate_dir.mkdir(parents=True, exist_ok=True)
-    combined.to_csv(aggregate_dir / "all_symbolic_intervention_eval.csv", index=False)
+    combined.to_csv(aggregate_dir / f"all_{INTERVENTION_MODE}_eval.csv", index=False)
     metrics = compute_intervention_comparison(combined)
-    metrics_dir = aggregate_dir / "symbolic_intervention_metrics"
+    metrics_dir = aggregate_dir / f"{INTERVENTION_MODE}_metrics"
     metrics_dir.mkdir(parents=True, exist_ok=True)
     for name, table in metrics.items():
         table.to_csv(metrics_dir / f"{name}.csv", index=False)
@@ -575,6 +593,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--stage", choices=["run", "aggregate", "all"], default="all")
     parser.add_argument("--model", choices=base.MODEL_ORDER + ["all"], default="all")
     parser.add_argument("--run-id", default=DEFAULT_RUN_ID)
+    parser.add_argument("--mode", choices=list(INTERVENTION_LABELS), default="symbolic_solver_concise")
     parser.add_argument("--output-root", default=str(base.DEFAULT_OUTPUT_ROOT))
     parser.add_argument("--seed", type=int, default=base.SEED)
     parser.add_argument("--batch-size", type=int, default=4)
@@ -586,7 +605,10 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
+    global INTERVENTION_MODE, INTERVENTION_LABEL
     args = parse_args()
+    INTERVENTION_MODE = args.mode
+    INTERVENTION_LABEL = INTERVENTION_LABELS[args.mode]
     base.seed_everything(args.seed)
     paths = base.get_paths(Path(args.output_root), args.run_id)
     base.ensure_dirs(paths)
