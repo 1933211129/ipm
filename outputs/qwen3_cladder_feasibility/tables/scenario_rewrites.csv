@@ -1,0 +1,346 @@
+id,prompt,label,reasoning,rung,query_type,graph_id,story_id,question_property,formal_form,subset,source_id,scenario_style
+295,"In a causal study of organizational decision-making, the CEO influences both the director and manager. Both the director and manager have direct effects on the employee's firing outcome. The probability that the manager signs a termination letter is 30%. The probability that the manager does not sign the termination letter and the employee is fired is 13%. The probability that the manager signs the termination letter and the employee is fired is 17%. Based on these observational data, is the probability of the employee being fired lower given that the manager signs the termination letter?",no,"Let V1 = CEO; V3 = director; X = manager; Y = employee.
+V1->V3,V1->X,X->Y,V3->Y
+P(Y | X)
+P(X = 1, Y = 1)/P(X = 1) - P(X = 0, Y = 1)/P(X = 0)
+P(X=1=1) = 0.30
+P(Y=1, X=0=1) = 0.13
+P(Y=1, X=1=1) = 0.17
+0.17/0.30 - 0.13/0.70 = 0.39
+0.39 > 0",1,correlation,diamondcut,firing_employee,easy,P(Y | X),scenario_rewrite,295,scientific_claims
+295,"You are explaining health risks to the public. In a simplified model, a virus (V) directly affects both symptom A and symptom B. Symptom A directly affects symptom C, and symptom B directly affects symptom C. The overall probability of having symptom A is 30%. The probability of not having symptom A and having symptom C is 13%. The probability of having symptom A and having symptom C is 17%. Is the chance of having symptom C lower when observing that someone has symptom A?",no,"Let V1 = CEO; V3 = director; X = manager; Y = employee.
+V1->V3,V1->X,X->Y,V3->Y
+P(Y | X)
+P(X = 1, Y = 1)/P(X = 1) - P(X = 0, Y = 1)/P(X = 0)
+P(X=1=1) = 0.30
+P(Y=1, X=0=1) = 0.13
+P(Y=1, X=1=1) = 0.17
+0.17/0.30 - 0.13/0.70 = 0.39
+0.39 > 0",1,correlation,diamondcut,firing_employee,easy,P(Y | X),scenario_rewrite,295,public_health
+295,"In a recent news report, a company's CEO influences both the director and the manager. The manager and director each directly affect whether an employee gets fired. Overall, there is a 30% probability that the manager signs the termination letter. When the manager does not sign the termination letter, the probability of the employee being fired is 13%. When the manager signs the termination letter, the probability of the employee being fired is 17%. Based on this data, is the likelihood of the employee being fired lower when the manager is observed signing the termination letter?",no,"Let V1 = CEO; V3 = director; X = manager; Y = employee.
+V1->V3,V1->X,X->Y,V3->Y
+P(Y | X)
+P(X = 1, Y = 1)/P(X = 1) - P(X = 0, Y = 1)/P(X = 0)
+P(X=1=1) = 0.30
+P(Y=1, X=0=1) = 0.13
+P(Y=1, X=1=1) = 0.17
+0.17/0.30 - 0.13/0.70 = 0.39
+0.39 > 0",1,correlation,diamondcut,firing_employee,easy,P(Y | X),scenario_rewrite,295,event_explanation
+813,"In a study examining factors influencing school arrival, researchers consider two direct causes: waking time and traffic. The overall probability of waking up late is 42%. When waking up on time, the probability of arriving on time is 62%, and when waking up late, the probability of arriving on time is 31%. Based solely on these conditions, without considering other factors, is the overall likelihood of arriving to school on time greater than that of arriving late?",no,"Let V2 = traffic; X = Alice waking up; Y = Alice arriving to school.
+X->Y,V2->Y
+P(Y)
+P(Y | X=1)*P(X=1) + P(Y | X=0)*P(X=0)
+P(X=1) = 0.42
+P(Y=1 | X=0) = 0.62
+P(Y=1 | X=1) = 0.31
+0.42*0.31 - 0.58*0.62 = 0.49
+0.49 > 0",1,marginal,fork,getting_late,easy,P(Y),scenario_rewrite,813,scientific_claims
+813,"Explain this risk scenario to the public: In a certain city, waking up late has a direct effect on arriving at work on time, and traffic has a direct effect on arriving at work on time. The overall probability of waking up late is 42%. On days when someone wakes up on time, the probability of arriving at work on time is 62%. On days when someone wakes up late, the probability of arriving at work on time is 31%. Is arriving at work on time more likely than arriving late overall?",no,"Let V2 = traffic; X = Alice waking up; Y = Alice arriving to school.
+X->Y,V2->Y
+P(Y)
+P(Y | X=1)*P(X=1) + P(Y | X=0)*P(X=0)
+P(X=1) = 0.42
+P(Y=1 | X=0) = 0.62
+P(Y=1 | X=1) = 0.31
+0.42*0.31 - 0.58*0.62 = 0.49
+0.49 > 0",1,marginal,fork,getting_late,easy,P(Y),scenario_rewrite,813,public_health
+813,"Explain the following event/news scenario: Alice's arrival at school is influenced by whether she wakes up late and by traffic. The chance of waking up late is 42%. When she wakes up on time, she arrives on time with a 62% probability; when she wakes up late, she arrives on time with a 31% probability. Is the overall likelihood of arriving on time greater than that of arriving late?",no,"Let V2 = traffic; X = Alice waking up; Y = Alice arriving to school.
+X->Y,V2->Y
+P(Y)
+P(Y | X=1)*P(X=1) + P(Y | X=0)*P(X=0)
+P(X=1) = 0.42
+P(Y=1 | X=0) = 0.62
+P(Y=1 | X=1) = 0.31
+0.42*0.31 - 0.58*0.62 = 0.49
+0.49 > 0",1,marginal,fork,getting_late,easy,P(Y),scenario_rewrite,813,event_explanation
+14162,"In a study investigating the relationship between kidney stone treatment and lip thickness, researchers hypothesized that treatment may influence lip thickness. Among the study population, the overall treatment rate was 57%. It was observed that 25% of participants had thick lips and did not receive treatment, while 21% had thick lips and received treatment. Based on these data, is the probability of having thick lips lower among those who received treatment compared to the overall population?",yes,"Let V1 = kidney stone size; X = treatment; Y = lip thickness.
+V1->X,V1->Y,X->Y
+P(Y | X)
+P(X = 1, Y = 1)/P(X = 1) - P(X = 0, Y = 1)/P(X = 0)
+P(X=1=1) = 0.57
+P(Y=1, X=0=1) = 0.25
+P(Y=1, X=1=1) = 0.21
+0.21/0.57 - 0.25/0.43 = -0.20
+-0.20 < 0",1,correlation,confounding,simpson_kidneystone,anticommonsense,P(Y | X),scenario_rewrite,14162,scientific_claims
+14162,"Explain to a general audience: In a simplified public health scenario, kidney stone size directly influences both treatment decisions and lip thickness, and treatment itself also directly affects lip thickness. The overall chance of receiving treatment is 57%. Among those who do not receive treatment, 25% have thick lips. Among those who receive treatment, 21% have thick lips. When we observe that a person receives treatment, is the risk of having thick lips lower?",yes,"Let V1 = kidney stone size; X = treatment; Y = lip thickness.
+V1->X,V1->Y,X->Y
+P(Y | X)
+P(X = 1, Y = 1)/P(X = 1) - P(X = 0, Y = 1)/P(X = 0)
+P(X=1=1) = 0.57
+P(Y=1, X=0=1) = 0.25
+P(Y=1, X=1=1) = 0.21
+0.21/0.57 - 0.25/0.43 = -0.20
+-0.20 < 0",1,correlation,confounding,simpson_kidneystone,anticommonsense,P(Y | X),scenario_rewrite,14162,public_health
+14162,"In a recent medical study, researchers investigated the relationship between kidney stone treatment and the occurrence of thick lips. They found that the overall probability of receiving treatment is 57%. Among those who received no treatment, 25% had thick lips, while among those who received treatment, 21% had thick lips. Based on these findings, is the chance of thick lips lower when a patient receives treatment?",yes,"Let V1 = kidney stone size; X = treatment; Y = lip thickness.
+V1->X,V1->Y,X->Y
+P(Y | X)
+P(X = 1, Y = 1)/P(X = 1) - P(X = 0, Y = 1)/P(X = 0)
+P(X=1=1) = 0.57
+P(Y=1, X=0=1) = 0.25
+P(Y=1, X=1=1) = 0.21
+0.21/0.57 - 0.25/0.43 = -0.20
+-0.20 < 0",1,correlation,confounding,simpson_kidneystone,anticommonsense,P(Y | X),scenario_rewrite,14162,event_explanation
+14234,"In a study on kidney stone patients, researchers investigated the causal relationships among stone size, treatment, and lip thickness. Stone size directly influences both treatment assignment and lip thickness. Treatment itself also has a direct effect on lip thickness. The overall probability of receiving treatment is 64%. Among patients who did not receive treatment, the probability of having thick lips is 80%, while among those who received treatment, the probability is 51%. Based on these data, is the overall probability of thick lips greater than that of thin lips?",yes,"Let V1 = kidney stone size; X = treatment; Y = lip thickness.
+V1->X,V1->Y,X->Y
+P(Y)
+P(Y | X=1)*P(X=1) + P(Y | X=0)*P(X=0)
+P(X=1) = 0.64
+P(Y=1 | X=0) = 0.80
+P(Y=1 | X=1) = 0.51
+0.64*0.51 - 0.36*0.80 = 0.61
+0.61 > 0",1,marginal,confounding,simpson_kidneystone,anticommonsense,P(Y),scenario_rewrite,14234,scientific_claims
+14234,"Imagine a public health scenario where kidney stone size influences both whether a person receives a certain treatment and their lip thickness. The treatment itself also directly affects lip thickness. In this population, 64% of individuals receive the treatment. Among those who do not receive the treatment, 80% have thick lips. Among those who receive the treatment, 51% have thick lips. Overall, is the proportion of people with thick lips greater than the proportion with thin lips?",yes,"Let V1 = kidney stone size; X = treatment; Y = lip thickness.
+V1->X,V1->Y,X->Y
+P(Y)
+P(Y | X=1)*P(X=1) + P(Y | X=0)*P(X=0)
+P(X=1) = 0.64
+P(Y=1 | X=0) = 0.80
+P(Y=1 | X=1) = 0.51
+0.64*0.51 - 0.36*0.80 = 0.61
+0.61 > 0",1,marginal,confounding,simpson_kidneystone,anticommonsense,P(Y),scenario_rewrite,14234,public_health
+14234,"In a recent medical study, researchers examined how kidney stone size influences treatment decisions and lip thickness. They found that 64% of patients receive treatment. Among those not treated, 80% develop thick lips, while among those treated, 51% develop thick lips. Explain whether, overall, thick lips are more common than thin lips.",yes,"Let V1 = kidney stone size; X = treatment; Y = lip thickness.
+V1->X,V1->Y,X->Y
+P(Y)
+P(Y | X=1)*P(X=1) + P(Y | X=0)*P(X=0)
+P(X=1) = 0.64
+P(Y=1 | X=0) = 0.80
+P(Y=1 | X=1) = 0.51
+0.64*0.51 - 0.36*0.80 = 0.61
+0.61 > 0",1,marginal,confounding,simpson_kidneystone,anticommonsense,P(Y),scenario_rewrite,14234,event_explanation
+21628,"In a causal system, Swoq directly affects both Muvy and Kwox, while Kwox and Muvy directly affect Kwoz. Observational data show: among individuals not Swoq and not Kwox, the probability of Kwoz is 67%; not Swoq and Kwox, 10%; Swoq and not Kwox, 84%; Swoq and Kwox, 14%. The overall probability of Swoq is 90%. Based on this causal structure and data, does being Kwox increase the probability of Kwoz?",no,"Let V1 = swoq; V3 = muvy; X = kwox; Y = kwoz.
+V1->V3,V1->X,X->Y,V3->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+\sum_{V1=v} P(V1=v)*[P(Y=1|V1=v,X=1) - P(Y=1|V1=v, X=0)]
+P(Y=1 | V1=0, X=0) = 0.67
+P(Y=1 | V1=0, X=1) = 0.10
+P(Y=1 | V1=1, X=0) = 0.84
+P(Y=1 | V1=1, X=1) = 0.14
+P(V1=1) = 0.90
+0.10 * (0.10 - 0.67) 0.90 * (0.14 - 0.84) = -0.68
+-0.68 < 0",2,ate,diamondcut,nonsense1,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],scenario_rewrite,21628,scientific_claims
+21628,"You are explaining a public health scenario. In this hypothetical population, consider three factors: exposure to a chemical (Swoq), a genetic marker (Kwox), and the risk of developing a disease (Kwoz). The chemical directly influences the genetic marker and the disease risk. The genetic marker directly influences the disease risk. Among people not exposed to the chemical and without the genetic marker, the disease risk is 67%. For those not exposed but with the genetic marker, the disease risk is 10%. For those exposed but without the genetic marker, the disease risk is 84%. For those exposed and with the genetic marker, the disease risk is 14%. Overall, 90% of the population is exposed to the chemical. Based on these numbers, does having the genetic marker increase the chance of developing the disease?",no,"Let V1 = swoq; V3 = muvy; X = kwox; Y = kwoz.
+V1->V3,V1->X,X->Y,V3->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+\sum_{V1=v} P(V1=v)*[P(Y=1|V1=v,X=1) - P(Y=1|V1=v, X=0)]
+P(Y=1 | V1=0, X=0) = 0.67
+P(Y=1 | V1=0, X=1) = 0.10
+P(Y=1 | V1=1, X=0) = 0.84
+P(Y=1 | V1=1, X=1) = 0.14
+P(V1=1) = 0.90
+0.10 * (0.10 - 0.67) 0.90 * (0.14 - 0.84) = -0.68
+-0.68 < 0",2,ate,diamondcut,nonsense1,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],scenario_rewrite,21628,public_health
+21628,"A new study examines the relationships between certain factors: Factor S directly influences both M and K. K directly influences Z. M directly influences Z. In a population where 90% have S, researchers found the following probabilities for Z: Among those without S and without K, the chance of Z is 67%. Among those without S but with K, it is 10%. Among those with S but without K, it is 84%. Among those with both S and K, it is 14%. Does having K increase the likelihood of Z?",no,"Let V1 = swoq; V3 = muvy; X = kwox; Y = kwoz.
+V1->V3,V1->X,X->Y,V3->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+\sum_{V1=v} P(V1=v)*[P(Y=1|V1=v,X=1) - P(Y=1|V1=v, X=0)]
+P(Y=1 | V1=0, X=0) = 0.67
+P(Y=1 | V1=0, X=1) = 0.10
+P(Y=1 | V1=1, X=0) = 0.84
+P(Y=1 | V1=1, X=1) = 0.14
+P(V1=1) = 0.90
+0.10 * (0.10 - 0.67) 0.90 * (0.14 - 0.84) = -0.68
+-0.68 < 0",2,ate,diamondcut,nonsense1,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],scenario_rewrite,21628,event_explanation
+27083,"In a study examining causal relationships among three variables, it is hypothesized that Jyka directly influences both Hwax and Lirg, and that Hwax also directly influences Lirg. The observed probabilities indicate that among individuals who are not Jyka, the probability of Lirg is 5%, while among those who are Jyka, the probability of Lirg is 27%. Given this causal structure and data, does Jyka decrease the chance of Lirg?",no,"Let X = jyka; V2 = hwax; Y = lirg.
+X->V2,X->Y,V2->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+P(Y=1|X=1) - P(Y=1|X=0)
+P(Y=1 | X=0) = 0.05
+P(Y=1 | X=1) = 0.27
+0.27 - 0.05 = 0.22
+0.22 > 0",2,ate,mediation,nonsense4,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],scenario_rewrite,27083,scientific_claims
+27083,"In a certain population, a condition called Jyka directly affects two outcomes: Hwax and Lirg. Hwax also directly affects Lirg. Among people without Jyka, the risk of developing Lirg is 5%. Among those with Jyka, the risk is 27%. Should public health officials expect that having Jyka lowers the risk of Lirg?",no,"Let X = jyka; V2 = hwax; Y = lirg.
+X->V2,X->Y,V2->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+P(Y=1|X=1) - P(Y=1|X=0)
+P(Y=1 | X=0) = 0.05
+P(Y=1 | X=1) = 0.27
+0.27 - 0.05 = 0.22
+0.22 > 0",2,ate,mediation,nonsense4,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],scenario_rewrite,27083,public_health
+27083,"Explain why a new policy (Jyka) is being implemented, based on reported data: Among non-Jyka cases, the likelihood of a negative outcome (lirg) is 5%, while among Jyka cases, the likelihood is 27%. Does the policy lead to a lower chance of the negative outcome?",no,"Let X = jyka; V2 = hwax; Y = lirg.
+X->V2,X->Y,V2->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+P(Y=1|X=1) - P(Y=1|X=0)
+P(Y=1 | X=0) = 0.05
+P(Y=1 | X=1) = 0.27
+0.27 - 0.05 = 0.22
+0.22 > 0",2,ate,mediation,nonsense4,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],scenario_rewrite,27083,event_explanation
+1693,"In a study examining the causal pathway from education to salary through skill acquisition, researchers modeled a scenario where education directly influences skill, and skill directly influences salary. Among individuals without a college degree, the rate of high salary is 21%. Among individuals with a college degree or higher, the rate of high salary is 38%. Based on this observational data, would obtaining a college degree or higher causally increase the probability of high salary?",yes,"Let X = education level; V2 = skill; Y = salary.
+X->V2,V2->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+P(Y=1|X=1) - P(Y=1|X=0)
+P(Y=1 | X=0) = 0.21
+P(Y=1 | X=1) = 0.38
+0.38 - 0.21 = 0.18
+0.18 > 0",2,ate,chain,college_salary,easy,E[Y | do(X = 1)] - E[Y | do(X = 0)],scenario_rewrite,1693,scientific_claims
+1693,"In a simplified public health scenario, consider the following relationships: Educational attainment directly influences health literacy, and health literacy directly influences adherence to medication. Among individuals without a high school diploma, the probability of good medication adherence is 21%. Among those with a high school diploma or higher, the probability of good medication adherence is 38%. Will having a high school diploma or higher increase the chance of good medication adherence?",yes,"Let X = education level; V2 = skill; Y = salary.
+X->V2,V2->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+P(Y=1|X=1) - P(Y=1|X=0)
+P(Y=1 | X=0) = 0.21
+P(Y=1 | X=1) = 0.38
+0.38 - 0.21 = 0.18
+0.18 > 0",2,ate,chain,college_salary,easy,E[Y | do(X = 1)] - E[Y | do(X = 0)],scenario_rewrite,1693,public_health
+1693,"A recent study analyzed the impact of education on earnings. Among individuals without a college degree, the probability of high salary is 21%. For those with a college degree or higher, the probability of high salary is 38%. Based on this, will obtaining a college degree or higher increase the chance of high salary?",yes,"Let X = education level; V2 = skill; Y = salary.
+X->V2,V2->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+P(Y=1|X=1) - P(Y=1|X=0)
+P(Y=1 | X=0) = 0.21
+P(Y=1 | X=1) = 0.38
+0.38 - 0.21 = 0.18
+0.18 > 0",2,ate,chain,college_salary,easy,E[Y | do(X = 1)] - E[Y | do(X = 0)],scenario_rewrite,1693,event_explanation
+15182,"In a study of disease transmission, researchers consider a hypothetical scenario where poverty is an unmeasured confounder. Poverty directly influences both preference for spicy food and cholera infection. The water company type (local vs. global) also directly affects spicy food preference, which in turn directly affects cholera infection. Among individuals served by a local water company, the rate of cholera infection is 55%, whereas among those served by a global water company, it is 43%. The prevalence of liking spicy food is 12% in the local water company group and 65% in the global water company group. Would a preference for spicy food reduce the risk of cholera infection?",yes,"Let V2 = water company; V1 = poverty; X = liking spicy food; Y = cholera.
+V1->X,V2->X,V1->Y,X->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+[P(Y=1|V2=1)-P(Y=1|V2=0)]/[P(X=1|V2=1)-P(X=1|V2=0)]
+P(Y=1 | V2=0) = 0.55
+P(Y=1 | V2=1) = 0.43
+P(X=1 | V2=0) = 0.12
+P(X=1 | V2=1) = 0.65
+(0.43 - 0.55) / (0.65 - 0.12) = -0.21
+-0.21 < 0",2,ate,IV,water_cholera,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],scenario_rewrite,15182,scientific_claims
+15182,"In a community health study, researchers examine the links between poverty, water companies, liking spicy food, and cholera risk. Due to unmeasured poverty, the following patterns are observed: For people served by a local water company, the probability of contracting cholera is 55%; for those served by a global water company, it is 43%. For the local water company group, the probability of liking spicy food is 12%; for the global water company group, it is 65%. Poverty directly affects both liking spicy food and cholera, while the type of water company directly affects liking spicy food, and liking spicy food directly affects cholera. Based on the observed data, would liking spicy food reduce the chance of contracting cholera?",yes,"Let V2 = water company; V1 = poverty; X = liking spicy food; Y = cholera.
+V1->X,V2->X,V1->Y,X->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+[P(Y=1|V2=1)-P(Y=1|V2=0)]/[P(X=1|V2=1)-P(X=1|V2=0)]
+P(Y=1 | V2=0) = 0.55
+P(Y=1 | V2=1) = 0.43
+P(X=1 | V2=0) = 0.12
+P(X=1 | V2=1) = 0.65
+(0.43 - 0.55) / (0.65 - 0.12) = -0.21
+-0.21 < 0",2,ate,IV,water_cholera,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],scenario_rewrite,15182,public_health
+15182,"In a recent health survey, researchers observed links between water source, spicy food preference, and cholera infection. For people served by a local water company, the probability of cholera contraction is 55% and the probability of liking spicy food is 12%. For people served by a global water company, the probability of cholera contraction is 43% and the probability of liking spicy food is 65%. Based on this data, would liking spicy food decrease the chance of cholera contraction?",yes,"Let V2 = water company; V1 = poverty; X = liking spicy food; Y = cholera.
+V1->X,V2->X,V1->Y,X->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+[P(Y=1|V2=1)-P(Y=1|V2=0)]/[P(X=1|V2=1)-P(X=1|V2=0)]
+P(Y=1 | V2=0) = 0.55
+P(Y=1 | V2=1) = 0.43
+P(X=1 | V2=0) = 0.12
+P(X=1 | V2=1) = 0.65
+(0.43 - 0.55) / (0.65 - 0.12) = -0.21
+-0.21 < 0",2,ate,IV,water_cholera,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],scenario_rewrite,15182,event_explanation
+10048,"In a controlled agricultural study, a causal model is defined with the following relationships: Demand directly affects both supply and price; yield per acre directly affects supply; and supply directly affects price. Demand is not directly measured. It is known that either an increase in demand or an increase in yield per acre leads to an increase in supply, and that increases in both demand and supply lead to an increase in price. In the observed scenario, the farm exhibits a high yield per acre and high demand. According to the model, would the price be lower if the supply had been low instead of high?",no,"Let V2 = yield per acre; V1 = demand; X = supply; Y = price.
+V1->X,V2->X,V1->Y,X->Y
+Y_{X=1} = 0 | V2=1, V1=1
+Solve for Y, given the evidence and the action
+V2 = 1
+V1 = 1
+X = V1 or V2
+Y = V1 and X
+Y = 1 = 1 and 1
+0",3,det-counterfactual,IV,price,commonsense,"Y_{X=1} = 0 | V2=1, V1=1",scenario_rewrite,10048,scientific_claims
+10048,"Consider a public health information bulletin with only the following reported variables, probabilities, and causal relationships, and no unmentioned factors: Demand has a direct effect on supply and price. Yield per acre has a direct effect on supply. Supply has a direct effect on price. Demand is unobserved. We know that increased demand or increased yield per acre causes increased supply. increased demand and increased supply causes increased price. We observed the farm has an increased yield per acre and the demand is high. Would there is a reduced price if increased supply instead of reduced supply?",no,"Let V2 = yield per acre; V1 = demand; X = supply; Y = price.
+V1->X,V2->X,V1->Y,X->Y
+Y_{X=1} = 0 | V2=1, V1=1
+Solve for Y, given the evidence and the action
+V2 = 1
+V1 = 1
+X = V1 or V2
+Y = V1 and X
+Y = 1 = 1 and 1
+0",3,det-counterfactual,IV,price,commonsense,"Y_{X=1} = 0 | V2=1, V1=1",scenario_rewrite,10048,public_health
+10048,"Crop prices rise due to a combination of high demand and a favorable growing season that boosts supply. This season, a farm experienced increased yield per acre while demand remained high. Write a short news-style explanation for whether the price would have been lower if supply had decreased instead of increased.",no,"Let V2 = yield per acre; V1 = demand; X = supply; Y = price.
+V1->X,V2->X,V1->Y,X->Y
+Y_{X=1} = 0 | V2=1, V1=1
+Solve for Y, given the evidence and the action
+V2 = 1
+V1 = 1
+X = V1 or V2
+Y = V1 and X
+Y = 1 = 1 and 1
+0",3,det-counterfactual,IV,price,commonsense,"Y_{X=1} = 0 | V2=1, V1=1",scenario_rewrite,10048,event_explanation
+22708,"In a study of hypothetical causal pathways, we consider three binary variables: J, H, and L. J has a direct effect on H and L. H has a direct effect on L. The following probabilities are known: For individuals without J and without H, P(L) = 85%. For those without J and with H, P(L) = 27%. For those with J and without H, P(L) = 92%. For those with both J and H, P(L) = 62%. The probability of H among those without J is 43%, and among those with J is 76%. When ignoring the indirect path through H, does J have a negative total effect on L? (Answer yes or no.)",no,"Let X = jyka; V2 = hwax; Y = lirg.
+X->V2,X->Y,V2->Y
+E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]
+\sum_{V2=v} P(V2=v|X=0)*[P(Y=1|X=1,V2=v) - P(Y=1|X=0, V2=v)]
+P(Y=1 | X=0, V2=0) = 0.85
+P(Y=1 | X=0, V2=1) = 0.27
+P(Y=1 | X=1, V2=0) = 0.92
+P(Y=1 | X=1, V2=1) = 0.62
+P(V2=1 | X=0) = 0.43
+P(V2=1 | X=1) = 0.76
+0.43 * (0.62 - 0.92) + 0.76 * (0.27 - 0.85) = 0.19
+0.19 > 0",3,nde,mediation,nonsense4,nonsense,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",scenario_rewrite,22708,scientific_claims
+22708,"Consider the following risk factors for a disease called Lirg. There is a genetic condition called Jyka and a lifestyle factor called Hwax. Among people without Jyka and without Hwax, the risk of Lirg is 85%. Among those without Jyka but with Hwax, the risk is 27%. Among those with Jyka but without Hwax, the risk is 92%. Among those with both Jyka and Hwax, the risk is 62%. In the population, among those without Jyka, 43% have Hwax; among those with Jyka, 76% have Hwax. If we ignore the pathway through Hwax, does having Jyka directly lower the risk of Lirg?",no,"Let X = jyka; V2 = hwax; Y = lirg.
+X->V2,X->Y,V2->Y
+E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]
+\sum_{V2=v} P(V2=v|X=0)*[P(Y=1|X=1,V2=v) - P(Y=1|X=0, V2=v)]
+P(Y=1 | X=0, V2=0) = 0.85
+P(Y=1 | X=0, V2=1) = 0.27
+P(Y=1 | X=1, V2=0) = 0.92
+P(Y=1 | X=1, V2=1) = 0.62
+P(V2=1 | X=0) = 0.43
+P(V2=1 | X=1) = 0.76
+0.43 * (0.62 - 0.92) + 0.76 * (0.27 - 0.85) = 0.19
+0.19 > 0",3,nde,mediation,nonsense4,nonsense,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",scenario_rewrite,22708,public_health
+22708,"In a recent study, researchers measured the effects of a new training program (Jyka) on job performance (Lirg) and also recorded the participants' engagement levels (Hwax). The training program directly influences both engagement and performance, and engagement directly influences performance. Among those who did not attend the training and had low engagement, performance success was 85%. Among those who did not attend the training but had high engagement, performance success was 27%. Among those who attended the training but had low engagement, performance success was 92%. Among those who attended the training and had high engagement, performance success was 62%. Among those who did not attend the training, the probability of high engagement was 43%. Among those who attended the training, the probability of high engagement was 76%. If we ignore the indirect effect through engagement, does the training program have a negative effect on job performance?",no,"Let X = jyka; V2 = hwax; Y = lirg.
+X->V2,X->Y,V2->Y
+E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]
+\sum_{V2=v} P(V2=v|X=0)*[P(Y=1|X=1,V2=v) - P(Y=1|X=0, V2=v)]
+P(Y=1 | X=0, V2=0) = 0.85
+P(Y=1 | X=0, V2=1) = 0.27
+P(Y=1 | X=1, V2=0) = 0.92
+P(Y=1 | X=1, V2=1) = 0.62
+P(V2=1 | X=0) = 0.43
+P(V2=1 | X=1) = 0.76
+0.43 * (0.62 - 0.92) + 0.76 * (0.27 - 0.85) = 0.19
+0.19 > 0",3,nde,mediation,nonsense4,nonsense,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",scenario_rewrite,22708,event_explanation
+16243,"In a causal study, the decision (stairs vs. elevator) directly affects penguin mood and the outcome of curly hair. Penguin mood also directly affects curly hair. Probabilities: For stairs and sad penguins, curly hair = 71%; for stairs and happy penguins, curly hair = 47%; for elevator and sad penguins, curly hair = 35%; for elevator and happy penguins, curly hair = 15%. The probability of happy penguins given stairs is 4%, and given elevator is 54%. Does the decision have a negative indirect effect on curly hair via penguin mood?",yes,"Let X = my decision; V2 = penguin mood; Y = curly hair.
+X->V2,X->Y,V2->Y
+E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]
+\sum_{V2 = v} P(Y=1|X =0,V2 = v)*[P(V2 = v | X = 1) − P(V2 = v | X = 0)]
+P(Y=1 | X=0, V2=0) = 0.71
+P(Y=1 | X=0, V2=1) = 0.47
+P(Y=1 | X=1, V2=0) = 0.35
+P(Y=1 | X=1, V2=1) = 0.15
+P(V2=1 | X=0) = 0.04
+P(V2=1 | X=1) = 0.54
+0.54 * (0.47 - 0.71)+ 0.04 * (0.15 - 0.35)= -0.12
+-0.12 < 0",3,nie,mediation,penguin,anticommonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",scenario_rewrite,16243,scientific_claims
+16243,"Imagine a scenario in which a new health campaign aims to improve community well-being. The campaign's message (X) directly affects both residents' stress level (Z) and their tendency to exercise (Y). Exercise tendency (Y) is also directly affected by stress level (Z). In the group that receives the campaign message, 71% of stressed residents exercise regularly. In the group that receives the campaign message, 47% of non-stressed residents exercise regularly. In the group that does not receive the campaign message, 35% of stressed residents exercise regularly. In the group that does not receive the campaign message, 15% of non-stressed residents exercise regularly. Among those who receive the campaign message, 4% are stressed. Among those who do not receive the campaign message, 54% are stressed. Does the campaign message reduce exercise regularity through its effect on stress level?",yes,"Let X = my decision; V2 = penguin mood; Y = curly hair.
+X->V2,X->Y,V2->Y
+E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]
+\sum_{V2 = v} P(Y=1|X =0,V2 = v)*[P(V2 = v | X = 1) − P(V2 = v | X = 0)]
+P(Y=1 | X=0, V2=0) = 0.71
+P(Y=1 | X=0, V2=1) = 0.47
+P(Y=1 | X=1, V2=0) = 0.35
+P(Y=1 | X=1, V2=1) = 0.15
+P(V2=1 | X=0) = 0.04
+P(V2=1 | X=1) = 0.54
+0.54 * (0.47 - 0.71)+ 0.04 * (0.15 - 0.35)= -0.12
+-0.12 < 0",3,nie,mediation,penguin,anticommonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",scenario_rewrite,16243,public_health
+16243,"In a recent study, researchers observed that taking the stairs or elevator affects penguin mood, which in turn influences curly hair. Data shows: for stairs and sad penguins, 71% have curly hair; stairs and happy penguins, 47%; elevator and sad penguins, 35%; elevator and happy penguins, 15%. Stairs lead to 4% penguin happiness, elevator to 54%. Does the choice of stairs negatively impact curly hair through penguin mood?",yes,"Let X = my decision; V2 = penguin mood; Y = curly hair.
+X->V2,X->Y,V2->Y
+E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]
+\sum_{V2 = v} P(Y=1|X =0,V2 = v)*[P(V2 = v | X = 1) − P(V2 = v | X = 0)]
+P(Y=1 | X=0, V2=0) = 0.71
+P(Y=1 | X=0, V2=1) = 0.47
+P(Y=1 | X=1, V2=0) = 0.35
+P(Y=1 | X=1, V2=1) = 0.15
+P(V2=1 | X=0) = 0.04
+P(V2=1 | X=1) = 0.54
+0.54 * (0.47 - 0.71)+ 0.04 * (0.15 - 0.35)= -0.12
+-0.12 < 0",3,nie,mediation,penguin,anticommonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",scenario_rewrite,16243,event_explanation
+27819,"In a controlled experimental setting, researchers investigate a causal chain where variable Yupt directly influences Zupj, and Zupj directly influences Muvq. Prior data indicate that among subjects without Yupt, the probability of Muvq is 59%, whereas among those with Yupt, the probability of Muvq is 56%. Based on this information, does Yupt have a negative indirect effect on Muvq via Zupj?",yes,"Let X = yupt; V2 = zupj; Y = muvq.
+X->V2,V2->Y
+E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]
+P(Y=1|X=1) - P(Y=1|X=0)
+P(Y=1 | X=0) = 0.59
+P(Y=1 | X=1) = 0.56
+0.56 - 0.59 = -0.02
+-0.02 < 0",3,nie,chain,nonsense6,nonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",scenario_rewrite,27819,scientific_claims
+27819,"Consider a public health scenario where a new policy (Yupt) is being evaluated. The policy directly affects an intermediate condition (Zupj), and that condition directly affects the risk of a health outcome (Muvq). Currently, for people not exposed to the policy, the risk of Muvq is 59%. For those exposed to the policy, the risk drops to 56%. Based on this information, is there evidence that the policy reduces the risk of Muvq through its effect on Zupj?",yes,"Let X = yupt; V2 = zupj; Y = muvq.
+X->V2,V2->Y
+E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]
+P(Y=1|X=1) - P(Y=1|X=0)
+P(Y=1 | X=0) = 0.59
+P(Y=1 | X=1) = 0.56
+0.56 - 0.59 = -0.02
+-0.02 < 0",3,nie,chain,nonsense6,nonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",scenario_rewrite,27819,public_health
+27819,"A news report states: A new study found that among people who are exposed to a certain chemical (Yupt), 56% develop a health condition (Muvq), while among those not exposed, 59% develop it. Researchers also identified a biological marker (Zupj) that is directly influenced by the chemical and in turn directly influences the condition. Can we conclude that the chemical reduces the risk of the condition through the biological marker?",yes,"Let X = yupt; V2 = zupj; Y = muvq.
+X->V2,V2->Y
+E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]
+P(Y=1|X=1) - P(Y=1|X=0)
+P(Y=1 | X=0) = 0.59
+P(Y=1 | X=1) = 0.56
+0.56 - 0.59 = -0.02
+-0.02 < 0",3,nie,chain,nonsense6,nonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",scenario_rewrite,27819,event_explanation

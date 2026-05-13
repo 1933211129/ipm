@@ -1,0 +1,10 @@
+prompt_mode,scenario_style,rewritten_accuracy,rewritten_parse_rate,source_accuracy,source_parse_rate,accuracy_gap,parse_rate_gap
+cot,event_explanation,0.4166666666666667,1.0,0.5,1.0,-0.08333333333333331,0.0
+cot,public_health,0.5,1.0,0.5,1.0,0.0,0.0
+cot,scientific_claims,0.5,1.0,0.5,1.0,0.0,0.0
+direct,event_explanation,0.5,1.0,0.5,1.0,0.0,0.0
+direct,public_health,0.5,1.0,0.5,1.0,0.0,0.0
+direct,scientific_claims,0.5,1.0,0.5,1.0,0.0,0.0
+structured,event_explanation,0.5,1.0,0.5,1.0,0.0,0.0
+structured,public_health,0.5,1.0,0.5,1.0,0.0,0.0
+structured,scientific_claims,0.5,1.0,0.5,1.0,0.0,0.0

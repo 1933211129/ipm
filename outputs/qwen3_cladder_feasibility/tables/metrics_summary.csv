@@ -1,0 +1,13 @@
+dataset_variant,prompt_mode,n,accuracy,parse_rate,invalid_rate,latency_sec
+original_main,cot,480,0.49166666666666664,1.0,0.0,2.5536877177002073
+original_main,direct,480,0.5,1.0,0.0,0.4009403920955568
+original_main,structured,480,0.5,1.0,0.0,2.8187452433184563
+original_smoke,cot,48,0.5,1.0,0.0,1.9841636970850232
+original_smoke,direct,48,0.5,1.0,0.0,0.3679349531242527
+original_smoke,structured,48,0.5,1.0,0.0,2.812871879351102
+scenario_rewrite,cot,36,0.4722222222222222,1.0,0.0,1.6515408182474656
+scenario_rewrite,direct,36,0.5,1.0,0.0,0.2657994606658273
+scenario_rewrite,structured,36,0.5,1.0,0.0,3.3871388090548056
+scenario_source_original,cot,12,0.5,1.0,0.0,1.9348975695029367
+scenario_source_original,direct,12,0.5,1.0,0.0,0.3602299895816638
+scenario_source_original,structured,12,0.5,1.0,0.0,1.898961749994972

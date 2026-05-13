@@ -1,0 +1,4 @@
+prompt_mode,n_stories,story_all_correct_rate
+cot,47,0.0425531914893617
+direct,47,0.0425531914893617
+structured,47,0.0425531914893617

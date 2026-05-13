@@ -1,0 +1,789 @@
+sample_id,story_id,graph_id,rung,query_type,question_property,formal_form,gold_label,prompt_mode,dataset_variant,subset,source_id,scenario_style,raw_output,input_tokens,output_tokens,latency_sec,parsed_label,used_deepseek_normalizer,is_invalid,is_correct
+295,firing_employee,diamondcut,1,correlation,easy,P(Y | X),no,direct,scenario_rewrite,scenario_rewrite,295,scientific_claims,"<think>
+
+</think>
+
+Final answer: yes/no",148,10,0.2452659687405685,yes,False,False,0
+295,firing_employee,diamondcut,1,correlation,easy,P(Y | X),no,direct,scenario_rewrite,scenario_rewrite,295,public_health,"symptom A?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no",140,18,0.2452659687405685,yes,False,False,0
+295,firing_employee,diamondcut,1,correlation,easy,P(Y | X),no,direct,scenario_rewrite,scenario_rewrite,295,event_explanation,Final answer: yes/no,152,6,0.2452659687405685,yes,False,False,0
+813,getting_late,fork,1,marginal,easy,P(Y),no,direct,scenario_rewrite,scenario_rewrite,813,scientific_claims,"arriving to school on time greater than that of arriving late?
+assistant
+<think>
+
+</think>
+
+Final answer: yes",131,27,0.2452659687405685,yes,False,False,0
+813,getting_late,fork,1,marginal,easy,P(Y),no,direct,scenario_rewrite,scenario_rewrite,813,public_health,Final answer: yes,146,6,0.2535407395043876,yes,False,False,0
+813,getting_late,fork,1,marginal,easy,P(Y),no,direct,scenario_rewrite,scenario_rewrite,813,event_explanation,"likelihood of arriving on time greater than that of arriving late?
+assistant
+<think>
+
+</think>
+
+Final answer: yes",125,27,0.2535407395043876,yes,False,False,0
+14162,simpson_kidneystone,confounding,1,correlation,anticommonsense,P(Y | X),yes,direct,scenario_rewrite,scenario_rewrite,14162,scientific_claims,"treatment compared to the overall population?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no",130,22,0.2535407395043876,yes,False,False,1
+14162,simpson_kidneystone,confounding,1,correlation,anticommonsense,P(Y | X),yes,direct,scenario_rewrite,scenario_rewrite,14162,public_health,"of having thick lips lower?
+assistant
+<think>
+
+</think>
+
+Final answer: yes",131,21,0.2535407395043876,yes,False,False,1
+14162,simpson_kidneystone,confounding,1,correlation,anticommonsense,P(Y | X),yes,direct,scenario_rewrite,scenario_rewrite,14162,event_explanation,"these findings, is the chance of thick lips lower when a patient receives treatment?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no",120,31,0.23419417699915357,yes,False,False,1
+14234,simpson_kidneystone,confounding,1,marginal,anticommonsense,P(Y),yes,direct,scenario_rewrite,scenario_rewrite,14234,scientific_claims,Final answer: yes/no,145,6,0.23419417699915357,yes,False,False,1
+14234,simpson_kidneystone,confounding,1,marginal,anticommonsense,P(Y),yes,direct,scenario_rewrite,scenario_rewrite,14234,public_health,"thin lips?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no",133,18,0.23419417699915357,yes,False,False,1
+14234,simpson_kidneystone,confounding,1,marginal,anticommonsense,P(Y),yes,direct,scenario_rewrite,scenario_rewrite,14234,event_explanation,", while among those treated, 51% develop thick lips. Explain whether, overall, thick lips are more common than thin lips.
+assistant
+<think>
+
+</think>
+
+Final answer: yes",108,43,0.23419417699915357,yes,False,False,1
+21628,nonsense1,diamondcut,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,direct,scenario_rewrite,scenario_rewrite,21628,scientific_claims,"overall probability of Swoq is 90%. Based on this causal structure and data, does being Kwox increase the probability of Kwoz?
+assistant
+<think>
+
+</think>
+
+Final answer: yes",169,46,0.2815182292542886,yes,False,False,0
+21628,nonsense1,diamondcut,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,direct,scenario_rewrite,scenario_rewrite,21628,public_health,Final answer: yes,210,5,0.2815182292542886,yes,False,False,0
+21628,nonsense1,diamondcut,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,direct,scenario_rewrite,scenario_rewrite,21628,event_explanation,"S but with K, it is 10%. Among those with S but without K, it is 84%. Among those with both S and K, it is 14%. Does having K increase the likelihood of Z?
+assistant
+<think>
+
+</think>
+
+Final answer: yes",153,62,0.2815182292542886,yes,False,False,0
+27083,nonsense4,mediation,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,direct,scenario_rewrite,scenario_rewrite,27083,scientific_claims,"indicate that among individuals who are not Jyka, the probability of Lirg is 5%, while among those who are Jyka, the probability of Lirg is 27%. Given this causal structure and data, does Jyka decrease the chance of Lirg?
+assistant
+<think>
+
+</think>
+
+Final answer: yes",141,74,0.2815182292542886,yes,False,False,0
+27083,nonsense4,mediation,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,direct,scenario_rewrite,scenario_rewrite,27083,public_health,"<think>
+
+</think>
+
+Final answer: yes/no",121,11,0.23867038525349926,yes,False,False,0
+27083,nonsense4,mediation,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,direct,scenario_rewrite,scenario_rewrite,27083,event_explanation,"policy lead to a lower chance of the negative outcome?
+assistant
+<think>
+
+</think>
+
+Final answer: yes",106,26,0.23867038525349926,yes,False,False,0
+1693,college_salary,chain,2,ate,easy,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,direct,scenario_rewrite,scenario_rewrite,1693,scientific_claims,Final answer: yes/no,126,6,0.23867038525349926,yes,False,False,1
+1693,college_salary,chain,2,ate,easy,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,direct,scenario_rewrite,scenario_rewrite,1693,public_health,"<think>
+
+</think>
+
+Final answer: yes",121,11,0.23867038525349926,yes,False,False,1
+1693,college_salary,chain,2,ate,easy,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,direct,scenario_rewrite,scenario_rewrite,1693,event_explanation,"exactly one line in this format: Final answer: yes/no
+
+Question:
+A recent study analyzed the impact of education on earnings. Among individuals without a college degree, the probability of high salary is 21%. For those with a college degree or higher, the probability of high salary is 38%. Based on this, will obtaining a college degree or higher increase the chance of high salary?
+assistant
+<think>
+
+</think>
+
+Final answer: yes",102,95,0.2829794897552347,yes,False,False,1
+15182,water_cholera,IV,2,ate,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,direct,scenario_rewrite,scenario_rewrite,15182,scientific_claims,"of cholera infection?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no",177,20,0.2829794897552347,yes,False,False,1
+15182,water_cholera,IV,2,ate,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,direct,scenario_rewrite,scenario_rewrite,15182,public_health,Final answer: yes/no,191,6,0.2829794897552347,yes,False,False,1
+15182,water_cholera,IV,2,ate,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,direct,scenario_rewrite,scenario_rewrite,15182,event_explanation,"company, the probability of cholera contraction is 43% and the probability of liking spicy food is 65%. Based on this data, would liking spicy food decrease the chance of cholera contraction?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no",140,57,0.2829794897552347,yes,False,False,1
+10048,price,IV,3,det-counterfactual,commonsense,"Y_{X=1} = 0 | V2=1, V1=1",no,direct,scenario_rewrite,scenario_rewrite,10048,scientific_claims,"a high yield per acre and high demand. According to the model, would the price be lower if the supply had been low instead of high?
+assistant
+<think>
+
+</think>
+
+Final answer: yes",155,44,0.2883799062401522,yes,False,False,0
+10048,price,IV,3,det-counterfactual,commonsense,"Y_{X=1} = 0 | V2=1, V1=1",no,direct,scenario_rewrite,scenario_rewrite,10048,public_health,"supply causes increased price. We observed the farm has an increased yield per acre and the demand is high. Would there is a reduced price if increased supply instead of reduced supply?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no",149,50,0.2883799062401522,yes,False,False,0
+10048,price,IV,3,det-counterfactual,commonsense,"Y_{X=1} = 0 | V2=1, V1=1",no,direct,scenario_rewrite,scenario_rewrite,10048,event_explanation,"user
+You are solving a formal causal reasoning question.
+Return exactly one line in this format: Final answer: yes/no
+
+Question:
+Crop prices rise due to a combination of high demand and a favorable growing season that boosts supply. This season, a farm experienced increased yield per acre while demand remained high. Write a short news-style explanation for whether the price would have been lower if supply had decreased instead of increased.
+assistant
+<think>
+
+</think>
+
+Final answer: yes",93,106,0.2883799062401522,yes,False,False,0
+22708,nonsense4,mediation,3,nde,nonsense,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",no,direct,scenario_rewrite,scenario_rewrite,22708,scientific_claims,Final answer: yes,193,6,0.2883799062401522,yes,False,False,0
+22708,nonsense4,mediation,3,nde,nonsense,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",no,direct,scenario_rewrite,scenario_rewrite,22708,public_health,"directly lower the risk of Lirg?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no",208,24,0.32361683349881787,yes,False,False,0
+22708,nonsense4,mediation,3,nde,nonsense,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",no,direct,scenario_rewrite,scenario_rewrite,22708,event_explanation,Final answer: yes,226,6,0.32361683349881787,yes,False,False,0
+16243,penguin,mediation,3,nie,anticommonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,direct,scenario_rewrite,scenario_rewrite,16243,scientific_claims,"5%; for elevator and happy penguins, curly hair = 15%. The probability of happy penguins given stairs is 4%, and given elevator is 54%. Does the decision have a negative indirect effect on curly hair via penguin mood?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no",165,67,0.32361683349881787,yes,False,False,1
+16243,penguin,mediation,3,nie,anticommonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,direct,scenario_rewrite,scenario_rewrite,16243,public_health,"</think>
+
+Final answer: yes",223,9,0.32361683349881787,yes,False,False,1
+16243,penguin,mediation,3,nie,anticommonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,direct,scenario_rewrite,scenario_rewrite,16243,event_explanation,"</think>
+
+Final answer: yes/no",141,9,0.24402941674634349,yes,False,False,1
+27819,nonsense6,chain,3,nie,nonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,direct,scenario_rewrite,scenario_rewrite,27819,scientific_claims,"q via Zupj?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no",129,21,0.24402941674634349,yes,False,False,1
+27819,nonsense6,chain,3,nie,nonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,direct,scenario_rewrite,scenario_rewrite,27819,public_health,Final answer: yes/no,144,6,0.24402941674634349,yes,False,False,1
+27819,nonsense6,chain,3,nie,nonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,direct,scenario_rewrite,scenario_rewrite,27819,event_explanation,"condition through the biological marker?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no",129,21,0.24402941674634349,yes,False,False,1
+295,firing_employee,diamondcut,1,correlation,easy,P(Y | X),no,cot,scenario_rewrite,scenario_rewrite,295,scientific_claims,"<think>
+
+</think>
+
+yes
+
+Reasoning: The probability that the manager signs the termination letter and the employee is fired is 17%, which is higher than the probability that the manager signs the termination letter and the employee is fired (13%). Therefore, the probability of the employee being fired is higher given that the manager signs the termination",160,68,1.6402446874999441,yes,False,False,0
+295,firing_employee,diamondcut,1,correlation,easy,P(Y | X),no,cot,scenario_rewrite,scenario_rewrite,295,public_health,"symptom A?
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: The probability of having symptom C is 17%, which is lower than the probability of having symptom C when observing that someone has symptom A (13%).",152,76,1.6402446874999441,yes,False,False,0
+295,firing_employee,diamondcut,1,correlation,easy,P(Y | X),no,cot,scenario_rewrite,scenario_rewrite,295,event_explanation,"yes
+
+Reasoning: The probability of the employee being fired is 17% when the manager signs the termination letter, which is lower than the 30% probability when the manager does not sign.",164,64,1.6402446874999441,yes,False,False,0
+813,getting_late,fork,1,marginal,easy,P(Y),no,cot,scenario_rewrite,scenario_rewrite,813,scientific_claims,"arriving to school on time greater than that of arriving late?
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: The overall probability of arriving on time is 62% (when waking up on time) and 31% (when waking up late), which is greater than 42%.",143,85,1.6402446874999441,yes,False,False,0
+813,getting_late,fork,1,marginal,easy,P(Y),no,cot,scenario_rewrite,scenario_rewrite,813,public_health,"Final answer: yes/no  
+Reasoning: Yes, arriving at work on time is more likely overall.",158,56,1.4488520625018282,yes,False,False,0
+813,getting_late,fork,1,marginal,easy,P(Y),no,cot,scenario_rewrite,scenario_rewrite,813,event_explanation,"likelihood of arriving on time greater than that of arriving late?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Reasoning: The overall likelihood of arriving on time is greater than arriving late.",137,77,1.4488520625018282,yes,False,False,0
+14162,simpson_kidneystone,confounding,1,correlation,anticommonsense,P(Y | X),yes,cot,scenario_rewrite,scenario_rewrite,14162,scientific_claims,"treatment compared to the overall population?
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: The probability of having thick lips is lower among those who received treatment compared to the overall population.",142,72,1.4488520625018282,yes,False,False,1
+14162,simpson_kidneystone,confounding,1,correlation,anticommonsense,P(Y | X),yes,cot,scenario_rewrite,scenario_rewrite,14162,public_health,"of having thick lips lower?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Reasoning: Yes, because the overall chance of receiving treatment is 57%, and among those who receive treatment, 21% have thick lips, which is lower than the 25% among those who do not receive treatment.",143,71,1.4488520625018282,yes,False,False,1
+14162,simpson_kidneystone,confounding,1,correlation,anticommonsense,P(Y | X),yes,cot,scenario_rewrite,scenario_rewrite,14162,event_explanation,"these findings, is the chance of thick lips lower when a patient receives treatment?
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: The probability of thick lips among those who received treatment is 21%, which is lower than the 25% among those who received no treatment. Therefore, the chance of thick lips is lower when a patient receives treatment.",132,77,1.3324109792592935,no,False,False,0
+14234,simpson_kidneystone,confounding,1,marginal,anticommonsense,P(Y),yes,cot,scenario_rewrite,scenario_rewrite,14234,scientific_claims,"yes
+
+Reasoning: The overall probability of thick lips is 51%, which is greater than the probability of thin lips (80%).",157,52,1.3324109792592935,yes,False,False,1
+14234,simpson_kidneystone,confounding,1,marginal,anticommonsense,P(Y),yes,cot,scenario_rewrite,scenario_rewrite,14234,public_health,"thin lips?
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: The proportion of people with thick lips is greater than the proportion with thin lips.",145,64,1.3324109792592935,yes,False,False,1
+14234,simpson_kidneystone,confounding,1,marginal,anticommonsense,P(Y),yes,cot,scenario_rewrite,scenario_rewrite,14234,event_explanation,", while among those treated, 51% develop thick lips. Explain whether, overall, thick lips are more common than thin lips.
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: Overall, 64% of patients receive treatment, and 51% of those treated develop thick lips, while 80% of those not treated develop thick lips. Thus, thick lips are more common overall.",120,89,1.3324109792592935,yes,False,False,1
+21628,nonsense1,diamondcut,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,cot,scenario_rewrite,scenario_rewrite,21628,scientific_claims,"overall probability of Swoq is 90%. Based on this causal structure and data, does being Kwox increase the probability of Kwoz?
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: The data shows that individuals not Kwox have a higher probability of Kwoz (67%) compared to those who are Kwox (10%), and individuals who are Swoq have a higher probability of Kwoz (84%) compared to those who are not S",181,105,1.8923841249925317,yes,False,False,0
+21628,nonsense1,diamondcut,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,cot,scenario_rewrite,scenario_rewrite,21628,public_health,"yes
+
+Reasoning: The genetic marker increases the disease risk in those exposed but without the marker (84%) and in those exposed and with the marker (14%), which supports the conclusion that having the genetic marker increases the chance of developing the disease.",222,64,1.8923841249925317,yes,False,False,0
+21628,nonsense1,diamondcut,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,cot,scenario_rewrite,scenario_rewrite,21628,event_explanation,"S but with K, it is 10%. Among those with S but without K, it is 84%. Among those with both S and K, it is 14%. Does having K increase the likelihood of Z?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Reasoning: Yes, having K increases the likelihood of Z. The probabilities for Z in the groups with K are higher than those without K.",165,121,1.8923841249925317,yes,False,False,0
+27083,nonsense4,mediation,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,cot,scenario_rewrite,scenario_rewrite,27083,scientific_claims,"indicate that among individuals who are not Jyka, the probability of Lirg is 5%, while among those who are Jyka, the probability of Lirg is 27%. Given this causal structure and data, does Jyka decrease the chance of Lirg?
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: Jyka's presence decreases the probability of Lirg (from 27% to 5% among non-Jyka individuals).",153,133,1.8923841249925317,yes,False,False,0
+27083,nonsense4,mediation,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,cot,scenario_rewrite,scenario_rewrite,27083,public_health,"<think>
+
+</think>
+
+yes
+
+Reasoning: The presence of Jyka is associated with a lower risk of Lirg (27% vs. 5% among those without Jyka), indicating that Jyka may lower the risk of Lirg.",133,60,1.4252539582521422,yes,False,False,0
+27083,nonsense4,mediation,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,cot,scenario_rewrite,scenario_rewrite,27083,event_explanation,"policy lead to a lower chance of the negative outcome?
+assistant
+<think>
+
+</think>
+
+Final answer: yes  
+Reasoning: The policy (Jyka) has a significantly lower likelihood of a negative outcome (lirg) compared to non-Jyka cases, which supports the conclusion that the policy leads to a lower chance of the negative outcome.",118,75,1.4252539582521422,yes,False,False,0
+1693,college_salary,chain,2,ate,easy,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,cot,scenario_rewrite,scenario_rewrite,1693,scientific_claims,"yes
+
+Reasoning: The observed rates of high salary are higher among individuals with a college degree or higher, which suggests a causal relationship between education and salary.",138,55,1.4252539582521422,yes,False,False,1
+1693,college_salary,chain,2,ate,easy,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,cot,scenario_rewrite,scenario_rewrite,1693,public_health,"<think>
+
+</think>
+
+yes
+
+Reasoning: Having a high school diploma or higher increases the probability of good medication adherence.",133,60,1.4252539582521422,yes,False,False,1
+1693,college_salary,chain,2,ate,easy,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,cot,scenario_rewrite,scenario_rewrite,1693,event_explanation,"Final answer: yes/no
+Reasoning: <short explanation>
+
+Question:
+A recent study analyzed the impact of education on earnings. Among individuals without a college degree, the probability of high salary is 21%. For those with a college degree or higher, the probability of high salary is 38%. Based on this, will obtaining a college degree or higher increase the chance of high salary?
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: The study shows that individuals with a college degree or higher have a higher probability of high salary (38% vs. 21% for those without). Therefore, obtaining a college degree or higher increases the chance of high salary.",114,153,1.958894010487711,yes,False,False,1
+15182,water_cholera,IV,2,ate,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,cot,scenario_rewrite,scenario_rewrite,15182,scientific_claims,"of cholera infection?
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: The study shows that a preference for spicy food (which is influenced by poverty and local water company type) is associated with a lower rate of cholera infection. This suggests that the preference for spicy food may reduce the risk of cholera infection.",189,78,1.958894010487711,yes,False,False,1
+15182,water_cholera,IV,2,ate,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,cot,scenario_rewrite,scenario_rewrite,15182,public_health,"yes
+
+Reasoning: The observed data shows that liking spicy food directly affects cholera risk, and the type of water company (local vs. global) also influences liking spicy food. Since poverty affects both cholera and liking spicy food, the observed patterns suggest that liking spicy food would reduce the chance of contracting cholera",203,64,1.958894010487711,yes,False,False,1
+15182,water_cholera,IV,2,ate,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,cot,scenario_rewrite,scenario_rewrite,15182,event_explanation,"company, the probability of cholera contraction is 43% and the probability of liking spicy food is 65%. Based on this data, would liking spicy food decrease the chance of cholera contraction?
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: The data shows that people served by a local water company have a higher chance of cholera and a lower chance of liking spicy food, while those served by a global water company have a lower chance of cholera and a higher chance of liking spicy food. Therefore, liking spicy food decreases the chance",152,115,1.958894010487711,yes,False,False,1
+10048,price,IV,3,det-counterfactual,commonsense,"Y_{X=1} = 0 | V2=1, V1=1",no,cot,scenario_rewrite,scenario_rewrite,10048,scientific_claims,"a high yield per acre and high demand. According to the model, would the price be lower if the supply had been low instead of high?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Reasoning: According to the model, if supply had been low instead of high, price would be lower.",167,75,1.2256351977412123,yes,False,False,0
+10048,price,IV,3,det-counterfactual,commonsense,"Y_{X=1} = 0 | V2=1, V1=1",no,cot,scenario_rewrite,scenario_rewrite,10048,public_health,"supply causes increased price. We observed the farm has an increased yield per acre and the demand is high. Would there is a reduced price if increased supply instead of reduced supply?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Reasoning: Yes, there is a reduced price if increased supply instead of reduced supply.",161,81,1.2256351977412123,yes,False,False,0
+10048,price,IV,3,det-counterfactual,commonsense,"Y_{X=1} = 0 | V2=1, V1=1",no,cot,scenario_rewrite,scenario_rewrite,10048,event_explanation,"solving a formal causal reasoning question.
+Think briefly and keep the explanation concise.
+Return exactly two lines:
+Final answer: yes/no
+Reasoning: <short explanation>
+
+Question:
+Crop prices rise due to a combination of high demand and a favorable growing season that boosts supply. This season, a farm experienced increased yield per acre while demand remained high. Write a short news-style explanation for whether the price would have been lower if supply had decreased instead of increased.
+assistant
+<think>
+
+</think>
+
+Final answer: yes
+
+Reasoning: If supply had decreased instead of increased, crop prices would have remained the same.",105,137,1.2256351977412123,yes,False,False,0
+22708,nonsense4,mediation,3,nde,nonsense,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",no,cot,scenario_rewrite,scenario_rewrite,22708,scientific_claims,"yes
+
+Reasoning: J has a negative total effect on L because the probability of L is lower among those with J compared to those without J, despite the presence of H.",205,37,1.2256351977412123,yes,False,False,0
+22708,nonsense4,mediation,3,nde,nonsense,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",no,cot,scenario_rewrite,scenario_rewrite,22708,public_health,"directly lower the risk of Lirg?
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: The presence of Jyka and Hwax together is associated with a lower risk of Lirg (62%), which suggests that having Jyka directly lowers the risk.",220,69,1.860079541496816,yes,False,False,0
+22708,nonsense4,mediation,3,nde,nonsense,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",no,cot,scenario_rewrite,scenario_rewrite,22708,event_explanation,"yes
+
+Reasoning: The training program has a negative effect on job performance, as the probability of high engagement among those who attended the training is higher than among those who did not attend, and this correlation is not accounted for in the indirect effect.",238,51,1.860079541496816,yes,False,False,0
+16243,penguin,mediation,3,nie,anticommonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,cot,scenario_rewrite,scenario_rewrite,16243,scientific_claims,"5%; for elevator and happy penguins, curly hair = 15%. The probability of happy penguins given stairs is 4%, and given elevator is 54%. Does the decision have a negative indirect effect on curly hair via penguin mood?
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: The decision (stairs vs. elevator) directly affects penguin mood, which in turn affects curly hair. The probabilities indicate that the decision has a negative indirect effect on curly hair via penguin mood.",177,112,1.860079541496816,yes,False,False,1
+16243,penguin,mediation,3,nie,anticommonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,cot,scenario_rewrite,scenario_rewrite,16243,public_health,"</think>
+
+Final answer: yes/no  
+Reasoning: The campaign message directly reduces exercise regularity by improving stress levels, which in turn leads to increased exercise behavior.",235,54,1.860079541496816,yes,False,False,1
+16243,penguin,mediation,3,nie,anticommonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,cot,scenario_rewrite,scenario_rewrite,16243,event_explanation,"</think>
+
+Final answer: yes/no  
+Reasoning: The study shows that penguin happiness is linked to their choice of stairs or elevator, and that stairs lead to 4% happiness, while elevators lead to 54%. The data indicates that stairs and sad penguins have 71% curly hair, which is",153,67,2.0801128019957105,yes,False,False,1
+27819,nonsense6,chain,3,nie,nonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,cot,scenario_rewrite,scenario_rewrite,27819,scientific_claims,"q via Zupj?
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: The probability of Muvq among those without Yupt is higher than among those with Yupt, indicating a negative indirect effect of Yupt on Muvq via Zupj.",141,79,2.0801128019957105,yes,False,False,1
+27819,nonsense6,chain,3,nie,nonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,cot,scenario_rewrite,scenario_rewrite,27819,public_health,"yes
+
+Reasoning: The policy directly affects Zupj, which in turn reduces the risk of Muvq. The observed decrease in Muvq risk from 59% to 56% supports the causal link between the policy and the reduced risk.",156,64,2.0801128019957105,yes,False,False,1
+27819,nonsense6,chain,3,nie,nonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,cot,scenario_rewrite,scenario_rewrite,27819,event_explanation,"condition through the biological marker?
+assistant
+<think>
+
+</think>
+
+yes
+
+Reasoning: The study shows that exposure to the chemical (Yupt) reduces the risk of developing the condition (Muvq) among those exposed, as well as the condition among those not exposed. The biological marker (Zupj) is directly influenced by the chemical, which in turn affects the condition",141,79,2.0801128019957105,yes,False,False,1
+295,firing_employee,diamondcut,1,correlation,easy,P(Y | X),no,structured,scenario_rewrite,scenario_rewrite,295,scientific_claims,"<think>
+
+</think>
+
+Final answer: yes  
+Variables: CEO, director, manager, employee  
+Query type: causal reasoning  
+Key evidence: The probability that the manager signs the termination letter and the employee is fired is 17%.  
+Decision basis: The probability of the employee being fired is higher given that the manager signs the termination letter",174,68,2.493723114748718,yes,False,False,0
+295,firing_employee,diamondcut,1,correlation,easy,P(Y | X),no,structured,scenario_rewrite,scenario_rewrite,295,public_health,"symptom A?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Variables: symptom A, symptom B, symptom C  
+Query type: causal reasoning  
+Key evidence: The probability of having symptom A and C is 17%, which is higher than the probability of having symptom A and not C (13%).  
+Decision basis: Therefore, the chance",166,76,2.493723114748718,yes,False,False,0
+295,firing_employee,diamondcut,1,correlation,easy,P(Y | X),no,structured,scenario_rewrite,scenario_rewrite,295,event_explanation,"Final answer: yes  
+Variables: CEO, manager, director, employee  
+Query type: causal reasoning  
+Key evidence: The manager signing the termination letter increases the probability of the employee being fired by 17% (17% vs. 30% when not signed).  
+Decision basis: The likelihood of",178,64,2.493723114748718,yes,False,False,0
+813,getting_late,fork,1,marginal,easy,P(Y),no,structured,scenario_rewrite,scenario_rewrite,813,scientific_claims,"arriving to school on time greater than that of arriving late?
+assistant
+<think>
+
+</think>
+
+Final answer: yes  
+Variables: waking time, traffic, arrival on time, arrival late  
+Query type: causal reasoning  
+Key evidence: The probability of arriving on time is 62% when waking up on time, and 31% when waking up late.  
+Decision basis: Based on the given probabilities",157,85,2.493723114748718,yes,False,False,0
+813,getting_late,fork,1,marginal,easy,P(Y),no,structured,scenario_rewrite,scenario_rewrite,813,public_health,"Final answer: yes  
+Variables: waking up late, traffic, arriving at work on time  
+Query type: causal reasoning  
+Key evidence: Waking up late has a direct effect on arriving at work on time, and traffic has a direct effect on arriving at work on time.  
+Decision basis: Overall, the probability",172,64,3.0737035937490873,yes,False,False,0
+813,getting_late,fork,1,marginal,easy,P(Y),no,structured,scenario_rewrite,scenario_rewrite,813,event_explanation,"likelihood of arriving on time greater than that of arriving late?
+assistant
+<think>
+
+</think>
+
+Final answer: yes  
+Variables: Alice, school, waking up late, traffic, arrival on time  
+Query type: causal reasoning  
+Key evidence: Alice's arrival on time depends on her waking up late (42%) and traffic (31%).  
+Decision basis: The overall likelihood of arriving on time is greater",151,85,3.0737035937490873,yes,False,False,0
+14162,simpson_kidneystone,confounding,1,correlation,anticommonsense,P(Y | X),yes,structured,scenario_rewrite,scenario_rewrite,14162,scientific_claims,"treatment compared to the overall population?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Variables: treatment rate, lip thickness, participants  
+Query type: causal reasoning  
+Key evidence: The study found that 21% of participants had thick lips and received treatment, compared to 25% who did not.  
+Decision basis: The probability of having thick lips is lower",156,80,3.0737035937490873,yes,False,False,1
+14162,simpson_kidneystone,confounding,1,correlation,anticommonsense,P(Y | X),yes,structured,scenario_rewrite,scenario_rewrite,14162,public_health,"of having thick lips lower?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Variables: kidney stone size, treatment, lip thickness  
+Query type: causal reasoning  
+Key evidence: A person who receives treatment has a lower chance of having thick lips.  
+Decision basis: The overall chance of receiving treatment is 57%, and among those who receive treatment, 2",157,79,3.0737035937490873,yes,False,False,1
+14162,simpson_kidneystone,confounding,1,correlation,anticommonsense,P(Y | X),yes,structured,scenario_rewrite,scenario_rewrite,14162,event_explanation,"these findings, is the chance of thick lips lower when a patient receives treatment?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Variables: kidney stone treatment, thick lips  
+Query type: causal reasoning  
+Key evidence: The probability of thick lips among those who received treatment is 21%, which is lower than 25% among those who received no treatment.  
+Decision basis: Based on the data, the",146,89,3.1740946977515705,yes,False,False,1
+14234,simpson_kidneystone,confounding,1,marginal,anticommonsense,P(Y),yes,structured,scenario_rewrite,scenario_rewrite,14234,scientific_claims,"Final answer: yes  
+Variables: stone size, treatment, lip thickness  
+Query type: causal reasoning  
+Key evidence: Stone size directly influences both treatment assignment and lip thickness. Treatment itself also has a direct effect on lip thickness.  
+Decision basis: The overall probability of thick lips is 51%, which is greater",171,64,3.1740946977515705,yes,False,False,1
+14234,simpson_kidneystone,confounding,1,marginal,anticommonsense,P(Y),yes,structured,scenario_rewrite,scenario_rewrite,14234,public_health,"thin lips?
+assistant
+<think>
+
+</think>
+
+Final answer: yes  
+Variables: kidney stone size, treatment, lip thickness  
+Query type: causal reasoning  
+Key evidence: The treatment directly affects lip thickness, and among those who receive the treatment, 51% have thick lips.  
+Decision basis: The proportion of people with thick lips is greater than the proportion",159,76,3.1740946977515705,yes,False,False,1
+14234,simpson_kidneystone,confounding,1,marginal,anticommonsense,P(Y),yes,structured,scenario_rewrite,scenario_rewrite,14234,event_explanation,", while among those treated, 51% develop thick lips. Explain whether, overall, thick lips are more common than thin lips.
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Variables: kidney stone size, treatment decisions, lip thickness  
+Query type: causal reasoning  
+Key evidence: 64% of patients receive treatment, 51% of those treated develop thick lips, and 80% of those not treated develop thick lips.  
+Decision basis:",134,101,3.1740946977515705,yes,False,False,1
+21628,nonsense1,diamondcut,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,structured,scenario_rewrite,scenario_rewrite,21628,scientific_claims,"overall probability of Swoq is 90%. Based on this causal structure and data, does being Kwox increase the probability of Kwoz?
+assistant
+<think>
+
+</think>
+
+Final answer: yes  
+Variables: Swoq, Muvy, Kwox, Kwoz  
+Query type: causal reasoning  
+Key evidence: The probability of Kwoz is higher among individuals not Swoq and not Kwox, and Swoq and Kwox.  
+Decision basis",195,105,3.8126072394952644,yes,False,False,0
+21628,nonsense1,diamondcut,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,structured,scenario_rewrite,scenario_rewrite,21628,public_health,"Final answer: yes/no  
+Variables: Swoq, Kwox, Kwoz  
+Query type: causal reasoning  
+Key evidence: The genetic marker (Kwox) directly influences the disease risk, and exposure to the chemical (Swoq) also influences the disease risk.  
+Decision basis: Having",236,64,3.8126072394952644,yes,False,False,0
+21628,nonsense1,diamondcut,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,structured,scenario_rewrite,scenario_rewrite,21628,event_explanation,"S but with K, it is 10%. Among those with S but without K, it is 84%. Among those with both S and K, it is 14%. Does having K increase the likelihood of Z?
+assistant
+<think>
+
+</think>
+
+Final answer: yes  
+Variables: Factor S, K, M, Z  
+Query type: causal reasoning  
+Key evidence: Among those with S and K, the probability of Z is 14%, which is higher than among those without S and without K (67%).  
+Decision basis: Having K increases the",179,121,3.8126072394952644,yes,False,False,0
+27083,nonsense4,mediation,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,structured,scenario_rewrite,scenario_rewrite,27083,scientific_claims,"indicate that among individuals who are not Jyka, the probability of Lirg is 5%, while among those who are Jyka, the probability of Lirg is 27%. Given this causal structure and data, does Jyka decrease the chance of Lirg?
+assistant
+<think>
+
+</think>
+
+Final answer: yes  
+Variables: Jyka, Hwax, Lirg  
+Query type: causal reasoning  
+Key evidence: Jyka directly influences Hwax and Lirg, and Hwax also influences Lirg.  
+Decision basis: Jyka decreases the chance of Lir",167,133,3.8126072394952644,yes,False,False,0
+27083,nonsense4,mediation,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,structured,scenario_rewrite,scenario_rewrite,27083,public_health,"<think>
+
+</think>
+
+Final answer: yes  
+Variables: Jyka, Hwax, Lirg  
+Query type: causal reasoning  
+Key evidence: Jyka reduces the risk of Lirg among those without it.  
+Decision basis: Having Jyka lowers the risk of Lirg compared to those without it.",147,69,3.1520515000011073,yes,False,False,0
+27083,nonsense4,mediation,2,ate,nonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],no,structured,scenario_rewrite,scenario_rewrite,27083,event_explanation,"policy lead to a lower chance of the negative outcome?
+assistant
+<think>
+
+</think>
+
+Final answer: yes  
+Variables: Jyka, non-Jyka  
+Query type: causal reasoning  
+Key evidence: Among non-Jyka cases, the likelihood of a negative outcome (lirg) is 5%, while among Jyka cases, the likelihood is 27%.  
+Decision basis",132,84,3.1520515000011073,yes,False,False,0
+1693,college_salary,chain,2,ate,easy,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,structured,scenario_rewrite,scenario_rewrite,1693,scientific_claims,"Final answer: yes/no  
+Variables: education, skill, salary  
+Query type: causal reasoning  
+Key evidence: Education directly influences skill, and skill directly influences salary.  
+Decision basis: The observed rates (21% vs. 38%) support the causal link between education and salary.",152,64,3.1520515000011073,yes,False,False,1
+1693,college_salary,chain,2,ate,easy,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,structured,scenario_rewrite,scenario_rewrite,1693,public_health,"<think>
+
+</think>
+
+Final answer: yes  
+Variables: Educational attainment, health literacy, medication adherence  
+Query type: causal reasoning  
+Key evidence: Educational attainment directly influences health literacy, and health literacy directly influences adherence to medication.  
+Decision basis: Having a high school diploma or higher increases the probability of good medication adherence.",147,69,3.1520515000011073,yes,False,False,1
+1693,college_salary,chain,2,ate,easy,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,structured,scenario_rewrite,scenario_rewrite,1693,event_explanation,"<short causal clue>
+Decision basis: <one short sentence>
+
+Question:
+A recent study analyzed the impact of education on earnings. Among individuals without a college degree, the probability of high salary is 21%. For those with a college degree or higher, the probability of high salary is 38%. Based on this, will obtaining a college degree or higher increase the chance of high salary?
+assistant
+<think>
+
+</think>
+
+Final answer: yes  
+Variables: education, college degree, earnings  
+Query type: causal reasoning  
+Key evidence: Individuals with a college degree or higher have a higher probability of high salary.  
+Decision basis: Obtaining a college degree or higher increases the chance of high salary.",128,153,3.830489104249864,yes,False,False,1
+15182,water_cholera,IV,2,ate,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,structured,scenario_rewrite,scenario_rewrite,15182,scientific_claims,"of cholera infection?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Variables: poverty, cholera infection, spicy food preference, local water company, global water company  
+Query type: causal reasoning  
+Key evidence: Poverty influences both preference for spicy food and cholera infection, and local vs. global water company type affects spicy food preference.  
+Decision basis:",203,78,3.830489104249864,yes,False,False,1
+15182,water_cholera,IV,2,ate,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,structured,scenario_rewrite,scenario_rewrite,15182,public_health,"Final answer: yes/no  
+Variables: poverty, water company, liking spicy food, cholera  
+Query type: causal reasoning  
+Key evidence: The observed data shows that liking spicy food directly increases the risk of cholera, which is linked to poverty and water company type.  
+Decision basis: Based on the observed patterns",217,64,3.830489104249864,yes,False,False,1
+15182,water_cholera,IV,2,ate,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],yes,structured,scenario_rewrite,scenario_rewrite,15182,event_explanation,"company, the probability of cholera contraction is 43% and the probability of liking spicy food is 65%. Based on this data, would liking spicy food decrease the chance of cholera contraction?
+assistant
+<think>
+
+</think>
+
+Final answer: yes  
+Variables: water company, cholera, spicy food  
+Query type: causal reasoning  
+Key evidence: The probability of cholera contraction is lower for people served by a global water company, and the probability of liking spicy food is higher for people served by a global water company.  
+Decision basis:",166,115,3.830489104249864,yes,False,False,1
+10048,price,IV,3,det-counterfactual,commonsense,"Y_{X=1} = 0 | V2=1, V1=1",no,structured,scenario_rewrite,scenario_rewrite,10048,scientific_claims,"a high yield per acre and high demand. According to the model, would the price be lower if the supply had been low instead of high?
+assistant
+<think>
+
+</think>
+
+Final answer: yes  
+Variables: demand, supply, price, yield per acre  
+Query type: causal reasoning  
+Key evidence: The observed scenario shows high yield per acre and high demand, which aligns with the model's predictions.  
+Decision basis: If supply had been low instead of high, price would be lower",181,102,3.7752849062380847,yes,False,False,0
+10048,price,IV,3,det-counterfactual,commonsense,"Y_{X=1} = 0 | V2=1, V1=1",no,structured,scenario_rewrite,scenario_rewrite,10048,public_health,"supply causes increased price. We observed the farm has an increased yield per acre and the demand is high. Would there is a reduced price if increased supply instead of reduced supply?
+assistant
+<think>
+
+</think>
+
+Final answer: yes  
+Variables: Demand, Supply, Yield per acre  
+Query type: Causal reasoning  
+Key evidence: Increased demand and increased supply cause increased price.  
+Decision basis: If increased supply is observed, it would lead to a reduced price compared to decreased supply.",175,108,3.7752849062380847,yes,False,False,0
+10048,price,IV,3,det-counterfactual,commonsense,"Y_{X=1} = 0 | V2=1, V1=1",no,structured,scenario_rewrite,scenario_rewrite,10048,event_explanation,": yes/no
+Variables: <main variables>
+Query type: <query type>
+Key evidence: <short causal clue>
+Decision basis: <one short sentence>
+
+Question:
+Crop prices rise due to a combination of high demand and a favorable growing season that boosts supply. This season, a farm experienced increased yield per acre while demand remained high. Write a short news-style explanation for whether the price would have been lower if supply had decreased instead of increased.
+assistant
+<think>
+
+</think>
+
+Final answer: yes  
+Variables: high demand, favorable growing season, increased yield per acre  
+Query type: news  
+Key evidence: high demand and favorable growing season increased supply  
+Decision basis: If supply had decreased, the price would have been lower due to reduced supply.",119,164,3.7752849062380847,yes,False,False,0
+22708,nonsense4,mediation,3,nde,nonsense,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",no,structured,scenario_rewrite,scenario_rewrite,22708,scientific_claims,"Final answer: yes/no  
+Variables: J, H, L  
+Query type: causal reasoning  
+Key evidence: J has a direct effect on H and L, and H has a direct effect on L.  
+Decision basis: Ignoring the indirect path through H, J has a negative total effect on L.",219,64,3.7752849062380847,yes,False,False,0
+22708,nonsense4,mediation,3,nde,nonsense,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",no,structured,scenario_rewrite,scenario_rewrite,22708,public_health,"directly lower the risk of Lirg?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Variables: Jyka, Hwax, Lirg  
+Query type: causal reasoning  
+Key evidence: The presence of Jyka and Hwax is associated with a lower risk of Lirg.  
+Decision basis: Having Jyka directly lowers the risk of L",234,82,3.9902934272540733,yes,False,False,0
+22708,nonsense4,mediation,3,nde,nonsense,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",no,structured,scenario_rewrite,scenario_rewrite,22708,event_explanation,"Final answer: yes/no  
+Variables: Jyka, Lirg, Hwax  
+Query type: causal reasoning  
+Key evidence: The training program directly influences both engagement and performance, and engagement influences performance.  
+Decision basis: The training program has a negative effect on job performance.",252,64,3.9902934272540733,yes,False,False,0
+16243,penguin,mediation,3,nie,anticommonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,structured,scenario_rewrite,scenario_rewrite,16243,scientific_claims,"5%; for elevator and happy penguins, curly hair = 15%. The probability of happy penguins given stairs is 4%, and given elevator is 54%. Does the decision have a negative indirect effect on curly hair via penguin mood?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Variables: stairs, elevator, penguin mood, curly hair  
+Query type: causal reasoning  
+Key evidence: The decision (stairs vs. elevator) directly affects penguin mood, which in turn affects curly hair.  
+Decision basis: The negative indirect effect on curly hair via penguin mood",191,125,3.9902934272540733,yes,False,False,1
+16243,penguin,mediation,3,nie,anticommonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,structured,scenario_rewrite,scenario_rewrite,16243,public_health,"</think>
+
+Final answer: yes  
+Variables: campaign message, stress level, exercise tendency  
+Query type: causal reasoning  
+Key evidence: The campaign message directly reduces stress levels, which in turn reduces exercise tendency.  
+Decision basis: The campaign message reduces exercise regularity through its effect on stress level.",249,67,3.9902934272540733,yes,False,False,1
+16243,penguin,mediation,3,nie,anticommonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,structured,scenario_rewrite,scenario_rewrite,16243,event_explanation,"</think>
+
+Final answer: yes  
+Variables: penguin mood, curly hair, stairs, elevator  
+Query type: causal reasoning  
+Key evidence: Stairs lead to 4% penguin happiness, which in turn affects curly hair.  
+Decision basis: The choice of stairs leads to 4% penguin happiness, which is",167,67,3.182001698005479,yes,False,False,1
+27819,nonsense6,chain,3,nie,nonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,structured,scenario_rewrite,scenario_rewrite,27819,scientific_claims,"q via Zupj?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Variables: Yupt, Zupj, Muvq  
+Query type: causal reasoning  
+Key evidence: The probability of Muvq is higher among those with Yupt, indicating a positive association.  
+Decision basis: Yupt has a negative indirect effect on Muvq via Z",155,79,3.182001698005479,yes,False,False,1
+27819,nonsense6,chain,3,nie,nonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,structured,scenario_rewrite,scenario_rewrite,27819,public_health,"Final answer: yes/no  
+Variables: Yupt, Zupj, Muvq  
+Query type: causal reasoning  
+Key evidence: The policy reduces Zupj, which in turn reduces Muvq.  
+Decision basis: There is evidence that the policy reduces the risk of Muvq through its effect on",170,64,3.182001698005479,yes,False,False,1
+27819,nonsense6,chain,3,nie,nonsense,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",yes,structured,scenario_rewrite,scenario_rewrite,27819,event_explanation,"condition through the biological marker?
+assistant
+<think>
+
+</think>
+
+Final answer: yes/no  
+Variables: Yupt, Muvq, Zupj  
+Query type: causal reasoning  
+Key evidence: The study shows that exposure to Yupt reduces the risk of Muvq, as 56% of exposed individuals develop it compared to 59% of non-exposed",155,79,3.182001698005479,yes,False,False,1

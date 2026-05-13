@@ -1,0 +1,27 @@
+# Python 3.13 / Qwen3-0.6B / first-pass causal-consistency evaluation
+# Goal: keep the environment small and stable for behavior-level experiments first.
+
+# Core model runtime
+torch==2.11.0
+transformers==5.6.1
+accelerate==1.13.0
+safetensors==0.7.0
+openai==2.31.0
+
+# Data loading and tabular processing
+datasets==4.8.4
+pyarrow==23.0.1
+pandas==3.0.2
+numpy==2.4.4
+tabulate==0.10.0
+
+# Statistics and analysis
+scipy==1.17.1
+scikit-learn==1.8.0
+
+# Visualization
+matplotlib==3.10.8
+seaborn==0.13.2
+
+# White-box analysis
+transformer-lens==3.0.0
