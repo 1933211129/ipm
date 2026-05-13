@@ -255,8 +255,17 @@ def bootstrap_policy_gains(pred: pd.DataFrame, seed: int, n_bootstrap: int) -> p
 
 
 def contrast_metrics(pred: pd.DataFrame) -> pd.DataFrame:
-    metrics = base.compute_strict_ccc(pred)
-    return metrics["metrics_ccc"]
+    if "eval_set" not in pred.columns:
+        metrics = base.compute_strict_ccc(pred)
+        return metrics["metrics_ccc"]
+    frames = []
+    for eval_set, group in pred.groupby("eval_set", dropna=False):
+        metrics = base.compute_strict_ccc(group)
+        ccc = metrics["metrics_ccc"].copy()
+        if not ccc.empty:
+            ccc.insert(0, "eval_set", eval_set)
+            frames.append(ccc)
+    return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
 
 
 def repeated_group_splits(frame: pd.DataFrame, n_splits: int, test_size: float, seed: int) -> list[tuple[np.ndarray, np.ndarray]]:
