@@ -1,5 +1,7 @@
 # MLISE 2026 简化投稿方案：基于 Qwen 家族的因果一致性与隐藏层机制验证
 
+> 2026-05-13 更新：本方案保留为上一轮 scaling 版记录。服务器正式结果显示 `Accuracy`、`PCC` 和 `Story All-Correct Rate` 的规模差异过小，难以支撑“模型规模带来因果一致性提升”的主叙事。当前会议稿主线已切换为诊断版方案，详见 [MLISE2026_diagnostic_plan.md](/Users/xiaokong/task/2026/IPM/MLISE2026_diagnostic_plan.md)。新实验脚本为 [scripts/mlise2026_qwen_diagnostic.py](/Users/xiaokong/task/2026/IPM/scripts/mlise2026_qwen_diagnostic.py)，图表使用英文，Markdown 报告和实验记录使用中文。
+
 ## 1. 文档目的
 
 这份文档是在当前 `IP&M` 长线项目基础上，专门为一个更容易实现、篇幅更短、适合先投普通 EI 会议的版本而写。
@@ -821,4 +823,3 @@ outputs/mlise2026_qwen_scaling/figures/
 
 - MLISE 2026 官网：https://www.mlise.org/
 - MLISE 2026 Submission 页面：https://mlise.org/Submission
-

@@ -1,5 +1,7 @@
 # GPT-5.5 接手说明：IP&M 因果一致性评测项目
 
+> 2026-05-13 更新：`MLISE 2026` 短期会议稿已经从原来的 Qwen scaling 主线切换为诊断版主线。上一轮三模型 scaling 结果区分度不足，不能强写“规模效应”。当前优先阅读 [MLISE2026_diagnostic_plan.md](/Users/xiaokong/task/2026/IPM/MLISE2026_diagnostic_plan.md)，并使用 [scripts/mlise2026_qwen_diagnostic.py](/Users/xiaokong/task/2026/IPM/scripts/mlise2026_qwen_diagnostic.py) 在服务器 `/data/kongyb/ipm` 重新运行诊断实验。实验图表使用英文，Markdown 报告和实验记录使用中文。
+
 ## 1. 这份文档的用途
 
 这是一份专门给下一个 `GPT-5.5` 窗口使用的 handoff 文档。
@@ -691,4 +693,3 @@ python scripts/qwen3_cladder_feasibility.py
 > **A100 上复现 + 扩模型 + 升级成论文主实验**
 
 开始推进。
-
