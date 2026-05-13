@@ -1,0 +1,7 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,metric,estimate,ci_low,ci_high,n_bootstrap
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_graph,accuracy,0.5,0.4640625,0.5421875,1000
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_query,accuracy,0.5,0.4625,0.5375,1000
+qwen3_4b,Qwen3-4B,main,main,nl_var_graph,accuracy,0.5953125,0.5578125,0.63125,1000
+qwen3_4b,Qwen3-4B,main,main,nl_var_query,accuracy,0.56875,0.53125,0.6046875,1000
+qwen3_8b,Qwen3-8B,main,main,nl_var_graph,accuracy,0.5609375,0.5234375,0.5984765624999999,1000
+qwen3_8b,Qwen3-8B,main,main,nl_var_query,accuracy,0.5375,0.49839843749999996,0.5797265625,1000

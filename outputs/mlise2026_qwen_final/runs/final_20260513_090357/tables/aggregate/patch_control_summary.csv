@@ -1,0 +1,4 @@
+model,model_display_name,patch_condition,n_rows,n_samples,mean_absolute_recovery,median_absolute_recovery,max_absolute_recovery,positive_recovery_rate,mean_normalized_recovery
+qwen3_4b,Qwen3-4B,matched,576,16,-0.0224609375,0.0,3.71875,0.4618055555555556,0.5156710417403121
+qwen3_4b,Qwen3-4B,random,576,16,-0.060980902777777776,-0.03125,2.9375,0.4670138888888889,0.3572801102269453
+qwen3_4b,Qwen3-4B,matched_minus_random,576,16,0.038519965277777776,0.03125,2.125,0.5069444444444444,

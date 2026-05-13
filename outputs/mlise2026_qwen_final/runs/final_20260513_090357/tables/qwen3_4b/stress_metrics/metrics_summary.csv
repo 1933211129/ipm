@@ -1,0 +1,11 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,prompt_condition,n,accuracy,parse_rate,invalid_rate,latency_sec
+qwen3_4b,Qwen3-4B,stress,anticommonsense,nl,Natural Language,100,0.47,1.0,0.0,0.032997467503882945
+qwen3_4b,Qwen3-4B,stress,anticommonsense,nl_formal,NL + Formal Scaffold,100,0.52,1.0,0.0,0.03399258290126454
+qwen3_4b,Qwen3-4B,stress,commonsense,nl,Natural Language,100,0.51,1.0,0.0,0.02868013552390039
+qwen3_4b,Qwen3-4B,stress,commonsense,nl_formal,NL + Formal Scaffold,100,0.55,1.0,0.0,0.03432060349790845
+qwen3_4b,Qwen3-4B,stress,easy,nl,Natural Language,100,0.49,1.0,0.0,0.02819527132145595
+qwen3_4b,Qwen3-4B,stress,easy,nl_formal,NL + Formal Scaffold,100,0.48,1.0,0.0,0.03398998270975426
+qwen3_4b,Qwen3-4B,stress,hard,nl,Natural Language,100,0.49,1.0,0.0,0.028667295290506444
+qwen3_4b,Qwen3-4B,stress,hard,nl_formal,NL + Formal Scaffold,100,0.5,1.0,0.0,0.03421289871097542
+qwen3_4b,Qwen3-4B,stress,noncommonsense,nl,Natural Language,100,0.48,1.0,0.0,0.02944269493804313
+qwen3_4b,Qwen3-4B,stress,noncommonsense,nl_formal,NL + Formal Scaffold,100,0.49,1.0,0.0,0.03427821021177806

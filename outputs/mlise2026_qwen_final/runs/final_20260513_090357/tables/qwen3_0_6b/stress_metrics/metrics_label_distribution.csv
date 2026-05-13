@@ -1,0 +1,11 @@
+model,dataset_variant,prompt_mode,parsed_label,n
+qwen3_0_6b,anticommonsense,nl,yes,100
+qwen3_0_6b,anticommonsense,nl_formal,yes,100
+qwen3_0_6b,commonsense,nl,yes,100
+qwen3_0_6b,commonsense,nl_formal,yes,100
+qwen3_0_6b,easy,nl,yes,100
+qwen3_0_6b,easy,nl_formal,yes,100
+qwen3_0_6b,hard,nl,yes,100
+qwen3_0_6b,hard,nl_formal,yes,100
+qwen3_0_6b,noncommonsense,nl,yes,100
+qwen3_0_6b,noncommonsense,nl_formal,yes,100

@@ -1,0 +1,6 @@
+model,model_display_name,diagnostic_source,dataset_variant,comparison,nl_accuracy,other_accuracy,paired_accuracy_diff,diff_ci_low,diff_ci_high,mcnemar_b_nl_correct_other_wrong,mcnemar_c_nl_wrong_other_correct,mcnemar_p_approx,n_valid_pairs,n_bootstrap
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_vs_nl_formal,0.5,0.5,0.0,,,0,0,1.0,100,0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_vs_nl_formal,0.5,0.5,0.0,,,0,0,1.0,100,0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_vs_nl_formal,0.5,0.5,0.0,,,0,0,1.0,100,0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_vs_nl_formal,0.5,0.5,0.0,,,0,0,1.0,100,0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_vs_nl_formal,0.5,0.5,0.0,,,0,0,1.0,100,0

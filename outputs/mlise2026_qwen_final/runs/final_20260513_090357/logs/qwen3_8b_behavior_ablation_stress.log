@@ -1,0 +1,17 @@
+nohup: ignoring input
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights: 100%|██████████| 399/399 [00:00<00:00, 6582.57it/s]
+[进度] model=qwen3_8b source=main mode=nl 待评测=640
+[进度] model=qwen3_8b source=main mode=nl_formal 待评测=640
+[进度] model=qwen3_8b source=main mode=formula_only 待评测=640
+[完成] 主行为实验完成：qwen3_8b
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights: 100%|██████████| 399/399 [00:00<00:00, 7062.10it/s]
+[进度] model=qwen3_8b source=main mode=nl_var_query 待评测=640
+[进度] model=qwen3_8b source=main mode=nl_var_graph 待评测=640
+[完成] 形式成分消融完成：qwen3_8b
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights: 100%|██████████| 399/399 [00:00<00:00, 6523.81it/s]
+[进度] model=qwen3_8b source=stress mode=nl 待评测=500
+[进度] model=qwen3_8b source=stress mode=nl_formal 待评测=500
+[完成] stress split 实验完成：qwen3_8b

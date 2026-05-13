@@ -1,0 +1,17 @@
+model,model_display_name,diagnostic_source,dataset_variant,query_type,scaffold_mode,scaffold_condition,nl_accuracy,scaffold_accuracy,scaffold_gain
+qwen3_0_6b,Qwen3-0.6B,main,main,ate,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,ate,formula_only,Formalized Input,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,backadj,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,backadj,formula_only,Formalized Input,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,correlation,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,correlation,formula_only,Formalized Input,0.5,0.53,0.030000000000000027
+qwen3_0_6b,Qwen3-0.6B,main,main,det-counterfactual,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,det-counterfactual,formula_only,Formalized Input,0.5,0.5166666666666667,0.01666666666666672
+qwen3_0_6b,Qwen3-0.6B,main,main,ett,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,ett,formula_only,Formalized Input,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,marginal,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,marginal,formula_only,Formalized Input,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nde,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nde,formula_only,Formalized Input,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nie,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nie,formula_only,Formalized Input,0.5,0.5,0.0

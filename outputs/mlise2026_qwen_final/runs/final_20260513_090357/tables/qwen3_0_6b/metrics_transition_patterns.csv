@@ -1,0 +1,4 @@
+model,model_display_name,diagnostic_source,dataset_variant,transition_pattern,n,total,rate
+qwen3_0_6b,Qwen3-0.6B,main,main,C-C-C,320,640,0.5
+qwen3_0_6b,Qwen3-0.6B,main,main,W-W-C,4,640,0.00625
+qwen3_0_6b,Qwen3-0.6B,main,main,W-W-W,316,640,0.49375

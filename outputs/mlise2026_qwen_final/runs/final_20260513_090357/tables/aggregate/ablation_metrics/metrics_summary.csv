@@ -1,0 +1,7 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,prompt_condition,n,accuracy,parse_rate,invalid_rate,latency_sec
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_graph,NL + Variables + Graph,640,0.5,1.0,0.0,0.01046954138982978
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_query,NL + Variables + Formal Query,640,0.5,0.9921875,0.0078125,0.012729518593005145
+qwen3_4b,Qwen3-4B,main,main,nl_var_graph,NL + Variables + Graph,640,0.5953125,1.0,0.0,0.03209551978125087
+qwen3_4b,Qwen3-4B,main,main,nl_var_query,NL + Variables + Formal Query,640,0.56875,1.0,0.0,0.03286622753803381
+qwen3_8b,Qwen3-8B,main,main,nl_var_graph,NL + Variables + Graph,640,0.5609375,1.0,0.0,0.0608230323890893
+qwen3_8b,Qwen3-8B,main,main,nl_var_query,NL + Variables + Formal Query,640,0.5375,1.0,0.0,0.061765487483535206

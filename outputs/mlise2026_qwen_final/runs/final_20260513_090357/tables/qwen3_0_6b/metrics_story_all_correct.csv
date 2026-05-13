@@ -1,0 +1,4 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,n_stories,mean_items_per_story,story_all_correct_rate
+qwen3_0_6b,Qwen3-0.6B,main,main,formula_only,47,13.617021276595745,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl,47,13.617021276595745,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_formal,47,13.617021276595745,0.0

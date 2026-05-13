@@ -1,0 +1,9 @@
+model,model_display_name,diagnostic_source,dataset_variant,transition_pattern,n,total,rate
+qwen3_8b,Qwen3-8B,main,main,C-C-C,278,640,0.434375
+qwen3_8b,Qwen3-8B,main,main,C-C-W,48,640,0.075
+qwen3_8b,Qwen3-8B,main,main,C-W-C,15,640,0.0234375
+qwen3_8b,Qwen3-8B,main,main,C-W-W,18,640,0.028125
+qwen3_8b,Qwen3-8B,main,main,W-C-C,15,640,0.0234375
+qwen3_8b,Qwen3-8B,main,main,W-C-W,8,640,0.0125
+qwen3_8b,Qwen3-8B,main,main,W-W-C,46,640,0.071875
+qwen3_8b,Qwen3-8B,main,main,W-W-W,212,640,0.33125

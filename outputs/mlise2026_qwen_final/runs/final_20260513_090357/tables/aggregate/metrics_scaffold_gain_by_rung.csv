@@ -1,0 +1,82 @@
+model,model_display_name,diagnostic_source,dataset_variant,rung,scaffold_mode,scaffold_condition,nl_accuracy,scaffold_accuracy,scaffold_gain
+qwen3_0_6b,Qwen3-0.6B,main,main,1,nl_var_query,NL + Variables + Formal Query,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,1,nl_var_graph,NL + Variables + Graph,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,1,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,1,formula_only,Formalized Input,0.5,0.515,0.015000000000000013
+qwen3_0_6b,Qwen3-0.6B,main,main,2,nl_var_query,NL + Variables + Formal Query,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,2,nl_var_graph,NL + Variables + Graph,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,2,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,2,formula_only,Formalized Input,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,3,nl_var_query,NL + Variables + Formal Query,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,3,nl_var_graph,NL + Variables + Graph,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,3,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,3,formula_only,Formalized Input,0.5,0.5041666666666667,0.004166666666666652
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,1,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,2,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,3,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,1,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,2,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,3,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,1,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,2,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,3,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,1,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,2,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,3,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,1,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,2,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,3,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,main,main,1,nl_var_query,NL + Variables + Formal Query,0.59,0.55,-0.039999999999999925
+qwen3_4b,Qwen3-4B,main,main,1,nl_var_graph,NL + Variables + Graph,0.59,0.615,0.025000000000000022
+qwen3_4b,Qwen3-4B,main,main,1,nl_formal,NL + Formal Scaffold,0.59,0.565,-0.025000000000000022
+qwen3_4b,Qwen3-4B,main,main,1,formula_only,Formalized Input,0.59,0.575,-0.015000000000000013
+qwen3_4b,Qwen3-4B,main,main,2,nl_var_query,NL + Variables + Formal Query,0.63,0.61,-0.020000000000000018
+qwen3_4b,Qwen3-4B,main,main,2,nl_var_graph,NL + Variables + Graph,0.63,0.645,0.015000000000000013
+qwen3_4b,Qwen3-4B,main,main,2,nl_formal,NL + Formal Scaffold,0.63,0.625,-0.0050000000000000044
+qwen3_4b,Qwen3-4B,main,main,2,formula_only,Formalized Input,0.63,0.605,-0.025000000000000022
+qwen3_4b,Qwen3-4B,main,main,3,nl_var_query,NL + Variables + Formal Query,0.5708333333333333,0.55,-0.02083333333333326
+qwen3_4b,Qwen3-4B,main,main,3,nl_var_graph,NL + Variables + Graph,0.5708333333333333,0.5375,-0.033333333333333326
+qwen3_4b,Qwen3-4B,main,main,3,nl_formal,NL + Formal Scaffold,0.5708333333333333,0.525,-0.04583333333333328
+qwen3_4b,Qwen3-4B,main,main,3,formula_only,Formalized Input,0.5708333333333333,0.5208333333333334,-0.04999999999999993
+qwen3_4b,Qwen3-4B,stress,anticommonsense,1,nl_formal,NL + Formal Scaffold,0.4666666666666667,0.5,0.033333333333333326
+qwen3_4b,Qwen3-4B,stress,anticommonsense,2,nl_formal,NL + Formal Scaffold,0.5,0.4666666666666667,-0.033333333333333326
+qwen3_4b,Qwen3-4B,stress,anticommonsense,3,nl_formal,NL + Formal Scaffold,0.45,0.575,0.12499999999999994
+qwen3_4b,Qwen3-4B,stress,commonsense,1,nl_formal,NL + Formal Scaffold,0.5333333333333333,0.5333333333333333,0.0
+qwen3_4b,Qwen3-4B,stress,commonsense,2,nl_formal,NL + Formal Scaffold,0.5333333333333333,0.5666666666666667,0.033333333333333326
+qwen3_4b,Qwen3-4B,stress,commonsense,3,nl_formal,NL + Formal Scaffold,0.475,0.55,0.07500000000000007
+qwen3_4b,Qwen3-4B,stress,easy,1,nl_formal,NL + Formal Scaffold,0.5,0.5333333333333333,0.033333333333333326
+qwen3_4b,Qwen3-4B,stress,easy,2,nl_formal,NL + Formal Scaffold,0.5,0.4666666666666667,-0.033333333333333326
+qwen3_4b,Qwen3-4B,stress,easy,3,nl_formal,NL + Formal Scaffold,0.475,0.45,-0.024999999999999967
+qwen3_4b,Qwen3-4B,stress,hard,1,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,hard,2,nl_formal,NL + Formal Scaffold,0.5333333333333333,0.5,-0.033333333333333326
+qwen3_4b,Qwen3-4B,stress,hard,3,nl_formal,NL + Formal Scaffold,0.45,0.5,0.04999999999999999
+qwen3_4b,Qwen3-4B,stress,noncommonsense,1,nl_formal,NL + Formal Scaffold,0.4666666666666667,0.5,0.033333333333333326
+qwen3_4b,Qwen3-4B,stress,noncommonsense,2,nl_formal,NL + Formal Scaffold,0.5,0.4666666666666667,-0.033333333333333326
+qwen3_4b,Qwen3-4B,stress,noncommonsense,3,nl_formal,NL + Formal Scaffold,0.475,0.5,0.025000000000000022
+qwen3_8b,Qwen3-8B,main,main,1,nl_var_query,NL + Variables + Formal Query,0.54,0.515,-0.025000000000000022
+qwen3_8b,Qwen3-8B,main,main,1,nl_var_graph,NL + Variables + Graph,0.54,0.55,0.010000000000000009
+qwen3_8b,Qwen3-8B,main,main,1,nl_formal,NL + Formal Scaffold,0.54,0.555,0.015000000000000013
+qwen3_8b,Qwen3-8B,main,main,1,formula_only,Formalized Input,0.54,0.53,-0.010000000000000009
+qwen3_8b,Qwen3-8B,main,main,2,nl_var_query,NL + Variables + Formal Query,0.6,0.585,-0.015000000000000013
+qwen3_8b,Qwen3-8B,main,main,2,nl_var_graph,NL + Variables + Graph,0.6,0.625,0.025000000000000022
+qwen3_8b,Qwen3-8B,main,main,2,nl_formal,NL + Formal Scaffold,0.6,0.58,-0.020000000000000018
+qwen3_8b,Qwen3-8B,main,main,2,formula_only,Formalized Input,0.6,0.6,0.0
+qwen3_8b,Qwen3-8B,main,main,3,nl_var_query,NL + Variables + Formal Query,0.5458333333333333,0.5166666666666667,-0.029166666666666563
+qwen3_8b,Qwen3-8B,main,main,3,nl_var_graph,NL + Variables + Graph,0.5458333333333333,0.5166666666666667,-0.029166666666666563
+qwen3_8b,Qwen3-8B,main,main,3,nl_formal,NL + Formal Scaffold,0.5458333333333333,0.5083333333333333,-0.03749999999999998
+qwen3_8b,Qwen3-8B,main,main,3,formula_only,Formalized Input,0.5458333333333333,0.5333333333333333,-0.012499999999999956
+qwen3_8b,Qwen3-8B,stress,anticommonsense,1,nl_formal,NL + Formal Scaffold,0.5666666666666667,0.43333333333333335,-0.1333333333333333
+qwen3_8b,Qwen3-8B,stress,anticommonsense,2,nl_formal,NL + Formal Scaffold,0.4,0.43333333333333335,0.033333333333333326
+qwen3_8b,Qwen3-8B,stress,anticommonsense,3,nl_formal,NL + Formal Scaffold,0.5,0.475,-0.025000000000000022
+qwen3_8b,Qwen3-8B,stress,commonsense,1,nl_formal,NL + Formal Scaffold,0.6333333333333333,0.5,-0.1333333333333333
+qwen3_8b,Qwen3-8B,stress,commonsense,2,nl_formal,NL + Formal Scaffold,0.4666666666666667,0.5666666666666667,0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,commonsense,3,nl_formal,NL + Formal Scaffold,0.475,0.625,0.15000000000000002
+qwen3_8b,Qwen3-8B,stress,easy,1,nl_formal,NL + Formal Scaffold,0.5,0.5333333333333333,0.033333333333333326
+qwen3_8b,Qwen3-8B,stress,easy,2,nl_formal,NL + Formal Scaffold,0.43333333333333335,0.4666666666666667,0.033333333333333326
+qwen3_8b,Qwen3-8B,stress,easy,3,nl_formal,NL + Formal Scaffold,0.575,0.575,0.0
+qwen3_8b,Qwen3-8B,stress,hard,1,nl_formal,NL + Formal Scaffold,0.43333333333333335,0.4,-0.033333333333333326
+qwen3_8b,Qwen3-8B,stress,hard,2,nl_formal,NL + Formal Scaffold,0.43333333333333335,0.4666666666666667,0.033333333333333326
+qwen3_8b,Qwen3-8B,stress,hard,3,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_8b,Qwen3-8B,stress,noncommonsense,1,nl_formal,NL + Formal Scaffold,0.5,0.5333333333333333,0.033333333333333326
+qwen3_8b,Qwen3-8B,stress,noncommonsense,2,nl_formal,NL + Formal Scaffold,0.4666666666666667,0.43333333333333335,-0.033333333333333326
+qwen3_8b,Qwen3-8B,stress,noncommonsense,3,nl_formal,NL + Formal Scaffold,0.5,0.45,-0.04999999999999999

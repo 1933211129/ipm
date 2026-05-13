@@ -1,0 +1,3 @@
+model,model_display_name,diagnostic_source,dataset_variant,comparison,nl_accuracy,other_accuracy,paired_accuracy_diff,diff_ci_low,diff_ci_high,mcnemar_b_nl_correct_other_wrong,mcnemar_c_nl_wrong_other_correct,mcnemar_p_approx,n_valid_pairs,n_bootstrap
+qwen3_4b,Qwen3-4B,main,main,nl_vs_nl_formal,0.5953125,0.56875,-0.0265625,,,43,26,0.054082694898612886,640,0
+qwen3_4b,Qwen3-4B,main,main,nl_vs_formula_only,0.5953125,0.5640625,-0.03125,,,56,36,0.04760395472787153,640,0

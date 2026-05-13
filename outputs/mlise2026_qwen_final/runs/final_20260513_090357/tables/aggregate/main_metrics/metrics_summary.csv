@@ -1,0 +1,10 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,prompt_condition,n,accuracy,parse_rate,invalid_rate,latency_sec
+qwen3_0_6b,Qwen3-0.6B,main,main,formula_only,Formalized Input,640,0.50625,1.0,0.0,0.01183154539394304
+qwen3_0_6b,Qwen3-0.6B,main,main,nl,Natural Language,640,0.5,1.0,0.0,0.010931521289239703
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_formal,NL + Formal Scaffold,640,0.5,1.0,0.0,0.01128507292578428
+qwen3_4b,Qwen3-4B,main,main,formula_only,Formalized Input,640,0.5640625,1.0,0.0,0.0343917142703503
+qwen3_4b,Qwen3-4B,main,main,nl,Natural Language,640,0.5953125,1.0,0.0,0.029189465354283996
+qwen3_4b,Qwen3-4B,main,main,nl_formal,NL + Formal Scaffold,640,0.56875,1.0,0.0,0.0337529721378814
+qwen3_8b,Qwen3-8B,main,main,formula_only,Formalized Input,640,0.553125,1.0,0.0,0.06229657394778765
+qwen3_8b,Qwen3-8B,main,main,nl,Natural Language,640,0.5609375,1.0,0.0,0.05396837748539833
+qwen3_8b,Qwen3-8B,main,main,nl_formal,NL + Formal Scaffold,640,0.5453125,1.0,0.0,0.06253209956157656

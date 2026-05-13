@@ -1,0 +1,211 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,story_id,query_type,formal_form,left_sample_id,right_sample_id,has_invalid,strict_contrast_consistent,correct_flip,wrong_flip,invariant_yes,invariant_no,left_gold_label,right_gold_label,left_parsed_label,right_parsed_label
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,celebrity,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",16506,4127,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,celebrity,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",16506,16517,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,celebrity,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",4008,4049,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,celebrity,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",4138,4049,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,celebrity,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",16798,4049,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,college_wage,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],4781,4788,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,elite_students,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",5246,5167,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,elite_students,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",5246,17727,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,hospitalization,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",19916,7097,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",7409,7298,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",7409,20089,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",7409,20109,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",7409,20189,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",20218,7298,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",20218,20089,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",20218,20109,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",20218,20189,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,neg_mediation,nie,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",21008,20911,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,penguin,marginal,P(Y),15449,2733,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,simpson_kidneystone,correlation,P(Y | X),10196,22686,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,simpson_kidneystone,correlation,P(Y | X),22847,22686,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,smoke_birthWeight,nde,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",23300,10767,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,celebrity,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",16506,4127,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,celebrity,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",16506,16517,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,celebrity,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",4008,4049,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,celebrity,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",4138,4049,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,celebrity,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",16798,4049,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,college_wage,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],4781,4788,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,elite_students,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",5246,5167,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,elite_students,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",5246,17727,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,hospitalization,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",19916,7097,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",7409,7298,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",7409,20089,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",7409,20109,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",7409,20189,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",20218,7298,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",20218,20089,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",20218,20109,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,man_in_relationship,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",20218,20189,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,neg_mediation,nie,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",21008,20911,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,penguin,marginal,P(Y),15449,2733,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,simpson_kidneystone,correlation,P(Y | X),10196,22686,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,simpson_kidneystone,correlation,P(Y | X),22847,22686,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,smoke_birthWeight,nde,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",23300,10767,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,celebrity,backadj,[backdoor adjustment set for Y given X],16684,4015,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,celebrity,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",4086,4087,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,celebrity,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",16516,4087,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,celebrity,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",16596,4087,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,celebrity,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",3938,4019,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,celebrity,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",16628,4019,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,celebrity,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",16638,4019,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,elite_students,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",4988,17649,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,elite_students,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",4988,17719,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,elite_students,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",5268,17649,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,elite_students,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",5268,17719,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,firing_employee,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],862,13632,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,firing_squad,correlation,P(Y | X),1173,13892,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,gender_admission,nie,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",5816,18589,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,gender_admission_state,correlation,P(Y | X),6257,6271,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,getting_tanned,correlation,P(Y | X),2347,15077,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,hospitalization,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",19726,19867,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,hospitalization,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",19826,19867,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,neg_mediation,nde,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",8336,8323,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,obesity_mortality,nde,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",8504,8631,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,obesity_mortality,nde,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",8504,21192,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,obesity_mortality,nde,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",8644,8631,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,obesity_mortality,nde,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",8644,21192,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,penguin,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],2808,2655,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,simpson_vaccine,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],10542,23002,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,celebrity,backadj,[backdoor adjustment set for Y given X],16684,4015,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,celebrity,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",4086,4087,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,celebrity,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",16516,4087,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,celebrity,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",16596,4087,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,celebrity,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",3938,4019,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,celebrity,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",16628,4019,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,celebrity,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",16638,4019,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,elite_students,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",4988,17649,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,elite_students,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",4988,17719,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,elite_students,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",5268,17649,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,elite_students,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",5268,17719,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,firing_employee,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],862,13632,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,firing_squad,correlation,P(Y | X),1173,13892,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,gender_admission,nie,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]",5816,18589,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,gender_admission_state,correlation,P(Y | X),6257,6271,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,getting_tanned,correlation,P(Y | X),2347,15077,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,hospitalization,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",19726,19867,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,hospitalization,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",19826,19867,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,neg_mediation,nde,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",8336,8323,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,obesity_mortality,nde,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",8504,8631,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,obesity_mortality,nde,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",8504,21192,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,obesity_mortality,nde,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",8644,8631,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,obesity_mortality,nde,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",8644,21192,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,penguin,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],2808,2655,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,simpson_vaccine,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],10542,23002,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl,celebrity,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",3978,16749,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl,hospitalization,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",19836,19837,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl,nonsense0,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],26157,26380,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl,nonsense1,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],26723,26902,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl,nonsense1,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],26723,27453,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl,nonsense1,marginal,P(Y),27330,27022,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl,nonsense3,marginal,P(Y),29570,28687,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl,nonsense5,backadj,[backdoor adjustment set for Y given X],31858,31309,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl,nonsense8,marginal,P(Y),34819,35374,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl,nonsense9,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",35556,35577,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl,nonsense9,correlation,P(Y | X),35481,35408,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl,nonsense9,correlation,P(Y | X),35481,35965,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,celebrity,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",3978,16749,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,hospitalization,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",19836,19837,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,nonsense0,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],26157,26380,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,nonsense1,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],26723,26902,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,nonsense1,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],26723,27453,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,nonsense1,marginal,P(Y),27330,27022,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,nonsense3,marginal,P(Y),29570,28687,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,nonsense5,backadj,[backdoor adjustment set for Y given X],31858,31309,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,nonsense8,marginal,P(Y),34819,35374,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,nonsense9,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",35556,35577,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,nonsense9,correlation,P(Y | X),35481,35408,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,nonsense9,correlation,P(Y | X),35481,35965,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,hospitalization,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",19916,19917,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense0,backadj,[backdoor adjustment set for Y given X],25402,26035,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense0,backadj,[backdoor adjustment set for Y given X],25992,26035,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense0,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",25536,25527,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense0,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",25499,25498,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense0,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",25499,25539,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense3,marginal,P(Y),29326,29270,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense4,nie,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]",30348,30520,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense4,nie,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]",30521,30520,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense7,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],33607,33508,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense7,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],33607,33919,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense7,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],33607,34180,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense7,backadj,[backdoor adjustment set for Y given X],33364,34239,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense7,correlation,P(Y | X),33792,33457,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense8,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",34448,34469,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense9,marginal,P(Y),36345,35743,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,nonsense9,marginal,P(Y),36345,36255,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,hospitalization,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",19916,19917,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense0,backadj,[backdoor adjustment set for Y given X],25402,26035,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense0,backadj,[backdoor adjustment set for Y given X],25992,26035,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense0,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",25536,25527,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense0,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",25499,25498,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense0,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",25499,25539,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense3,marginal,P(Y),29326,29270,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense4,nie,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]",30348,30520,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense4,nie,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]",30521,30520,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense7,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],33607,33508,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense7,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],33607,33919,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense7,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],33607,34180,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense7,backadj,[backdoor adjustment set for Y given X],33364,34239,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense7,correlation,P(Y | X),33792,33457,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense8,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",34448,34469,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense9,marginal,P(Y),36345,35743,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,nonsense9,marginal,P(Y),36345,36255,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense0,backadj,[backdoor adjustment set for Y given X],482,11617,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense0,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",11346,147,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense0,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],11863,393,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense1,backadj,[backdoor adjustment set for Y given X],2098,1755,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense3,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],3928,3965,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense3,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],14810,3965,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense3,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],3435,14574,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense3,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],3435,15250,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense4,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",15866,4687,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense4,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],4712,5366,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense4,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",15859,4629,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense4,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",15859,15809,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense4,nde,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",4891,4890,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense4,nde,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",16021,4890,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense5,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],5661,5949,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense5,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",5776,5737,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense5,marginal,P(Y),6066,6454,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense5,marginal,P(Y),6066,17011,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense5,marginal,P(Y),17184,6454,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense5,marginal,P(Y),17184,17011,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense6,backadj,[backdoor adjustment set for Y given X],19028,7627,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense7,correlation,P(Y | X),19605,8076,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense7,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],8751,8516,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense7,marginal,P(Y),19439,19424,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense7,nde,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",8576,8548,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense7,nde,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",19735,8548,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense8,correlation,P(Y | X),9817,20745,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense9,backadj,[backdoor adjustment set for Y given X],21474,21399,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,nonsense9,backadj,[backdoor adjustment set for Y given X],21474,21823,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense0,backadj,[backdoor adjustment set for Y given X],482,11617,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense0,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",11346,147,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense0,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],11863,393,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense1,backadj,[backdoor adjustment set for Y given X],2098,1755,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense3,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],3928,3965,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense3,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],14810,3965,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense3,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],3435,14574,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense3,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],3435,15250,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense4,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",15866,4687,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense4,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],4712,5366,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense4,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",15859,4629,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense4,exp_away,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",15859,15809,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense4,nde,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",4891,4890,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense4,nde,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]",16021,4890,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense5,ate,E[Y | do(X = 1)] - E[Y | do(X = 0)],5661,5949,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense5,collider_bias,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]",5776,5737,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense5,marginal,P(Y),6066,6454,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense5,marginal,P(Y),6066,17011,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense5,marginal,P(Y),17184,6454,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense5,marginal,P(Y),17184,17011,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense6,backadj,[backdoor adjustment set for Y given X],19028,7627,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense7,correlation,P(Y | X),19605,8076,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense7,ett,E[Y_{X = 1} - Y_{X = 0} | X = 1],8751,8516,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense7,marginal,P(Y),19439,19424,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense7,nde,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",8576,8548,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense7,nde,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",19735,8548,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense8,correlation,P(Y | X),9817,20745,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense9,backadj,[backdoor adjustment set for Y given X],21474,21399,False,0,0,0,1,0,no,yes,yes,yes
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,nonsense9,backadj,[backdoor adjustment set for Y given X],21474,21823,False,0,0,0,1,0,no,yes,yes,yes

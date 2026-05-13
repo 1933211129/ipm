@@ -1,0 +1,3 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,prompt_condition,n,accuracy,parse_rate,invalid_rate,latency_sec
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_graph,NL + Variables + Graph,640,0.5,1.0,0.0,0.010469541389829829
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_query,NL + Variables + Formal Query,640,0.5,0.9921875,0.0078125,0.012729518593005196

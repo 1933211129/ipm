@@ -1,0 +1,7 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,rung,n,accuracy,parse_rate
+qwen3_4b,Qwen3-4B,main,main,nl_var_graph,1,200,0.615,1.0
+qwen3_4b,Qwen3-4B,main,main,nl_var_graph,2,200,0.645,1.0
+qwen3_4b,Qwen3-4B,main,main,nl_var_graph,3,240,0.5375,1.0
+qwen3_4b,Qwen3-4B,main,main,nl_var_query,1,200,0.55,1.0
+qwen3_4b,Qwen3-4B,main,main,nl_var_query,2,200,0.61,1.0
+qwen3_4b,Qwen3-4B,main,main,nl_var_query,3,240,0.55,1.0

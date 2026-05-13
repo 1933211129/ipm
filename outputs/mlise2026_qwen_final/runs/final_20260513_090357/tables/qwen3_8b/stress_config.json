@@ -1,0 +1,26 @@
+{
+  "运行配置": {
+    "stage": "stress",
+    "model": "qwen3_8b",
+    "sample_mode": "formal",
+    "run_id": "final_20260513_090357",
+    "data_path": "/data/kongyb/ipm/datasets/cladder/data/full_v1.5_default.csv",
+    "output_root": "outputs/mlise2026_qwen_final",
+    "patch_model": "qwen3_4b",
+    "seed": 42,
+    "batch_size": 4,
+    "patch_batch_size": 1,
+    "max_new_tokens": 48,
+    "stress_sample_size": 100,
+    "patch_pair_limit": 16,
+    "bootstrap": 1000,
+    "resume": true,
+    "skip_figures": false
+  },
+  "模型配置": {
+    "display_name": "Qwen3-8B",
+    "path": "/data/LLM/Qwen/Qwen3-8B",
+    "hf_name": "Qwen/Qwen3-8B",
+    "size_order": "8B"
+  }
+}

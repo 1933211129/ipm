@@ -1,0 +1,7 @@
+nohup: ignoring input
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 4573.92it/s]
+[完成] formal-to-natural patching 完成：qwen3_4b
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 5682.84it/s]
+[完成] random patch control 完成：qwen3_4b

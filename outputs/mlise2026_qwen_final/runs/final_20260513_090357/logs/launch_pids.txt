@@ -1,0 +1,5 @@
+RUN_ID=final_20260513_090357
+qwen3_0_6b_pid=35054
+qwen3_4b_pid=35056
+qwen3_8b_pid=35061
+patch_pid=73101

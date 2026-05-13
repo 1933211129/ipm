@@ -1,0 +1,10 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,metric,estimate,ci_low,ci_high,n_bootstrap
+qwen3_0_6b,Qwen3-0.6B,main,main,formula_only,accuracy,0.50625,0.46875,0.546875,1000
+qwen3_0_6b,Qwen3-0.6B,main,main,nl,accuracy,0.5,0.4625,0.5375,1000
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_formal,accuracy,0.5,0.4625,0.540625,1000
+qwen3_4b,Qwen3-4B,main,main,formula_only,accuracy,0.5640625,0.5265625,0.6000390624999999,1000
+qwen3_4b,Qwen3-4B,main,main,nl,accuracy,0.5953125,0.559375,0.634375,1000
+qwen3_4b,Qwen3-4B,main,main,nl_formal,accuracy,0.56875,0.5328125,0.6078125,1000
+qwen3_8b,Qwen3-8B,main,main,formula_only,accuracy,0.553125,0.515625,0.59375,1000
+qwen3_8b,Qwen3-8B,main,main,nl,accuracy,0.5609375,0.521875,0.6,1000
+qwen3_8b,Qwen3-8B,main,main,nl_formal,accuracy,0.5453125,0.509375,0.5828125,1000

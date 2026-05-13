@@ -1,0 +1,17 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,query_type,n,accuracy,parse_rate
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_graph,ate,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_graph,backadj,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_graph,correlation,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_graph,det-counterfactual,60,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_graph,ett,60,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_graph,marginal,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_graph,nde,60,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_graph,nie,60,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_query,ate,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_query,backadj,100,0.5,0.95
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_query,correlation,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_query,det-counterfactual,60,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_query,ett,60,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_query,marginal,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_query,nde,60,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_var_query,nie,60,0.5,1.0

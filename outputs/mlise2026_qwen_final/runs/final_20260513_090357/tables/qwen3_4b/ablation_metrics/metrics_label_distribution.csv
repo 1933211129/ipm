@@ -1,0 +1,5 @@
+model,dataset_variant,prompt_mode,parsed_label,n
+qwen3_4b,main,nl_var_graph,no,373
+qwen3_4b,main,nl_var_graph,yes,267
+qwen3_4b,main,nl_var_query,no,420
+qwen3_4b,main,nl_var_query,yes,220

@@ -1,0 +1,247 @@
+model,model_display_name,diagnostic_source,dataset_variant,query_type,scaffold_mode,scaffold_condition,nl_accuracy,scaffold_accuracy,scaffold_gain
+qwen3_0_6b,Qwen3-0.6B,main,main,ate,nl_var_query,NL + Variables + Formal Query,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,ate,nl_var_graph,NL + Variables + Graph,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,ate,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,ate,formula_only,Formalized Input,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,backadj,nl_var_query,NL + Variables + Formal Query,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,backadj,nl_var_graph,NL + Variables + Graph,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,backadj,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,backadj,formula_only,Formalized Input,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,correlation,nl_var_query,NL + Variables + Formal Query,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,correlation,nl_var_graph,NL + Variables + Graph,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,correlation,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,correlation,formula_only,Formalized Input,0.5,0.53,0.030000000000000027
+qwen3_0_6b,Qwen3-0.6B,main,main,det-counterfactual,nl_var_query,NL + Variables + Formal Query,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,det-counterfactual,nl_var_graph,NL + Variables + Graph,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,det-counterfactual,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,det-counterfactual,formula_only,Formalized Input,0.5,0.5166666666666667,0.01666666666666672
+qwen3_0_6b,Qwen3-0.6B,main,main,ett,nl_var_query,NL + Variables + Formal Query,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,ett,nl_var_graph,NL + Variables + Graph,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,ett,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,ett,formula_only,Formalized Input,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,marginal,nl_var_query,NL + Variables + Formal Query,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,marginal,nl_var_graph,NL + Variables + Graph,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,marginal,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,marginal,formula_only,Formalized Input,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nde,nl_var_query,NL + Variables + Formal Query,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nde,nl_var_graph,NL + Variables + Graph,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nde,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nde,formula_only,Formalized Input,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nie,nl_var_query,NL + Variables + Formal Query,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nie,nl_var_graph,NL + Variables + Graph,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nie,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nie,formula_only,Formalized Input,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,ate,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,backadj,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,collider_bias,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,correlation,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,det-counterfactual,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,ett,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,exp_away,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,marginal,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nde,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nie,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,ate,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,backadj,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,collider_bias,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,correlation,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,det-counterfactual,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,ett,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,exp_away,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,marginal,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nde,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nie,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,ate,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,backadj,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,collider_bias,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,correlation,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,det-counterfactual,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,ett,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,exp_away,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,marginal,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nde,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nie,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,ate,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,backadj,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,collider_bias,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,correlation,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,det-counterfactual,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,ett,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,exp_away,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,marginal,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nde,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nie,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,ate,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,backadj,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,collider_bias,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,correlation,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,det-counterfactual,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,ett,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,exp_away,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,marginal,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nde,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nie,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,main,main,ate,nl_var_query,NL + Variables + Formal Query,0.74,0.7,-0.040000000000000036
+qwen3_4b,Qwen3-4B,main,main,ate,nl_var_graph,NL + Variables + Graph,0.74,0.75,0.010000000000000009
+qwen3_4b,Qwen3-4B,main,main,ate,nl_formal,NL + Formal Scaffold,0.74,0.73,-0.010000000000000009
+qwen3_4b,Qwen3-4B,main,main,ate,formula_only,Formalized Input,0.74,0.71,-0.030000000000000027
+qwen3_4b,Qwen3-4B,main,main,backadj,nl_var_query,NL + Variables + Formal Query,0.52,0.52,0.0
+qwen3_4b,Qwen3-4B,main,main,backadj,nl_var_graph,NL + Variables + Graph,0.52,0.54,0.020000000000000018
+qwen3_4b,Qwen3-4B,main,main,backadj,nl_formal,NL + Formal Scaffold,0.52,0.52,0.0
+qwen3_4b,Qwen3-4B,main,main,backadj,formula_only,Formalized Input,0.52,0.5,-0.020000000000000018
+qwen3_4b,Qwen3-4B,main,main,correlation,nl_var_query,NL + Variables + Formal Query,0.65,0.58,-0.07000000000000006
+qwen3_4b,Qwen3-4B,main,main,correlation,nl_var_graph,NL + Variables + Graph,0.65,0.66,0.010000000000000009
+qwen3_4b,Qwen3-4B,main,main,correlation,nl_formal,NL + Formal Scaffold,0.65,0.56,-0.08999999999999997
+qwen3_4b,Qwen3-4B,main,main,correlation,formula_only,Formalized Input,0.65,0.59,-0.06000000000000005
+qwen3_4b,Qwen3-4B,main,main,det-counterfactual,nl_var_query,NL + Variables + Formal Query,0.5833333333333334,0.5666666666666667,-0.01666666666666672
+qwen3_4b,Qwen3-4B,main,main,det-counterfactual,nl_var_graph,NL + Variables + Graph,0.5833333333333334,0.5333333333333333,-0.050000000000000044
+qwen3_4b,Qwen3-4B,main,main,det-counterfactual,nl_formal,NL + Formal Scaffold,0.5833333333333334,0.5666666666666667,-0.01666666666666672
+qwen3_4b,Qwen3-4B,main,main,det-counterfactual,formula_only,Formalized Input,0.5833333333333334,0.5666666666666667,-0.01666666666666672
+qwen3_4b,Qwen3-4B,main,main,ett,nl_var_query,NL + Variables + Formal Query,0.4666666666666667,0.4166666666666667,-0.04999999999999999
+qwen3_4b,Qwen3-4B,main,main,ett,nl_var_graph,NL + Variables + Graph,0.4666666666666667,0.43333333333333335,-0.033333333333333326
+qwen3_4b,Qwen3-4B,main,main,ett,nl_formal,NL + Formal Scaffold,0.4666666666666667,0.4,-0.06666666666666665
+qwen3_4b,Qwen3-4B,main,main,ett,formula_only,Formalized Input,0.4666666666666667,0.4,-0.06666666666666665
+qwen3_4b,Qwen3-4B,main,main,marginal,nl_var_query,NL + Variables + Formal Query,0.53,0.52,-0.010000000000000009
+qwen3_4b,Qwen3-4B,main,main,marginal,nl_var_graph,NL + Variables + Graph,0.53,0.57,0.039999999999999925
+qwen3_4b,Qwen3-4B,main,main,marginal,nl_formal,NL + Formal Scaffold,0.53,0.57,0.039999999999999925
+qwen3_4b,Qwen3-4B,main,main,marginal,formula_only,Formalized Input,0.53,0.56,0.030000000000000027
+qwen3_4b,Qwen3-4B,main,main,nde,nl_var_query,NL + Variables + Formal Query,0.6166666666666667,0.6666666666666666,0.04999999999999993
+qwen3_4b,Qwen3-4B,main,main,nde,nl_var_graph,NL + Variables + Graph,0.6166666666666667,0.6333333333333333,0.016666666666666607
+qwen3_4b,Qwen3-4B,main,main,nde,nl_formal,NL + Formal Scaffold,0.6166666666666667,0.6166666666666667,0.0
+qwen3_4b,Qwen3-4B,main,main,nde,formula_only,Formalized Input,0.6166666666666667,0.5333333333333333,-0.08333333333333337
+qwen3_4b,Qwen3-4B,main,main,nie,nl_var_query,NL + Variables + Formal Query,0.6166666666666667,0.55,-0.06666666666666665
+qwen3_4b,Qwen3-4B,main,main,nie,nl_var_graph,NL + Variables + Graph,0.6166666666666667,0.55,-0.06666666666666665
+qwen3_4b,Qwen3-4B,main,main,nie,nl_formal,NL + Formal Scaffold,0.6166666666666667,0.5166666666666667,-0.09999999999999998
+qwen3_4b,Qwen3-4B,main,main,nie,formula_only,Formalized Input,0.6166666666666667,0.5833333333333334,-0.033333333333333326
+qwen3_4b,Qwen3-4B,stress,anticommonsense,ate,nl_formal,NL + Formal Scaffold,0.5,0.4,-0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,anticommonsense,backadj,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,anticommonsense,collider_bias,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,anticommonsense,correlation,nl_formal,NL + Formal Scaffold,0.5,0.4,-0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,anticommonsense,det-counterfactual,nl_formal,NL + Formal Scaffold,0.4,0.6,0.19999999999999996
+qwen3_4b,Qwen3-4B,stress,anticommonsense,ett,nl_formal,NL + Formal Scaffold,0.3,0.4,0.10000000000000003
+qwen3_4b,Qwen3-4B,stress,anticommonsense,exp_away,nl_formal,NL + Formal Scaffold,0.5,0.6,0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,anticommonsense,marginal,nl_formal,NL + Formal Scaffold,0.4,0.5,0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,anticommonsense,nde,nl_formal,NL + Formal Scaffold,0.6,0.6,0.0
+qwen3_4b,Qwen3-4B,stress,anticommonsense,nie,nl_formal,NL + Formal Scaffold,0.5,0.7,0.19999999999999996
+qwen3_4b,Qwen3-4B,stress,commonsense,ate,nl_formal,NL + Formal Scaffold,0.6,0.7,0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,commonsense,backadj,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,commonsense,collider_bias,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,commonsense,correlation,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,commonsense,det-counterfactual,nl_formal,NL + Formal Scaffold,0.4,0.7,0.29999999999999993
+qwen3_4b,Qwen3-4B,stress,commonsense,ett,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,commonsense,exp_away,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,commonsense,marginal,nl_formal,NL + Formal Scaffold,0.6,0.6,0.0
+qwen3_4b,Qwen3-4B,stress,commonsense,nde,nl_formal,NL + Formal Scaffold,0.5,0.4,-0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,commonsense,nie,nl_formal,NL + Formal Scaffold,0.5,0.6,0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,easy,ate,nl_formal,NL + Formal Scaffold,0.5,0.4,-0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,easy,backadj,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,easy,collider_bias,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,easy,correlation,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,easy,det-counterfactual,nl_formal,NL + Formal Scaffold,0.7,0.6,-0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,easy,ett,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,easy,exp_away,nl_formal,NL + Formal Scaffold,0.5,0.6,0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,easy,marginal,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,easy,nde,nl_formal,NL + Formal Scaffold,0.4,0.3,-0.10000000000000003
+qwen3_4b,Qwen3-4B,stress,easy,nie,nl_formal,NL + Formal Scaffold,0.3,0.4,0.10000000000000003
+qwen3_4b,Qwen3-4B,stress,hard,ate,nl_formal,NL + Formal Scaffold,0.6,0.5,-0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,hard,backadj,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,hard,collider_bias,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,hard,correlation,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,hard,det-counterfactual,nl_formal,NL + Formal Scaffold,0.4,0.4,0.0
+qwen3_4b,Qwen3-4B,stress,hard,ett,nl_formal,NL + Formal Scaffold,0.5,0.6,0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,hard,exp_away,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,hard,marginal,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,hard,nde,nl_formal,NL + Formal Scaffold,0.4,0.5,0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,hard,nie,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,noncommonsense,ate,nl_formal,NL + Formal Scaffold,0.5,0.4,-0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,noncommonsense,backadj,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,noncommonsense,collider_bias,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,noncommonsense,correlation,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,noncommonsense,det-counterfactual,nl_formal,NL + Formal Scaffold,0.4,0.5,0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,noncommonsense,ett,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,noncommonsense,exp_away,nl_formal,NL + Formal Scaffold,0.4,0.5,0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,noncommonsense,marginal,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,stress,noncommonsense,nde,nl_formal,NL + Formal Scaffold,0.6,0.5,-0.09999999999999998
+qwen3_4b,Qwen3-4B,stress,noncommonsense,nie,nl_formal,NL + Formal Scaffold,0.4,0.5,0.09999999999999998
+qwen3_8b,Qwen3-8B,main,main,ate,nl_var_query,NL + Variables + Formal Query,0.76,0.7,-0.06000000000000005
+qwen3_8b,Qwen3-8B,main,main,ate,nl_var_graph,NL + Variables + Graph,0.76,0.77,0.010000000000000009
+qwen3_8b,Qwen3-8B,main,main,ate,nl_formal,NL + Formal Scaffold,0.76,0.71,-0.050000000000000044
+qwen3_8b,Qwen3-8B,main,main,ate,formula_only,Formalized Input,0.76,0.7,-0.06000000000000005
+qwen3_8b,Qwen3-8B,main,main,backadj,nl_var_query,NL + Variables + Formal Query,0.44,0.47,0.02999999999999997
+qwen3_8b,Qwen3-8B,main,main,backadj,nl_var_graph,NL + Variables + Graph,0.44,0.48,0.03999999999999998
+qwen3_8b,Qwen3-8B,main,main,backadj,nl_formal,NL + Formal Scaffold,0.44,0.45,0.010000000000000009
+qwen3_8b,Qwen3-8B,main,main,backadj,formula_only,Formalized Input,0.44,0.5,0.06
+qwen3_8b,Qwen3-8B,main,main,correlation,nl_var_query,NL + Variables + Formal Query,0.55,0.54,-0.010000000000000009
+qwen3_8b,Qwen3-8B,main,main,correlation,nl_var_graph,NL + Variables + Graph,0.55,0.57,0.019999999999999907
+qwen3_8b,Qwen3-8B,main,main,correlation,nl_formal,NL + Formal Scaffold,0.55,0.55,0.0
+qwen3_8b,Qwen3-8B,main,main,correlation,formula_only,Formalized Input,0.55,0.55,0.0
+qwen3_8b,Qwen3-8B,main,main,det-counterfactual,nl_var_query,NL + Variables + Formal Query,0.5333333333333333,0.5333333333333333,0.0
+qwen3_8b,Qwen3-8B,main,main,det-counterfactual,nl_var_graph,NL + Variables + Graph,0.5333333333333333,0.5,-0.033333333333333326
+qwen3_8b,Qwen3-8B,main,main,det-counterfactual,nl_formal,NL + Formal Scaffold,0.5333333333333333,0.5,-0.033333333333333326
+qwen3_8b,Qwen3-8B,main,main,det-counterfactual,formula_only,Formalized Input,0.5333333333333333,0.6,0.06666666666666665
+qwen3_8b,Qwen3-8B,main,main,ett,nl_var_query,NL + Variables + Formal Query,0.45,0.45,0.0
+qwen3_8b,Qwen3-8B,main,main,ett,nl_var_graph,NL + Variables + Graph,0.45,0.4666666666666667,0.016666666666666663
+qwen3_8b,Qwen3-8B,main,main,ett,nl_formal,NL + Formal Scaffold,0.45,0.43333333333333335,-0.016666666666666663
+qwen3_8b,Qwen3-8B,main,main,ett,formula_only,Formalized Input,0.45,0.4166666666666667,-0.033333333333333326
+qwen3_8b,Qwen3-8B,main,main,marginal,nl_var_query,NL + Variables + Formal Query,0.53,0.49,-0.040000000000000036
+qwen3_8b,Qwen3-8B,main,main,marginal,nl_var_graph,NL + Variables + Graph,0.53,0.53,0.0
+qwen3_8b,Qwen3-8B,main,main,marginal,nl_formal,NL + Formal Scaffold,0.53,0.56,0.030000000000000027
+qwen3_8b,Qwen3-8B,main,main,marginal,formula_only,Formalized Input,0.53,0.51,-0.020000000000000018
+qwen3_8b,Qwen3-8B,main,main,nde,nl_var_query,NL + Variables + Formal Query,0.6333333333333333,0.5833333333333334,-0.04999999999999993
+qwen3_8b,Qwen3-8B,main,main,nde,nl_var_graph,NL + Variables + Graph,0.6333333333333333,0.5333333333333333,-0.09999999999999998
+qwen3_8b,Qwen3-8B,main,main,nde,nl_formal,NL + Formal Scaffold,0.6333333333333333,0.55,-0.08333333333333326
+qwen3_8b,Qwen3-8B,main,main,nde,formula_only,Formalized Input,0.6333333333333333,0.6,-0.033333333333333326
+qwen3_8b,Qwen3-8B,main,main,nie,nl_var_query,NL + Variables + Formal Query,0.5666666666666667,0.5,-0.06666666666666665
+qwen3_8b,Qwen3-8B,main,main,nie,nl_var_graph,NL + Variables + Graph,0.5666666666666667,0.5666666666666667,0.0
+qwen3_8b,Qwen3-8B,main,main,nie,nl_formal,NL + Formal Scaffold,0.5666666666666667,0.55,-0.016666666666666607
+qwen3_8b,Qwen3-8B,main,main,nie,formula_only,Formalized Input,0.5666666666666667,0.5166666666666667,-0.04999999999999993
+qwen3_8b,Qwen3-8B,stress,anticommonsense,ate,nl_formal,NL + Formal Scaffold,0.4,0.3,-0.10000000000000003
+qwen3_8b,Qwen3-8B,stress,anticommonsense,backadj,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_8b,Qwen3-8B,stress,anticommonsense,collider_bias,nl_formal,NL + Formal Scaffold,0.3,0.5,0.2
+qwen3_8b,Qwen3-8B,stress,anticommonsense,correlation,nl_formal,NL + Formal Scaffold,0.3,0.5,0.2
+qwen3_8b,Qwen3-8B,stress,anticommonsense,det-counterfactual,nl_formal,NL + Formal Scaffold,0.5,0.8,0.30000000000000004
+qwen3_8b,Qwen3-8B,stress,anticommonsense,ett,nl_formal,NL + Formal Scaffold,0.5,0.3,-0.2
+qwen3_8b,Qwen3-8B,stress,anticommonsense,exp_away,nl_formal,NL + Formal Scaffold,0.8,0.3,-0.5
+qwen3_8b,Qwen3-8B,stress,anticommonsense,marginal,nl_formal,NL + Formal Scaffold,0.6,0.5,-0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,anticommonsense,nde,nl_formal,NL + Formal Scaffold,0.5,0.4,-0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,anticommonsense,nie,nl_formal,NL + Formal Scaffold,0.5,0.4,-0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,commonsense,ate,nl_formal,NL + Formal Scaffold,0.4,0.7,0.29999999999999993
+qwen3_8b,Qwen3-8B,stress,commonsense,backadj,nl_formal,NL + Formal Scaffold,0.6,0.5,-0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,commonsense,collider_bias,nl_formal,NL + Formal Scaffold,0.4,0.5,0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,commonsense,correlation,nl_formal,NL + Formal Scaffold,0.6,0.6,0.0
+qwen3_8b,Qwen3-8B,stress,commonsense,det-counterfactual,nl_formal,NL + Formal Scaffold,0.3,0.8,0.5
+qwen3_8b,Qwen3-8B,stress,commonsense,ett,nl_formal,NL + Formal Scaffold,0.6,0.6,0.0
+qwen3_8b,Qwen3-8B,stress,commonsense,exp_away,nl_formal,NL + Formal Scaffold,0.6,0.5,-0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,commonsense,marginal,nl_formal,NL + Formal Scaffold,0.7,0.4,-0.29999999999999993
+qwen3_8b,Qwen3-8B,stress,commonsense,nde,nl_formal,NL + Formal Scaffold,0.4,0.5,0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,commonsense,nie,nl_formal,NL + Formal Scaffold,0.6,0.6,0.0
+qwen3_8b,Qwen3-8B,stress,easy,ate,nl_formal,NL + Formal Scaffold,0.4,0.4,0.0
+qwen3_8b,Qwen3-8B,stress,easy,backadj,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_8b,Qwen3-8B,stress,easy,collider_bias,nl_formal,NL + Formal Scaffold,0.4,0.5,0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,easy,correlation,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_8b,Qwen3-8B,stress,easy,det-counterfactual,nl_formal,NL + Formal Scaffold,0.7,0.6,-0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,easy,ett,nl_formal,NL + Formal Scaffold,0.4,0.7,0.29999999999999993
+qwen3_8b,Qwen3-8B,stress,easy,exp_away,nl_formal,NL + Formal Scaffold,0.6,0.6,0.0
+qwen3_8b,Qwen3-8B,stress,easy,marginal,nl_formal,NL + Formal Scaffold,0.4,0.5,0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,easy,nde,nl_formal,NL + Formal Scaffold,0.6,0.5,-0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,easy,nie,nl_formal,NL + Formal Scaffold,0.6,0.5,-0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,hard,ate,nl_formal,NL + Formal Scaffold,0.3,0.4,0.10000000000000003
+qwen3_8b,Qwen3-8B,stress,hard,backadj,nl_formal,NL + Formal Scaffold,0.6,0.5,-0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,hard,collider_bias,nl_formal,NL + Formal Scaffold,0.4,0.5,0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,hard,correlation,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_8b,Qwen3-8B,stress,hard,det-counterfactual,nl_formal,NL + Formal Scaffold,0.4,0.5,0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,hard,ett,nl_formal,NL + Formal Scaffold,0.6,0.6,0.0
+qwen3_8b,Qwen3-8B,stress,hard,exp_away,nl_formal,NL + Formal Scaffold,0.3,0.4,0.10000000000000003
+qwen3_8b,Qwen3-8B,stress,hard,marginal,nl_formal,NL + Formal Scaffold,0.5,0.3,-0.2
+qwen3_8b,Qwen3-8B,stress,hard,nde,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_8b,Qwen3-8B,stress,hard,nie,nl_formal,NL + Formal Scaffold,0.5,0.4,-0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,noncommonsense,ate,nl_formal,NL + Formal Scaffold,0.2,0.2,0.0
+qwen3_8b,Qwen3-8B,stress,noncommonsense,backadj,nl_formal,NL + Formal Scaffold,0.7,0.6,-0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,noncommonsense,collider_bias,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_8b,Qwen3-8B,stress,noncommonsense,correlation,nl_formal,NL + Formal Scaffold,0.5,0.6,0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,noncommonsense,det-counterfactual,nl_formal,NL + Formal Scaffold,0.4,0.5,0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,noncommonsense,ett,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
+qwen3_8b,Qwen3-8B,stress,noncommonsense,exp_away,nl_formal,NL + Formal Scaffold,0.3,0.5,0.2
+qwen3_8b,Qwen3-8B,stress,noncommonsense,marginal,nl_formal,NL + Formal Scaffold,0.7,0.5,-0.19999999999999996
+qwen3_8b,Qwen3-8B,stress,noncommonsense,nde,nl_formal,NL + Formal Scaffold,0.6,0.5,-0.09999999999999998
+qwen3_8b,Qwen3-8B,stress,noncommonsense,nie,nl_formal,NL + Formal Scaffold,0.5,0.3,-0.2

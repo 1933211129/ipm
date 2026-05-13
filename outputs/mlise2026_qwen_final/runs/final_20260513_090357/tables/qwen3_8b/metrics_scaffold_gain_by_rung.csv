@@ -1,0 +1,7 @@
+model,model_display_name,diagnostic_source,dataset_variant,rung,scaffold_mode,scaffold_condition,nl_accuracy,scaffold_accuracy,scaffold_gain
+qwen3_8b,Qwen3-8B,main,main,1,nl_formal,NL + Formal Scaffold,0.54,0.555,0.015000000000000013
+qwen3_8b,Qwen3-8B,main,main,1,formula_only,Formalized Input,0.54,0.53,-0.010000000000000009
+qwen3_8b,Qwen3-8B,main,main,2,nl_formal,NL + Formal Scaffold,0.6,0.58,-0.020000000000000018
+qwen3_8b,Qwen3-8B,main,main,2,formula_only,Formalized Input,0.6,0.6,0.0
+qwen3_8b,Qwen3-8B,main,main,3,nl_formal,NL + Formal Scaffold,0.5458333333333333,0.5083333333333333,-0.03749999999999998
+qwen3_8b,Qwen3-8B,main,main,3,formula_only,Formalized Input,0.5458333333333333,0.5333333333333333,-0.012499999999999956

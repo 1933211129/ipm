@@ -1,0 +1,3 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,n_pairs,n_valid_pairs,strict_ccc,correct_flip_rate,wrong_flip_rate,invariant_yes_rate,invariant_no_rate,scca,signed_ccc,invalid_pair_rate
+qwen3_4b,Qwen3-4B,main,main,nl_var_graph,358,358,0.45251396648044695,0.3463687150837989,0.10614525139664804,0.23184357541899442,0.31564245810055863,0.3463687150837989,0.24022346368715086,0.0
+qwen3_4b,Qwen3-4B,main,main,nl_var_query,358,358,0.39664804469273746,0.2709497206703911,0.12569832402234637,0.1787709497206704,0.4245810055865922,0.2709497206703911,0.1452513966480447,0.0

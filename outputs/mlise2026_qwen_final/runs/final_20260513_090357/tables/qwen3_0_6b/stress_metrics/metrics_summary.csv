@@ -1,0 +1,11 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,prompt_condition,n,accuracy,parse_rate,invalid_rate,latency_sec
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,Natural Language,100,0.5,1.0,0.0,0.014800305426178965
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,NL + Formal Scaffold,100,0.5,1.0,0.0,0.010816679805866442
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,Natural Language,100,0.5,1.0,0.0,0.011805998506315519
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,NL + Formal Scaffold,100,0.5,1.0,0.0,0.011002393931848929
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl,Natural Language,100,0.5,1.0,0.0,0.011248573666380253
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,NL + Formal Scaffold,100,0.5,1.0,0.0,0.011210046490014065
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,Natural Language,100,0.5,1.0,0.0,0.01098053833207814
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,NL + Formal Scaffold,100,0.5,1.0,0.0,0.010916855426330585
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,Natural Language,100,0.5,1.0,0.0,0.0118361096305307
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,NL + Formal Scaffold,100,0.5,1.0,0.0,0.012030755799496546

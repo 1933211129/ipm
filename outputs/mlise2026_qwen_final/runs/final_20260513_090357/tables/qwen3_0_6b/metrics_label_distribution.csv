@@ -1,0 +1,5 @@
+model,dataset_variant,prompt_mode,parsed_label,n
+qwen3_0_6b,main,formula_only,no,4
+qwen3_0_6b,main,formula_only,yes,636
+qwen3_0_6b,main,nl,yes,640
+qwen3_0_6b,main,nl_formal,yes,640

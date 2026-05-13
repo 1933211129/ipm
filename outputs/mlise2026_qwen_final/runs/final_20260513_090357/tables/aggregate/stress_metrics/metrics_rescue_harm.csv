@@ -1,0 +1,16 @@
+model,model_display_name,diagnostic_source,dataset_variant,n_valid_pairs,rescue_count,harm_count,rescue_rate_over_nl_failures,harm_rate_over_nl_successes,net_rescue_rate
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,100,0,0,0.0,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,100,0,0,0.0,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,100,0,0,0.0,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,100,0,0,0.0,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,100,0,0,0.0,0.0,0.0
+qwen3_4b,Qwen3-4B,stress,anticommonsense,100,9,4,0.16981132075471697,0.0851063829787234,0.05
+qwen3_4b,Qwen3-4B,stress,commonsense,100,7,3,0.14285714285714285,0.058823529411764705,0.04
+qwen3_4b,Qwen3-4B,stress,easy,100,4,5,0.0784313725490196,0.10204081632653061,-0.01
+qwen3_4b,Qwen3-4B,stress,hard,100,5,4,0.09803921568627451,0.08163265306122448,0.01
+qwen3_4b,Qwen3-4B,stress,noncommonsense,100,7,6,0.1346153846153846,0.125,0.01
+qwen3_8b,Qwen3-8B,stress,anticommonsense,100,14,18,0.27450980392156865,0.3673469387755102,-0.04
+qwen3_8b,Qwen3-8B,stress,commonsense,100,17,12,0.3541666666666667,0.23076923076923078,0.05
+qwen3_8b,Qwen3-8B,stress,easy,100,12,10,0.24489795918367346,0.19607843137254902,0.02
+qwen3_8b,Qwen3-8B,stress,hard,100,19,19,0.35185185185185186,0.41304347826086957,0.0
+qwen3_8b,Qwen3-8B,stress,noncommonsense,100,10,12,0.19607843137254902,0.24489795918367346,-0.02

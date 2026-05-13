@@ -1,0 +1,2 @@
+model,model_display_name,diagnostic_source,dataset_variant,n_valid_pairs,rescue_count,harm_count,rescue_rate_over_nl_failures,harm_rate_over_nl_successes,net_rescue_rate
+qwen3_8b,Qwen3-8B,main,main,640,23,33,0.08185053380782918,0.09192200557103064,-0.015625
