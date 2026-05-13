@@ -1311,6 +1311,8 @@ def set_chinese_plot_style() -> None:
     sns = sns_module
     sns.set_theme(style="whitegrid")
     plt.rcParams["font.sans-serif"] = [
+        "WenQuanYi Micro Hei",
+        "WenQuanYi Zen Hei",
         "Noto Sans CJK SC",
         "Source Han Sans SC",
         "PingFang SC",
