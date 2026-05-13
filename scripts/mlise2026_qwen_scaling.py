@@ -322,8 +322,9 @@ def build_user_prompt(base_prompt: str, mode: str) -> str:
     if mode == "structured":
         return (
             "You are solving a causal reasoning question.\n"
-            "Identify the relevant causal relation and answer the question.\n"
-            "Return the final answer exactly in this format: Final answer: yes/no\n\n"
+            "Silently identify the relevant causal relation before answering.\n"
+            "Do not write reasoning, variables, bullets, or any explanation.\n"
+            "Return exactly one line and nothing else: Final answer: yes/no\n\n"
             f"Question:\n{base_prompt}"
         )
     raise ValueError(f"未知 prompt mode: {mode}")
