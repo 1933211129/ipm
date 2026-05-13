@@ -104,24 +104,26 @@ $$
 
 ## 形式成分消融
 
-表 2 展示了四种形式输入条件相对 `nl` 的 scaffold gain。`nl_var_graph` 在 Qwen3-4B 与 Qwen3-8B 上均与 `nl` 持平，而 `nl_var_query`、`nl_formal` 和 `formula_only` 更容易造成下降。这说明负效应并非来自所有形式信息；causal graph 成分本身没有表现出明显伤害，formal query 或完整形式包装更可能引入额外解析负担。
+表 2 不只报告总体 scaffold gain，还报告相对 `nl` 的预测变化率、rescue 和 harm。这样做是必要的，因为仅看总体 accuracy 会掩盖样本级迁移。例如，`nl_var_graph` 在 Qwen3-4B 和 Qwen3-8B 上的总体 gain 都是 0，但这并不表示输出完全不变；Qwen3-4B 有 46 个样本改变预测，rescue=23、harm=23，Qwen3-8B 有 48 个样本改变预测，rescue=24、harm=24。也就是说，causal graph 成分造成了可见的样本级扰动，只是正负效应在总体 accuracy 上完全抵消。
 
-**表 2. 形式成分消融结果**
+相比之下，`nl_var_query`、`nl_formal` 和 `formula_only` 的扰动更容易呈现负净效应。Qwen3-4B 的 `nl_var_query` 改变 49 个样本，其中 rescue=16、harm=33；`nl_formal` 改变 69 个样本，其中 rescue=26、harm=43；`formula_only` 改变 92 个样本，其中 rescue=36、harm=56。Qwen3-8B 中也出现类似模式，尤其 `formula_only` 改变 127 个样本。消融实验的意义因此不是证明某个形式成分能提高总体 accuracy，而是定位不同形式成分对答案稳定性的扰动方式：graph 更接近“抵消型扰动”，formal query 和完整形式包装更接近“负净效应扰动”。
 
-| model_display_name | scaffold_mode | nl_accuracy | scaffold_accuracy | scaffold_gain |
-| ------------------ | ------------- | ----------- | ----------------- | ------------- |
-| Qwen3-0.6B         | nl_var_query  | 0.5000      | 0.5000            | 0.0000        |
-| Qwen3-0.6B         | nl_var_graph  | 0.5000      | 0.5000            | 0.0000        |
-| Qwen3-0.6B         | nl_formal     | 0.5000      | 0.5000            | 0.0000        |
-| Qwen3-0.6B         | formula_only  | 0.5000      | 0.5062            | 0.0062        |
-| Qwen3-4B           | nl_var_query  | 0.5953      | 0.5687            | -0.0266       |
-| Qwen3-4B           | nl_var_graph  | 0.5953      | 0.5953            | 0.0000        |
-| Qwen3-4B           | nl_formal     | 0.5953      | 0.5687            | -0.0266       |
-| Qwen3-4B           | formula_only  | 0.5953      | 0.5641            | -0.0312       |
-| Qwen3-8B           | nl_var_query  | 0.5609      | 0.5375            | -0.0234       |
-| Qwen3-8B           | nl_var_graph  | 0.5609      | 0.5609            | 0.0000        |
-| Qwen3-8B           | nl_formal     | 0.5609      | 0.5453            | -0.0156       |
-| Qwen3-8B           | formula_only  | 0.5609      | 0.5531            | -0.0078       |
+**表 2. 形式成分消融的样本级诊断结果**
+
+| Model | Condition | Accuracy | ΔAcc vs. nl | Prediction Change Rate | Rescue | Harm | Net Rescue Rate |
+|---|---|---:|---:|---:|---:|---:|---:|
+| Qwen3-0.6B | nl_var_query | 0.5000 | 0.0000 | 0.0000 | 0 | 0 | 0.0000 |
+| Qwen3-0.6B | nl_var_graph | 0.5000 | 0.0000 | 0.0000 | 0 | 0 | 0.0000 |
+| Qwen3-0.6B | nl_formal | 0.5000 | 0.0000 | 0.0000 | 0 | 0 | 0.0000 |
+| Qwen3-0.6B | formula_only | 0.5062 | 0.0062 | 0.0062 | 4 | 0 | 0.0062 |
+| Qwen3-4B | nl_var_query | 0.5687 | -0.0266 | 0.0766 | 16 | 33 | -0.0266 |
+| Qwen3-4B | nl_var_graph | 0.5953 | 0.0000 | 0.0719 | 23 | 23 | 0.0000 |
+| Qwen3-4B | nl_formal | 0.5687 | -0.0266 | 0.1078 | 26 | 43 | -0.0266 |
+| Qwen3-4B | formula_only | 0.5641 | -0.0312 | 0.1438 | 36 | 56 | -0.0312 |
+| Qwen3-8B | nl_var_query | 0.5375 | -0.0234 | 0.1359 | 36 | 51 | -0.0234 |
+| Qwen3-8B | nl_var_graph | 0.5609 | 0.0000 | 0.0750 | 24 | 24 | 0.0000 |
+| Qwen3-8B | nl_formal | 0.5453 | -0.0156 | 0.0875 | 23 | 33 | -0.0156 |
+| Qwen3-8B | formula_only | 0.5531 | -0.0078 | 0.1984 | 61 | 66 | -0.0078 |
 
 ![Figure 2. Scaffold Gain by Model](../figures/02_scaffold_gain_by_model.png)
 
