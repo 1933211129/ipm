@@ -1,0 +1,17 @@
+model,model_display_name,sample_mode,prompt_mode,query_type,n,accuracy,parse_rate
+qwen3_0_6b,Qwen3-0.6B,formal,direct,ate,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,direct,backadj,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,direct,correlation,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,direct,det-counterfactual,60,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,direct,ett,60,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,direct,marginal,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,direct,nde,60,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,direct,nie,60,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,structured,ate,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,structured,backadj,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,structured,correlation,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,structured,det-counterfactual,60,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,structured,ett,60,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,structured,marginal,100,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,structured,nde,60,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,structured,nie,60,0.5,1.0

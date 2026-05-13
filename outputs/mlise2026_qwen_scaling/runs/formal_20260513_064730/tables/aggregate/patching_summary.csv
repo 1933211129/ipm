@@ -1,0 +1,2 @@
+model,model_display_name,n_rows,n_pairs,positive_pair_ratio,mean_recovery,max_recovery
+qwen3_4b,Qwen3-4B,576,16,0.9375,1.181640625,4.28125

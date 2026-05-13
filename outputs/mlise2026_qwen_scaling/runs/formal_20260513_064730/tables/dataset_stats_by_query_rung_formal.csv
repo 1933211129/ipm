@@ -1,0 +1,9 @@
+query_type,rung,no,yes
+ate,2,50,50
+backadj,2,50,50
+correlation,1,50,50
+det-counterfactual,3,30,30
+ett,3,30,30
+marginal,1,50,50
+nde,3,30,30
+nie,3,30,30

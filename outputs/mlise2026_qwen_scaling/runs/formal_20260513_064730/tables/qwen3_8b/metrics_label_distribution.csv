@@ -1,0 +1,5 @@
+model,model_display_name,prompt_mode,parsed_label,n
+qwen3_8b,Qwen3-8B,direct,no,400
+qwen3_8b,Qwen3-8B,direct,yes,240
+qwen3_8b,Qwen3-8B,structured,no,369
+qwen3_8b,Qwen3-8B,structured,yes,271

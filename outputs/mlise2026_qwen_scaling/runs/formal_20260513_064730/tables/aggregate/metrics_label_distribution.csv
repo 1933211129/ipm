@@ -1,0 +1,11 @@
+model,model_display_name,prompt_mode,parsed_label,n
+qwen3_0_6b,Qwen3-0.6B,direct,yes,640
+qwen3_0_6b,Qwen3-0.6B,structured,yes,640
+qwen3_4b,Qwen3-4B,direct,no,302
+qwen3_4b,Qwen3-4B,direct,yes,338
+qwen3_4b,Qwen3-4B,structured,no,269
+qwen3_4b,Qwen3-4B,structured,yes,371
+qwen3_8b,Qwen3-8B,direct,no,400
+qwen3_8b,Qwen3-8B,direct,yes,240
+qwen3_8b,Qwen3-8B,structured,no,369
+qwen3_8b,Qwen3-8B,structured,yes,271

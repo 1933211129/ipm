@@ -1,0 +1,7 @@
+model,model_display_name,sample_mode,prompt_mode,rung,n,accuracy,parse_rate
+qwen3_0_6b,Qwen3-0.6B,formal,direct,1,200,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,direct,2,200,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,direct,3,240,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,structured,1,200,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,structured,2,200,0.5,1.0
+qwen3_0_6b,Qwen3-0.6B,formal,structured,3,240,0.5,1.0
