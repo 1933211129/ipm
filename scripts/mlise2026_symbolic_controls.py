@@ -320,6 +320,128 @@ def paired_bootstrap(eval_df: pd.DataFrame, seed: int, n_bootstrap: int) -> pd.D
     return pd.DataFrame(rows)
 
 
+def _bootstrap_diff(diff: np.ndarray, rng: np.random.Generator, n_bootstrap: int) -> tuple[float, float, float]:
+    if len(diff) == 0 or n_bootstrap <= 0:
+        return np.nan, np.nan, np.nan
+    boots = np.array([diff[rng.integers(0, len(diff), len(diff))].mean() for _ in range(n_bootstrap)])
+    lo, hi = np.quantile(boots, [0.025, 0.975])
+    return float(lo), float(hi), float((boots <= 0).mean())
+
+
+def paired_accuracy_breakdown(
+    eval_df: pd.DataFrame,
+    group_cols: list[str],
+    seed: int,
+    n_bootstrap: int,
+) -> pd.DataFrame:
+    rng = np.random.default_rng(seed)
+    rows = []
+    comparisons = [
+        ("symbolic_matched_binary_score", "nl_binary_score"),
+        ("symbolic_matched_binary_score", "symbolic_shuffled_binary_score"),
+        ("symbolic_shuffled_binary_score", "nl_binary_score"),
+    ]
+    base_cols = ["sample_id", "is_correct", "parsed_label"]
+    for group_key, group in eval_df.groupby(group_cols, dropna=False):
+        if not isinstance(group_key, tuple):
+            group_key = (group_key,)
+        group_payload = dict(zip(group_cols, group_key))
+        for left, right in comparisons:
+            ldf = group[group["prompt_mode"] == left][base_cols].rename(
+                columns={"is_correct": "left_correct", "parsed_label": "left_prediction"}
+            )
+            rdf = group[group["prompt_mode"] == right][base_cols].rename(
+                columns={"is_correct": "right_correct", "parsed_label": "right_prediction"}
+            )
+            merged = ldf.merge(rdf, on="sample_id", how="inner")
+            if merged.empty:
+                continue
+            left_correct = merged["left_correct"].astype(float).to_numpy()
+            right_correct = merged["right_correct"].astype(float).to_numpy()
+            diff = left_correct - right_correct
+            lo, hi, p_le_0 = _bootstrap_diff(diff, rng, n_bootstrap)
+            rows.append(
+                {
+                    **group_payload,
+                    "condition_a": left,
+                    "condition_b": right,
+                    "n": int(len(merged)),
+                    "acc_a": float(left_correct.mean()),
+                    "acc_b": float(right_correct.mean()),
+                    "paired_accuracy_diff": float(diff.mean()),
+                    "ci_low": lo,
+                    "ci_high": hi,
+                    "p_diff_le_0": p_le_0,
+                    "prediction_change_rate": float((merged["left_prediction"] != merged["right_prediction"]).mean()),
+                    "a_correct_b_wrong_rate": float(((merged["left_correct"] == 1) & (merged["right_correct"] == 0)).mean()),
+                    "a_wrong_b_correct_rate": float(((merged["left_correct"] == 0) & (merged["right_correct"] == 1)).mean()),
+                }
+            )
+    return pd.DataFrame(rows)
+
+
+def paired_contrast_metric_bootstrap(
+    pair_df: pd.DataFrame,
+    group_cols: list[str],
+    seed: int,
+    n_bootstrap: int,
+) -> pd.DataFrame:
+    if pair_df.empty:
+        return pd.DataFrame()
+    valid = pair_df[~pair_df["has_invalid"].astype(bool)].copy()
+    if valid.empty:
+        return pd.DataFrame()
+    left_id = valid[["left_sample_id", "right_sample_id"]].min(axis=1).astype(str)
+    right_id = valid[["left_sample_id", "right_sample_id"]].max(axis=1).astype(str)
+    valid["pair_key"] = left_id + "::" + right_id
+    valid["signed_contrast"] = valid["correct_flip"].astype(float) - valid["wrong_flip"].astype(float)
+    metric_cols = {
+        "strict_ccc": "strict_contrast_consistent",
+        "scca": "correct_flip",
+        "wrong_flip": "wrong_flip",
+        "signed_ccc": "signed_contrast",
+    }
+    comparisons = [
+        ("symbolic_matched_binary_score", "nl_binary_score"),
+        ("symbolic_matched_binary_score", "symbolic_shuffled_binary_score"),
+        ("symbolic_shuffled_binary_score", "nl_binary_score"),
+    ]
+    rng = np.random.default_rng(seed)
+    rows = []
+    id_cols = group_cols + ["story_id", "formal_form", "pair_key"]
+    for group_key, group in valid.groupby(group_cols, dropna=False):
+        if not isinstance(group_key, tuple):
+            group_key = (group_key,)
+        group_payload = dict(zip(group_cols, group_key))
+        for left, right in comparisons:
+            ldf = group[group["prompt_mode"] == left][id_cols + list(metric_cols.values())]
+            rdf = group[group["prompt_mode"] == right][id_cols + list(metric_cols.values())]
+            merged = ldf.merge(rdf, on=id_cols, how="inner", suffixes=("_a", "_b"))
+            if merged.empty:
+                continue
+            for metric_name, col in metric_cols.items():
+                a = merged[f"{col}_a"].astype(float).to_numpy()
+                b = merged[f"{col}_b"].astype(float).to_numpy()
+                diff = a - b
+                lo, hi, p_le_0 = _bootstrap_diff(diff, rng, n_bootstrap)
+                rows.append(
+                    {
+                        **group_payload,
+                        "condition_a": left,
+                        "condition_b": right,
+                        "metric": metric_name,
+                        "n_pairs": int(len(merged)),
+                        "metric_a": float(a.mean()),
+                        "metric_b": float(b.mean()),
+                        "paired_metric_diff": float(diff.mean()),
+                        "ci_low": lo,
+                        "ci_high": hi,
+                        "p_diff_le_0": p_le_0,
+                    }
+                )
+    return pd.DataFrame(rows)
+
+
 def aggregate(paths: base.RunPaths, args: argparse.Namespace) -> None:
     eval_df = read_control_tables(paths, args.sample_size)
     if eval_df.empty:
@@ -332,8 +454,54 @@ def aggregate(paths: base.RunPaths, args: argparse.Namespace) -> None:
     summary.to_csv(aggregate_dir / "symbolic_control_summary.csv", index=False)
     by_query = metrics["metrics_by_query"].copy()
     by_query.to_csv(aggregate_dir / "symbolic_control_by_query.csv", index=False)
+    ccc = metrics["metrics_ccc"].copy()
+    ccc_by_query = metrics["metrics_ccc_by_query"].copy()
+    ccc_pairs = metrics["metrics_ccc_pairs"].copy()
+    ccc.to_csv(aggregate_dir / "symbolic_control_ccc.csv", index=False)
+    ccc_by_query.to_csv(aggregate_dir / "symbolic_control_ccc_by_query.csv", index=False)
+    ccc_pairs.to_csv(aggregate_dir / "symbolic_control_ccc_pairs.csv", index=False)
+    metrics["metrics_scaffold_gain_by_query"].to_csv(
+        aggregate_dir / "symbolic_control_scaffold_gain_by_query.csv",
+        index=False,
+    )
+    metrics["metrics_accuracy_bootstrap_ci"].to_csv(
+        aggregate_dir / "symbolic_control_accuracy_bootstrap_ci.csv",
+        index=False,
+    )
+    metrics["metrics_ccc_bootstrap_ci"].to_csv(
+        aggregate_dir / "symbolic_control_ccc_bootstrap_ci.csv",
+        index=False,
+    )
     paired = paired_bootstrap(eval_df, args.seed, max(1, args.bootstrap))
     paired.to_csv(aggregate_dir / "symbolic_control_paired_bootstrap.csv", index=False)
+    paired_by_query = paired_accuracy_breakdown(
+        eval_df,
+        ["model", "model_display_name", "query_type"],
+        args.seed + 11,
+        max(1, args.bootstrap),
+    )
+    paired_by_query.to_csv(aggregate_dir / "symbolic_control_paired_by_query.csv", index=False)
+    paired_by_rung = paired_accuracy_breakdown(
+        eval_df,
+        ["model", "model_display_name", "rung"],
+        args.seed + 17,
+        max(1, args.bootstrap),
+    )
+    paired_by_rung.to_csv(aggregate_dir / "symbolic_control_paired_by_rung.csv", index=False)
+    contrast_paired = paired_contrast_metric_bootstrap(
+        ccc_pairs,
+        ["model", "model_display_name"],
+        args.seed + 23,
+        max(1, args.bootstrap),
+    )
+    contrast_paired.to_csv(aggregate_dir / "symbolic_control_contrast_paired_bootstrap.csv", index=False)
+    contrast_by_query = paired_contrast_metric_bootstrap(
+        ccc_pairs,
+        ["model", "model_display_name", "query_type"],
+        args.seed + 29,
+        max(1, args.bootstrap),
+    )
+    contrast_by_query.to_csv(aggregate_dir / "symbolic_control_contrast_by_query_bootstrap.csv", index=False)
     lines = [
         "# MLISE 2026 Symbolic Control 实验结果",
         "",
@@ -352,6 +520,18 @@ def aggregate(paths: base.RunPaths, args: argparse.Namespace) -> None:
         "## Query Type 结果",
         "",
         base.table_to_markdown(by_query.round(4)),
+        "",
+        "## Strict Contrast 指标",
+        "",
+        base.table_to_markdown(ccc.round(4)),
+        "",
+        "## Strict Contrast 配对 Bootstrap",
+        "",
+        base.table_to_markdown(contrast_paired.round(4)),
+        "",
+        "## Query Type 配对差异",
+        "",
+        base.table_to_markdown(paired_by_query.round(4)),
         "",
     ]
     (paths.report_dir / f"MLISE2026_symbolic_control_{args.sample_size}_report.md").write_text(
