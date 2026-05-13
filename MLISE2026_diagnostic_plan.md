@@ -1,5 +1,7 @@
 # MLISE 2026 诊断版实验方案：从规模效应转向因果失败瓶颈定位
 
+> 2026-05-13 更新：诊断版基础实验已经完成。下一步不更换模型或数据集，优先增加轻量增强实验包，包括 query type/rung 细粒度分析、CCC 正误翻转分解、输入条件转移矩阵、stress robustness、bootstrap CI、formal component ablation 和 patching control。详细执行边界与步骤见 [MLISE2026_enhancement_action_plan.md](/Users/xiaokong/task/2026/IPM/MLISE2026_enhancement_action_plan.md)。
+
 ## 1. 为什么调整方案
 
 上一轮 `Qwen3-0.6B / 4B / 8B × CLadder` 正式实验说明，原来的“模型规模越大，因果一致性越强”主线支撑不足：
