@@ -1,0 +1,17 @@
+model,model_display_name,query_type,nl_accuracy_calibration,symbolic_accuracy_calibration,query_router_selects_symbolic,confidence_router_margin_delta_threshold,n_calibration
+qwen3_4b,Qwen3-4B,ate,0.7578125,0.8203125,True,-inf,256
+qwen3_4b,Qwen3-4B,backadj,0.55859375,0.6015625,True,-inf,256
+qwen3_4b,Qwen3-4B,correlation,0.55078125,0.54296875,False,8.245970726013184,256
+qwen3_4b,Qwen3-4B,det-counterfactual,0.6015625,0.59765625,False,-1.4893455505371094,256
+qwen3_4b,Qwen3-4B,ett,0.45703125,0.453125,False,-5.75353828072548,256
+qwen3_4b,Qwen3-4B,marginal,0.51953125,0.50390625,False,1.5140380859375,256
+qwen3_4b,Qwen3-4B,nde,0.6171875,0.546875,False,3.4822118282318115,256
+qwen3_4b,Qwen3-4B,nie,0.6015625,0.6171875,True,-1.0002402067184448,256
+qwen3_8b,Qwen3-8B,ate,0.796875,0.8359375,True,-6.001575089991093,256
+qwen3_8b,Qwen3-8B,backadj,0.44921875,0.45703125,True,-inf,256
+qwen3_8b,Qwen3-8B,correlation,0.51953125,0.5,False,-2.75048828125,256
+qwen3_8b,Qwen3-8B,det-counterfactual,0.5703125,0.58984375,True,-0.74468994140625,256
+qwen3_8b,Qwen3-8B,ett,0.3984375,0.3046875,False,14.01416015625,256
+qwen3_8b,Qwen3-8B,marginal,0.51171875,0.53125,True,-0.999237060546875,256
+qwen3_8b,Qwen3-8B,nde,0.64453125,0.6875,True,-1.50341796875,256
+qwen3_8b,Qwen3-8B,nie,0.58203125,0.58984375,True,3.11910367012024,256

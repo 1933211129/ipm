@@ -1,0 +1,7 @@
+model,dataset_variant,prompt_mode,parsed_label,n
+qwen3_8b,symbolic_control,nl_binary_score,no,933
+qwen3_8b,symbolic_control,nl_binary_score,yes,1115
+qwen3_8b,symbolic_control,symbolic_matched_binary_score,no,881
+qwen3_8b,symbolic_control,symbolic_matched_binary_score,yes,1167
+qwen3_8b,symbolic_control,symbolic_shuffled_binary_score,no,1396
+qwen3_8b,symbolic_control,symbolic_shuffled_binary_score,yes,652

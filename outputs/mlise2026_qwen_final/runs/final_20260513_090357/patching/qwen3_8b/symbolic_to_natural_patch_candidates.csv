@@ -1,0 +1,243 @@
+sample_id,model,model_display_name,nl_correct,nl_invalid,nl_parsed_label,symbolic_correct,symbolic_invalid,symbolic_parsed_label,prompt,label,reasoning,rung,query_type,graph_id,story_id,question_property,formal_form,dataset_variant,subset,diagnostic_source
+16780,qwen3_8b,Qwen3-8B,0,False,yes,1,False,no,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Unobserved confounders has a direct effect on having a sister and cholesterol level. Treatment assignment has a direct effect on having a sister. Having a sister has a direct effect on cholesterol level. Unobserved confounders is unobserved. For patients not assigned the drug treatment, the probability of low cholesterol is 54%. For patients assigned the drug treatment, the probability of low cholesterol is 51%. For patients not assigned the drug treatment, the probability of having a sister is 65%. For patients assigned the drug treatment, the probability of having a sister is 31%. Will having a sister decrease the chance of low cholesterol?",no,"Let V2 = treatment assignment; V1 = unobserved confounders; X = having a sister; Y = cholesterol level.
+V1->X,V2->X,V1->Y,X->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+[P(Y=1|V2=1)-P(Y=1|V2=0)]/[P(X=1|V2=1)-P(X=1|V2=0)]
+P(Y=1 | V2=0) = 0.54
+P(Y=1 | V2=1) = 0.51
+P(X=1 | V2=0) = 0.65
+P(X=1 | V2=1) = 0.31
+(0.51 - 0.54) / (0.31 - 0.65) = 0.09
+0.09 > 0",2,ate,IV,cholesterol,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],main,formal,main
+7551,qwen3_8b,Qwen3-8B,0,False,no,1,False,yes,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Personality has a direct effect on relationship status. Appearance has a direct effect on relationship status. Method 1: We look directly at how personality correlates with appearance in general. Method 2: We look at this correlation case by case according to relationship status. To understand how personality affects appearance, is it more correct to use the Method 1 than Method 2?",yes,"nan
+nan
+nan
+nan
+nan
+nan
+nan",2,backadj,collision,man_in_relationship,hard,[backdoor adjustment set for Y given X],main,formal,main
+16750,qwen3_8b,Qwen3-8B,0,False,yes,1,False,no,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Unobserved confounders has a direct effect on having a sister and cholesterol level. Treatment assignment has a direct effect on having a sister. Having a sister has a direct effect on cholesterol level. Unobserved confounders is unobserved. The overall probability of having a sister is 20%. The probability of not having a sister and low cholesterol is 65%. The probability of having a sister and low cholesterol is 14%. Is the chance of low cholesterol larger when observing having a sister?",no,"Let V2 = treatment assignment; V1 = unobserved confounders; X = having a sister; Y = cholesterol level.
+V1->X,V2->X,V1->Y,X->Y
+P(Y | X)
+P(X = 1, Y = 1)/P(X = 1) - P(X = 0, Y = 1)/P(X = 0)
+P(X=1=1) = 0.20
+P(Y=1, X=0=1) = 0.65
+P(Y=1, X=1=1) = 0.14
+0.14/0.20 - 0.65/0.80 = -0.10
+-0.10 < 0",1,correlation,IV,cholesterol,anticommonsense,P(Y | X),main,formal,main
+20639,qwen3_8b,Qwen3-8B,0,False,no,1,False,yes,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on smoking and peanut allergy. Smoking has a direct effect on tar deposit. Tar deposit has a direct effect on peanut allergy. Gender is unobserved. We know that female causes smoking. smoking causes high tar deposit. female and high tar deposit causes being allergic to peanuts. We observed the person is non-female. Would the person is not allergic to peanuts if smoking instead of nonsmoking?",yes,"Let V1 = gender; X = smoking; V3 = tar deposit; Y = peanut allergy.
+V1->X,X->V3,V1->Y,V3->Y
+Y_{X=1} = 0 | V1=0
+Solve for Y, given the evidence and the action
+V1 = 0
+X = V1
+V3 = X
+Y = V1 and V3
+Y = 0 = 0 and 1
+1",3,det-counterfactual,frontdoor,smoking_frontdoor,anticommonsense,Y_{X=1} = 0 | V1=0,main,formal,main
+4912,qwen3_8b,Qwen3-8B,0,False,yes,1,False,no,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Husband has a direct effect on wife and alarm clock. Wife has a direct effect on alarm clock. For husbands that don't set the alarm, the probability of ringing alarm is 79%. For husbands that set the alarm, the probability of ringing alarm is 31%. For husbands that set the alarm, would it be less likely to see ringing alarm if the husband had not set the alarm?",no,"Let X = husband; V2 = wife; Y = alarm clock.
+X->V2,X->Y,V2->Y
+E[Y_{X = 1} - Y_{X = 0} | X = 1]
+P(Y=1|X=1) - P(Y=1|X=0)
+P(Y=1 | X=0) = 0.79
+P(Y=1 | X=1) = 0.31
+0.31 - 0.79 = -0.48
+-0.48 < 0",3,ett,mediation,alarm,hard,E[Y_{X = 1} - Y_{X = 0} | X = 1],main,formal,main
+23422,qwen3_8b,Qwen3-8B,0,False,no,1,False,yes,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Jyka has a direct effect on kwox. Yupt has a direct effect on kwox. The overall probability of jyka is 53%. For those who are not jyka, the probability of kwox is 13%. For those who are jyka, the probability of kwox is 25%. Is kwox less likely than not kwox overall?",yes,"Let V2 = yupt; X = jyka; Y = kwox.
+X->Y,V2->Y
+P(Y)
+P(Y | X=1)*P(X=1) + P(Y | X=0)*P(X=0)
+P(X=1) = 0.53
+P(Y=1 | X=0) = 0.13
+P(Y=1 | X=1) = 0.25
+0.53*0.25 - 0.47*0.13 = 0.20
+0.20 > 0",1,marginal,fork,nonsense5,nonsense,P(Y),main,formal,main
+19236,qwen3_8b,Qwen3-8B,0,False,no,1,False,yes,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Having a sister has a direct effect on infant's birth weight and infant mortality. Health condition has a direct effect on infant's birth weight and infant mortality. Infant's birth weight has a direct effect on infant mortality. Health condition is unobserved. For infants who do not have a sister and low infant birth weight, the probability of high infant mortality is 42%. For infants who do not have a sister and normal infant birth weight, the probability of high infant mortality is 69%. For infants who have a sister and low infant birth weight, the probability of high infant mortality is 20%. For infants who have a sister and normal infant birth weight, the probability of high infant mortality is 44%. For infants who do not have a sister and with poor health, the probability of normal infant birth weight is 62%. For infants who do not have a sister and with good health, the probability of normal infant birth weight is 39%. For infants who have a sister and with poor health, the probability of normal infant birth weight is 95%. For infants who have a sister and with good health, the probability of normal infant birth weight is 72%. The overall probability of good health is 3%. If we disregard the mediation effect through infant's birth weight, would having a sister negatively affect infant mortality?",yes,"Let V2 = health condition; X = having a sister; V3 = infant's birth weight; Y = infant mortality.
+X->V3,V2->V3,X->Y,V2->Y,V3->Y
+E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]
+\sum_{V3=v} [\sum_{V2=k}[P(Y=1|X=1,V3=v)-P(Y=1|X=0,V3=v)]*P(V3=v|X=0,V2=k)*P(V2=k)]
+P(Y=1 | X=0, V3=0) = 0.42
+P(Y=1 | X=0, V3=1) = 0.69
+P(Y=1 | X=1, V3=0) = 0.20
+P(Y=1 | X=1, V3=1) = 0.44
+P(V3=1 | X=0, V2=0) = 0.62
+P(V3=1 | X=0, V2=1) = 0.39
+P(V3=1 | X=1, V2=0) = 0.95
+P(V3=1 | X=1, V2=1) = 0.72
+P(V2=1) = 0.03
+0.03 * (0.44 - 0.20) * 0.39 + 0.97 * (0.69 - 0.42) * 0.95 = -0.24
+-0.24 < 0",3,nde,arrowhead,smoke_birthWeight,anticommonsense,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",main,formal,main
+20959,qwen3_8b,Qwen3-8B,0,False,no,1,False,yes,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Swoy has a direct effect on rixq and xevu. Rixq has a direct effect on zuph. Zuph has a direct effect on xevu. Swoy is unobserved. For those who are not rixq, the probability of zuph is 50%. For those who are rixq, the probability of zuph is 5%. For those who are not rixq and are not zuph, the probability of xevu is 40%. For those who are not rixq and are zuph, the probability of xevu is 53%. For those who are rixq and are not zuph, the probability of xevu is 38%. For those who are rixq and are zuph, the probability of xevu is 51%. The overall probability of rixq is 20%. Does rixq negatively affect xevu through zuph?",yes,"Let V1 = swoy; X = rixq; V3 = zuph; Y = xevu.
+V1->X,X->V3,V1->Y,V3->Y
+E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]
+\sum_{V3 = v} [P(V3 = v|X = 1) - P(V3 = v|X = 0)] * [\sum_{X = h} P(Y = 1|X = h,V3 = v)*P(X = h)]
+P(V3=1 | X=0) = 0.50
+P(V3=1 | X=1) = 0.05
+P(Y=1 | X=0, V3=0) = 0.40
+P(Y=1 | X=0, V3=1) = 0.53
+P(Y=1 | X=1, V3=0) = 0.38
+P(Y=1 | X=1, V3=1) = 0.51
+P(X=1) = 0.20
+0.05 - 0.50 * (0.51 * 0.20 + 0.53 * 0.80)= -0.06
+-0.06 < 0",3,nie,frontdoor,nonsense0,nonsense,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]",main,formal,main
+15133,qwen3_8b,Qwen3-8B,0,False,yes,1,False,no,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Poverty has a direct effect on liking spicy food and cholera. Water company has a direct effect on liking spicy food. Liking spicy food has a direct effect on cholera. Poverty is unobserved. For people served by a local water company, the probability of cholera contraction is 72%. For people served by a global water company, the probability of cholera contraction is 61%. For people served by a local water company, the probability of liking spicy food is 6%. For people served by a global water company, the probability of liking spicy food is 42%. Will liking spicy food increase the chance of cholera contraction?",no,"Let V2 = water company; V1 = poverty; X = liking spicy food; Y = cholera.
+V1->X,V2->X,V1->Y,X->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+[P(Y=1|V2=1)-P(Y=1|V2=0)]/[P(X=1|V2=1)-P(X=1|V2=0)]
+P(Y=1 | V2=0) = 0.72
+P(Y=1 | V2=1) = 0.61
+P(X=1 | V2=0) = 0.06
+P(X=1 | V2=1) = 0.42
+(0.61 - 0.72) / (0.42 - 0.06) = -0.29
+-0.29 < 0",2,ate,IV,water_cholera,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],main,formal,main
+27833,qwen3_8b,Qwen3-8B,0,False,yes,1,False,no,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Yupt has a direct effect on zupj. Muvq has a direct effect on zupj. Method 1: We look at how yupt correlates with muvq case by case according to zupj. Method 2: We look directly at how yupt correlates with muvq in general. To understand how yupt affects muvq, is it more correct to use the Method 1 than Method 2?",no,"nan
+nan
+nan
+nan
+nan
+nan
+nan",2,backadj,collision,nonsense6,nonsense,[backdoor adjustment set for Y given X],main,formal,main
+11248,qwen3_8b,Qwen3-8B,0,False,no,1,False,yes,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Solar eclipse has a direct effect on Alice arriving to school. Traffic has a direct effect on Alice arriving to school. The overall probability of solar eclipse is 81%. The probability of no solar eclipse and arriving to school on time is 11%. The probability of solar eclipse and arriving to school on time is 19%. Is the chance of arriving to school on time smaller when observing solar eclipse?",yes,"Let V2 = traffic; X = solar eclipse; Y = Alice arriving to school.
+X->Y,V2->Y
+P(Y | X)
+P(X = 1, Y = 1)/P(X = 1) - P(X = 0, Y = 1)/P(X = 0)
+P(X=1=1) = 0.81
+P(Y=1, X=0=1) = 0.11
+P(Y=1, X=1=1) = 0.19
+0.19/0.81 - 0.11/0.19 = -0.32
+-0.32 < 0",1,correlation,fork,getting_late,anticommonsense,P(Y | X),main,formal,main
+30145,qwen3_8b,Qwen3-8B,0,False,no,1,False,yes,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Yomx has a direct effect on xevu. Gwet has a direct effect on xevu. We know that yomx and gwet causes xevu. We observed an individual is not gwet. Would an individual is not xevu if not yomx instead of yomx?",yes,"Let V2 = gwet; X = yomx; Y = xevu.
+X->Y,V2->Y
+Y_{X=0} = 0 | V2=0
+Solve for Y, given the evidence and the action
+V2 = 0
+Y = X and V2
+Y = 0 = 0 and 0
+1",3,det-counterfactual,fork,nonsense3,nonsense,Y_{X=0} = 0 | V2=0,main,formal,main
+21006,qwen3_8b,Qwen3-8B,0,False,no,1,False,yes,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Swoy has a direct effect on rixq and xevu. Rixq has a direct effect on zuph. Zuph has a direct effect on xevu. Swoy is unobserved. For those who are not rixq and are not zuph, the probability of xevu is 92%. For those who are not rixq and are zuph, the probability of xevu is 52%. For those who are rixq and are not zuph, the probability of xevu is 93%. For those who are rixq and are zuph, the probability of xevu is 52%. For those who are not rixq, the probability of zuph is 93%. For those who are rixq, the probability of zuph is 31%. For those who are rixq, would it be less likely to see xevu if the individual was not rixq?",yes,"Let V1 = swoy; X = rixq; V3 = zuph; Y = xevu.
+V1->X,X->V3,V1->Y,V3->Y
+E[Y_{X = 1} - Y_{X = 0} | X = 1]
+\sum_{V3=v}P(Y=1|X=1,V3=v)*[P(V3=v|X=1)-P(V3=v|X=0)]
+P(Y=1 | X=0, V3=0) = 0.92
+P(Y=1 | X=0, V3=1) = 0.52
+P(Y=1 | X=1, V3=0) = 0.93
+P(Y=1 | X=1, V3=1) = 0.52
+P(V3=1 | X=0) = 0.93
+P(V3=1 | X=1) = 0.31
+0.52 * (0.31 - 0.93) + 0.52 * (0.69 - 0.07) = 0.26
+0.26 > 0",3,ett,frontdoor,nonsense0,nonsense,E[Y_{X = 1} - Y_{X = 0} | X = 1],main,formal,main
+4197,qwen3_8b,Qwen3-8B,0,False,no,1,False,yes,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on smoking and lung cancer. Smoking has a direct effect on tar deposit. Tar deposit has a direct effect on lung cancer. Gender is unobserved. The overall probability of smoking is 63%. For nonsmokers, the probability of lung cancer is 57%. For smokers, the probability of lung cancer is 53%. Is lung cancer more likely than absence of lung cancer overall?",yes,"Let V1 = gender; X = smoking; V3 = tar deposit; Y = lung cancer.
+V1->X,X->V3,V1->Y,V3->Y
+P(Y)
+P(Y | X=1)*P(X=1) + P(Y | X=0)*P(X=0)
+P(X=1) = 0.63
+P(Y=1 | X=0) = 0.57
+P(Y=1 | X=1) = 0.53
+0.63*0.53 - 0.37*0.57 = 0.55
+0.55 > 0",1,marginal,frontdoor,smoking_frontdoor,easy,P(Y),main,formal,main
+19297,qwen3_8b,Qwen3-8B,0,False,no,1,False,yes,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Having a sister has a direct effect on infant's birth weight and infant mortality. Health condition has a direct effect on infant's birth weight and infant mortality. Infant's birth weight has a direct effect on infant mortality. Health condition is unobserved. For infants who do not have a sister and low infant birth weight, the probability of high infant mortality is 62%. For infants who do not have a sister and normal infant birth weight, the probability of high infant mortality is 91%. For infants who have a sister and low infant birth weight, the probability of high infant mortality is 19%. For infants who have a sister and normal infant birth weight, the probability of high infant mortality is 49%. For infants who do not have a sister and with poor health, the probability of normal infant birth weight is 62%. For infants who do not have a sister and with good health, the probability of normal infant birth weight is 38%. For infants who have a sister and with poor health, the probability of normal infant birth weight is 94%. For infants who have a sister and with good health, the probability of normal infant birth weight is 58%. The overall probability of good health is 11%. If we disregard the mediation effect through infant's birth weight, would having a sister negatively affect infant mortality?",yes,"Let V2 = health condition; X = having a sister; V3 = infant's birth weight; Y = infant mortality.
+X->V3,V2->V3,X->Y,V2->Y,V3->Y
+E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]
+\sum_{V3=v} [\sum_{V2=k}[P(Y=1|X=1,V3=v)-P(Y=1|X=0,V3=v)]*P(V3=v|X=0,V2=k)*P(V2=k)]
+P(Y=1 | X=0, V3=0) = 0.62
+P(Y=1 | X=0, V3=1) = 0.91
+P(Y=1 | X=1, V3=0) = 0.19
+P(Y=1 | X=1, V3=1) = 0.49
+P(V3=1 | X=0, V2=0) = 0.62
+P(V3=1 | X=0, V2=1) = 0.38
+P(V3=1 | X=1, V2=0) = 0.94
+P(V3=1 | X=1, V2=1) = 0.58
+P(V2=1) = 0.11
+0.11 * (0.49 - 0.19) * 0.38 + 0.89 * (0.91 - 0.62) * 0.94 = -0.44
+-0.44 < 0",3,nde,arrowhead,smoke_birthWeight,anticommonsense,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",main,formal,main
+25923,qwen3_8b,Qwen3-8B,0,False,yes,1,False,no,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Kwox has a direct effect on muvy and swoq. Swoq has a direct effect on kwoz. Muvy has a direct effect on kwoz. For those who are not kwox, the probability of kwoz is 46%. For those who are kwox, the probability of kwoz is 22%. Does kwox positively affect kwoz through swoq and muvy?",no,"Let X = kwox; V3 = muvy; V2 = swoq; Y = kwoz.
+X->V3,X->V2,V2->Y,V3->Y
+E[Y_{X=0, V2=1, V3=1} - Y_{X=0, V2=0, V3=0}]
+P(Y=1|X=1) - P(Y=1|X=0)
+P(Y=1 | X=0) = 0.46
+P(Y=1 | X=1) = 0.22
+0.22 - 0.46 = -0.24
+-0.24 < 0",3,nie,diamond,nonsense1,nonsense,"E[Y_{X=0, V2=1, V3=1} - Y_{X=0, V2=0, V3=0}]",main,formal,main
+18982,qwen3_8b,Qwen3-8B,0,False,yes,1,False,no,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Kidney stone size has a direct effect on ability to speak english and recovery. Ability to speak english has a direct effect on recovery. For patients who have small kidney stones and do not speak english, the probability of recovery is 86%. For patients who have small kidney stones and speak english, the probability of recovery is 75%. For patients who have large kidney stones and do not speak english, the probability of recovery is 19%. For patients who have large kidney stones and speak english, the probability of recovery is 9%. The overall probability of large kidney stone is 55%. Will speaking english increase the chance of recovery?",no,"Let V1 = kidney stone size; X = ability to speak english; Y = recovery.
+V1->X,V1->Y,X->Y
+E[Y | do(X = 1)] - E[Y | do(X = 0)]
+\sum_{V1=v} P(V1=v)*[P(Y=1|V1=v,X=1) - P(Y=1|V1=v, X=0)]
+P(Y=1 | V1=0, X=0) = 0.86
+P(Y=1 | V1=0, X=1) = 0.75
+P(Y=1 | V1=1, X=0) = 0.19
+P(Y=1 | V1=1, X=1) = 0.09
+P(V1=1) = 0.55
+0.45 * (0.75 - 0.86) + 0.55 * (0.09 - 0.19) = -0.10
+-0.10 < 0",2,ate,confounding,simpson_kidneystone,anticommonsense,E[Y | do(X = 1)] - E[Y | do(X = 0)],main,formal,main
+16696,qwen3_8b,Qwen3-8B,0,False,yes,1,False,no,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Ability to speak english has a direct effect on fame. Talent has a direct effect on fame. Method 1: We look at how ability to speak english correlates with talent case by case according to fame. Method 2: We look directly at how ability to speak english correlates with talent in general. To understand how ability to speak english affects talent, is it more correct to use the Method 1 than Method 2?",no,"nan
+nan
+nan
+nan
+nan
+nan
+nan",2,backadj,collision,celebrity,anticommonsense,[backdoor adjustment set for Y given X],main,formal,main
+7040,qwen3_8b,Qwen3-8B,0,False,yes,1,False,no,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Gender has a direct effect on department competitiveness and admission status. Department competitiveness has a direct effect on admission status. The overall probability of male gender is 12%. The probability of non-male gender and admission acceptance is 65%. The probability of male gender and admission acceptance is 4%. Is the chance of admission acceptance larger when observing male gender?",no,"Let X = gender; V2 = department competitiveness; Y = admission status.
+X->V2,X->Y,V2->Y
+P(Y | X)
+P(X = 1, Y = 1)/P(X = 1) - P(X = 0, Y = 1)/P(X = 0)
+P(X=1=1) = 0.12
+P(Y=1, X=0=1) = 0.65
+P(Y=1, X=1=1) = 0.04
+0.04/0.12 - 0.65/0.88 = -0.40
+-0.40 < 0",1,correlation,mediation,gender_admission,hard,P(Y | X),main,formal,main
+29979,qwen3_8b,Qwen3-8B,0,False,yes,1,False,no,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Xevo has a direct effect on tijw and tijv. Tijv has a direct effect on gyzp. Tijw has a direct effect on gyzp. We know that xevo causes tijv and tijw. tijv or tijw causes gyzp. Would an individual is not gyzp if xevo instead of not xevo?",no,"Let X = xevo; V3 = tijw; V2 = tijv; Y = gyzp.
+X->V3,X->V2,V2->Y,V3->Y
+Y_{X=1} = 0 | 
+Solve for Y, given the evidence and the action
+V2 = X
+V3 = V2
+Y = V2 or V3
+Y = [1] = 1 or 1
+0",3,det-counterfactual,diamond,nonsense2,nonsense,Y_{X=1} = 0 | ,main,formal,main
+957,qwen3_8b,Qwen3-8B,0,False,no,1,False,yes,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Tanning salon treatment has a direct effect on skin. Going to the beach has a direct effect on skin. For people not using tanning salon treatments, the probability of tanned skin is 21%. For people who went to tanning salons, the probability of tanned skin is 72%. For people who went to tanning salons, would it be less likely to see tanned skin if the person had not had a tanning salon treatment?",yes,"Let V2 = going to the beach; X = tanning salon treatment; Y = skin.
+X->Y,V2->Y
+E[Y_{X = 1} - Y_{X = 0} | X = 1]
+P(Y=1|X=1) - P(Y=1|X=0)
+P(Y=1 | X=0) = 0.21
+P(Y=1 | X=1) = 0.72
+0.72 - 0.21 = 0.51
+0.51 > 0",3,ett,fork,getting_tanned,easy,E[Y_{X = 1} - Y_{X = 0} | X = 1],main,formal,main
+2143,qwen3_8b,Qwen3-8B,0,False,no,1,False,yes,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Encouragement level has a direct effect on studying habit and exam score. Studying habit has a direct effect on exam score. The overall probability of encouragement is 45%. For students who are not encouraged, the probability of high exam score is 21%. For students who are encouraged, the probability of high exam score is 87%. Is high exam score less likely than low exam score overall?",yes,"Let X = encouragement level; V2 = studying habit; Y = exam score.
+X->V2,X->Y,V2->Y
+P(Y)
+P(Y | X=1)*P(X=1) + P(Y | X=0)*P(X=0)
+P(X=1) = 0.45
+P(Y=1 | X=0) = 0.21
+P(Y=1 | X=1) = 0.87
+0.45*0.87 - 0.55*0.21 = 0.50
+0.50 > 0",1,marginal,mediation,encouagement_program,easy,P(Y),main,formal,main
+13621,qwen3_8b,Qwen3-8B,0,False,no,1,False,yes,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Ability to speak english has a direct effect on diabetes and lifespan. Smoking has a direct effect on diabetes and lifespan. Diabetes has a direct effect on lifespan. Smoking is unobserved. For people who do not speak english and without diabetes, the probability of long lifespan is 75%. For people who do not speak english and with diabetes, the probability of long lifespan is 57%. For people who speak english and without diabetes, the probability of long lifespan is 56%. For people who speak english and with diabetes, the probability of long lifespan is 19%. For people who do not speak english and nonsmokers, the probability of having diabetes is 27%. For people who do not speak english and smokers, the probability of having diabetes is 8%. For people who speak english and nonsmokers, the probability of having diabetes is 54%. For people who speak english and smokers, the probability of having diabetes is 73%. The overall probability of smoker is 43%. If we disregard the mediation effect through diabetes, would ability to speak english negatively affect lifespan?",yes,"Let V2 = smoking; X = ability to speak english; V3 = diabetes; Y = lifespan.
+X->V3,V2->V3,X->Y,V2->Y,V3->Y
+E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]
+\sum_{V3=v} [\sum_{V2=k}[P(Y=1|X=1,V3=v)-P(Y=1|X=0,V3=v)]*P(V3=v|X=0,V2=k)*P(V2=k)]
+P(Y=1 | X=0, V3=0) = 0.75
+P(Y=1 | X=0, V3=1) = 0.57
+P(Y=1 | X=1, V3=0) = 0.56
+P(Y=1 | X=1, V3=1) = 0.19
+P(V3=1 | X=0, V2=0) = 0.27
+P(V3=1 | X=0, V2=1) = 0.08
+P(V3=1 | X=1, V2=0) = 0.54
+P(V3=1 | X=1, V2=1) = 0.73
+P(V2=1) = 0.43
+0.43 * (0.19 - 0.56) * 0.08 + 0.57 * (0.57 - 0.75) * 0.54 = -0.24
+-0.24 < 0",3,nde,arrowhead,obesity_mortality,anticommonsense,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]",main,formal,main
+19445,qwen3_8b,Qwen3-8B,0,False,yes,1,False,no,"Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Having a brother has a direct effect on smoking and lung cancer. Pollution has a direct effect on smoking and lung cancer. Smoking has a direct effect on lung cancer. Pollution is unobserved. For people who do not have a brother and nonsmokers, the probability of lung cancer is 54%. For people who do not have a brother and smokers, the probability of lung cancer is 55%. For people who have a brother and nonsmokers, the probability of lung cancer is 69%. For people who have a brother and smokers, the probability of lung cancer is 51%. For people who do not have a brother and with low pollution, the probability of smoking is 95%. For people who do not have a brother and with high pollution, the probability of smoking is 37%. For people who have a brother and with low pollution, the probability of smoking is 58%. For people who have a brother and with high pollution, the probability of smoking is 9%. The overall probability of high pollution is 40%. Does having a brother negatively affect lung cancer through smoking?",no,"Let V2 = pollution; X = having a brother; V3 = smoking; Y = lung cancer.
+X->V3,V2->V3,X->Y,V2->Y,V3->Y
+E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]
+\sum_{V3=v} [\sum_{V2=k} P(Y=1|X=0,V3=v)*[P(V3=v|X=1,V2=k)-P(V3=v|X=0,V2=k)]*P(V2=k)]
+P(Y=1 | X=0, V3=0) = 0.54
+P(Y=1 | X=0, V3=1) = 0.55
+P(Y=1 | X=1, V3=0) = 0.69
+P(Y=1 | X=1, V3=1) = 0.51
+P(V3=1 | X=0, V2=0) = 0.95
+P(V3=1 | X=0, V2=1) = 0.37
+P(V3=1 | X=1, V2=0) = 0.58
+P(V3=1 | X=1, V2=1) = 0.09
+P(V2=1) = 0.40
+0.40 * 0.55 * (0.09 - 0.58)+ 0.60 * 0.55 * (0.37 - 0.95)= 0.08
+0.08 > 0",3,nie,arrowhead,smoking_gene_cancer,anticommonsense,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]",main,formal,main

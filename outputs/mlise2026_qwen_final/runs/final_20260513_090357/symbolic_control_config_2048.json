@@ -1,0 +1,11 @@
+{
+  "stage": "aggregate",
+  "model": "all",
+  "run_id": "final_20260513_090357",
+  "output_root": "/data/kongyb/ipm/outputs/mlise2026_qwen_final",
+  "sample_size": 2048,
+  "seed": 42,
+  "batch_size": 4,
+  "bootstrap": 1000,
+  "resume": true
+}

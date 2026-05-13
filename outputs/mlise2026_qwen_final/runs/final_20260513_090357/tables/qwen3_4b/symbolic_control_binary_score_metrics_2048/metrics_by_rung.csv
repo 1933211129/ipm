@@ -1,0 +1,10 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,rung,n,accuracy,parse_rate
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,nl_binary_score,1,512,0.53515625,1.0
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,nl_binary_score,2,512,0.658203125,1.0
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,nl_binary_score,3,1024,0.5693359375,1.0
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,symbolic_matched_binary_score,1,512,0.5234375,1.0
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,symbolic_matched_binary_score,2,512,0.7109375,1.0
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,symbolic_matched_binary_score,3,1024,0.5537109375,1.0
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,symbolic_shuffled_binary_score,1,512,0.51171875,1.0
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,symbolic_shuffled_binary_score,2,512,0.63671875,1.0
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,symbolic_shuffled_binary_score,3,1024,0.51171875,1.0

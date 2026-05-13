@@ -1,0 +1,7 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,metric,estimate,ci_low,ci_high,n_bootstrap
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,nl_binary_score,accuracy,0.5830078125,0.5615234375,0.60400390625,1000
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,symbolic_matched_binary_score,accuracy,0.58544921875,0.564453125,0.6059814453125,1000
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,symbolic_shuffled_binary_score,accuracy,0.54296875,0.521484375,0.564453125,1000
+qwen3_8b,Qwen3-8B,symbolic_control,symbolic_control,nl_binary_score,accuracy,0.55908203125,0.53612060546875,0.57911376953125,1000
+qwen3_8b,Qwen3-8B,symbolic_control,symbolic_control,symbolic_matched_binary_score,accuracy,0.56201171875,0.54052734375,0.58349609375,1000
+qwen3_8b,Qwen3-8B,symbolic_control,symbolic_control,symbolic_shuffled_binary_score,accuracy,0.533203125,0.51220703125,0.55469970703125,1000

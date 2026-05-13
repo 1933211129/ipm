@@ -1,0 +1,17 @@
+eval_set,model,model_display_name,prompt_mode,prompt_condition,n,accuracy,symbolic_selection_rate
+main_full_transfer,qwen3_4b,Qwen3-4B,always_nl,Always NL,640,0.6,0.0
+main_full_transfer,qwen3_4b,Qwen3-4B,always_symbolic,Always Symbolic,640,0.584375,1.0
+main_full_transfer,qwen3_4b,Qwen3-4B,confidence_by_query,Confidence Router,640,0.6078125,0.4609375
+main_full_transfer,qwen3_4b,Qwen3-4B,query_router,Query Router,640,0.6125,0.40625
+main_full_transfer,qwen3_8b,Qwen3-8B,always_nl,Always NL,640,0.5546875,0.0
+main_full_transfer,qwen3_8b,Qwen3-8B,always_symbolic,Always Symbolic,640,0.5828125,1.0
+main_full_transfer,qwen3_8b,Qwen3-8B,confidence_by_query,Confidence Router,640,0.5921875,0.6515625
+main_full_transfer,qwen3_8b,Qwen3-8B,query_router,Query Router,640,0.59375,0.75
+main_nonoverlap_transfer,qwen3_4b,Qwen3-4B,always_nl,Always NL,398,0.6055276381909548,0.0
+main_nonoverlap_transfer,qwen3_4b,Qwen3-4B,always_symbolic,Always Symbolic,398,0.6055276381909548,1.0
+main_nonoverlap_transfer,qwen3_4b,Qwen3-4B,confidence_by_query,Confidence Router,398,0.6155778894472361,0.5728643216080402
+main_nonoverlap_transfer,qwen3_4b,Qwen3-4B,query_router,Query Router,398,0.6180904522613065,0.535175879396985
+main_nonoverlap_transfer,qwen3_8b,Qwen3-8B,always_nl,Always NL,398,0.542713567839196,0.0
+main_nonoverlap_transfer,qwen3_8b,Qwen3-8B,always_symbolic,Always Symbolic,398,0.5753768844221105,1.0
+main_nonoverlap_transfer,qwen3_8b,Qwen3-8B,confidence_by_query,Confidence Router,398,0.5753768844221105,0.635678391959799
+main_nonoverlap_transfer,qwen3_8b,Qwen3-8B,query_router,Query Router,398,0.5804020100502513,0.6859296482412061

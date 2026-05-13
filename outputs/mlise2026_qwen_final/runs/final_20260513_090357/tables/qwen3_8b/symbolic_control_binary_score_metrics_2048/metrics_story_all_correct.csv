@@ -1,0 +1,4 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,n_stories,mean_items_per_story,story_all_correct_rate
+qwen3_8b,Qwen3-8B,symbolic_control,symbolic_control,nl_binary_score,47,43.57446808510638,0.0
+qwen3_8b,Qwen3-8B,symbolic_control,symbolic_control,symbolic_matched_binary_score,47,43.57446808510638,0.0
+qwen3_8b,Qwen3-8B,symbolic_control,symbolic_control,symbolic_shuffled_binary_score,47,43.57446808510638,0.0

@@ -1,0 +1,7 @@
+model,condition_a,condition_b,n,acc_a,acc_b,paired_gain,ci_low,ci_high,p_gain_le_0
+qwen3_4b,symbolic_matched_binary_score,nl_binary_score,2048,0.58544921875,0.5830078125,0.00244140625,-0.01563720703125,0.02198486328124999,0.432
+qwen3_4b,symbolic_matched_binary_score,symbolic_shuffled_binary_score,2048,0.58544921875,0.54296875,0.04248046875,0.02391357421875,0.060546875,0.0
+qwen3_4b,symbolic_shuffled_binary_score,nl_binary_score,2048,0.54296875,0.5830078125,-0.0400390625,-0.05909423828125,-0.02099609375,1.0
+qwen3_8b,symbolic_matched_binary_score,nl_binary_score,2048,0.56201171875,0.55908203125,0.0029296875,-0.013671875,0.02052001953124999,0.396
+qwen3_8b,symbolic_matched_binary_score,symbolic_shuffled_binary_score,2048,0.56201171875,0.533203125,0.02880859375,0.0048828125,0.05128173828124999,0.011
+qwen3_8b,symbolic_shuffled_binary_score,nl_binary_score,2048,0.533203125,0.55908203125,-0.02587890625,-0.04833984375,-0.00439453125,0.991

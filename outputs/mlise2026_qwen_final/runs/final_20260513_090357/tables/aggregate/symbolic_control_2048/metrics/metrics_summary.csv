@@ -1,0 +1,7 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,prompt_condition,n,accuracy,parse_rate,invalid_rate,latency_sec
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,nl_binary_score,NL Binary Score,2048,0.5830078125,1.0,0.0,0.013583058633400875
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,symbolic_matched_binary_score,Matched Symbolic Binary Score,2048,0.58544921875,1.0,0.0,0.02787187799287944
+qwen3_4b,Qwen3-4B,symbolic_control,symbolic_control,symbolic_shuffled_binary_score,Shuffled Symbolic Binary Score,2048,0.54296875,1.0,0.0,0.028238021176718982
+qwen3_8b,Qwen3-8B,symbolic_control,symbolic_control,nl_binary_score,NL Binary Score,2048,0.55908203125,1.0,0.0,0.02110262161471605
+qwen3_8b,Qwen3-8B,symbolic_control,symbolic_control,symbolic_matched_binary_score,Matched Symbolic Binary Score,2048,0.56201171875,1.0,0.0,0.04333765364583537
+qwen3_8b,Qwen3-8B,symbolic_control,symbolic_control,symbolic_shuffled_binary_score,Shuffled Symbolic Binary Score,2048,0.533203125,1.0,0.0,0.0439015790335588

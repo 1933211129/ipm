@@ -1,0 +1,13 @@
+{
+  "run_id": "final_20260513_090357",
+  "model": "qwen3_8b",
+  "sample_size": 2048,
+  "modes": [
+    "nl_binary_score",
+    "symbolic_matched_binary_score",
+    "symbolic_shuffled_binary_score"
+  ],
+  "batch_size": 4,
+  "bootstrap": 0,
+  "created_at": "2026-05-13 12:50:43"
+}
