@@ -1,6 +1,0 @@
-nohup: ignoring input
-Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 4311.87it/s]
-[进度] model=qwen3_4b sample=formal mode=direct 待评测=96
-'[Errno 101] Network is unreachable' thrown while requesting HEAD https://huggingface.co/Qwen/Qwen3-4B/resolve/main/config.json
-Retrying in 1s [Retry 1/5].
-[完成] 白盒 patching 完成：qwen3_4b

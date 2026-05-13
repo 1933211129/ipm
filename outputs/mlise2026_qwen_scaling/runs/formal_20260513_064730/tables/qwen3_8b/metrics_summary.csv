@@ -1,3 +1,0 @@
-model,model_display_name,sample_mode,prompt_mode,n,accuracy,parse_rate,invalid_rate,latency_sec
-qwen3_8b,Qwen3-8B,formal,direct,640,0.55,1.0,0.0,0.039928255707854986
-qwen3_8b,Qwen3-8B,formal,structured,640,0.5390625,1.0,0.0,0.03897465611989901

@@ -1,7 +1,0 @@
-model,model_display_name,sample_mode,prompt_mode,n_stories,story_all_correct_rate
-qwen3_0_6b,Qwen3-0.6B,formal,direct,47,0.02127659574468085
-qwen3_0_6b,Qwen3-0.6B,formal,structured,47,0.02127659574468085
-qwen3_4b,Qwen3-4B,formal,direct,47,0.02127659574468085
-qwen3_4b,Qwen3-4B,formal,structured,47,0.02127659574468085
-qwen3_8b,Qwen3-8B,formal,direct,47,0.02127659574468085
-qwen3_8b,Qwen3-8B,formal,structured,47,0.02127659574468085

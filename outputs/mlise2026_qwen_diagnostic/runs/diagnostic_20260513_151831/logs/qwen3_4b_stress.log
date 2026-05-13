@@ -1,6 +1,0 @@
-nohup: ignoring input
-[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
-Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights: 100%|██████████| 398/398 [00:00<00:00, 5569.68it/s]
-[进度] model=qwen3_4b source=stress mode=nl 待评测=500
-[进度] model=qwen3_4b source=stress mode=nl_formal 待评测=500
-[完成] stress split 诊断完成：qwen3_4b

@@ -1,4 +1,0 @@
-model,model_display_name,diagnostic_source,dataset_variant,n_valid_pairs,rescue_count,harm_count,rescue_rate_over_nl_failures,harm_rate_over_nl_successes,net_rescue_rate
-qwen3_0_6b,Qwen3-0.6B,main,main,640,0,0,0.0,0.0,0.0
-qwen3_4b,Qwen3-4B,main,main,640,26,43,0.10038610038610038,0.11286089238845144,-0.0265625
-qwen3_8b,Qwen3-8B,main,main,640,23,35,0.08156028368794327,0.09776536312849161,-0.01875

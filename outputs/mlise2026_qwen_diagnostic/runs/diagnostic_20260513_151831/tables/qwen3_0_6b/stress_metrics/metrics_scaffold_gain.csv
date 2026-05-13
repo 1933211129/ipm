@@ -1,6 +1,0 @@
-model,model_display_name,diagnostic_source,dataset_variant,scaffold_mode,scaffold_condition,nl_accuracy,scaffold_accuracy,scaffold_gain
-qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
-qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
-qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
-qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0
-qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,NL + Formal Scaffold,0.5,0.5,0.0

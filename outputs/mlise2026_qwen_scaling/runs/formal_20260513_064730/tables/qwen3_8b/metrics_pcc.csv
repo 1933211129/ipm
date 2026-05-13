@@ -1,7 +1,0 @@
-model,model_display_name,sample_mode,prompt_mode,transition,n,pcc,invalid_pair_rate
-qwen3_8b,Qwen3-8B,formal,direct,1→2,997,0.5285857572718154,0.0
-qwen3_8b,Qwen3-8B,formal,direct,1→3,1238,0.4983844911147011,0.0
-qwen3_8b,Qwen3-8B,formal,direct,2→3,1138,0.5026362038664324,0.0
-qwen3_8b,Qwen3-8B,formal,structured,1→2,997,0.49648946840521563,0.0
-qwen3_8b,Qwen3-8B,formal,structured,1→3,1238,0.4911147011308562,0.0
-qwen3_8b,Qwen3-8B,formal,structured,2→3,1138,0.4982425307557118,0.0

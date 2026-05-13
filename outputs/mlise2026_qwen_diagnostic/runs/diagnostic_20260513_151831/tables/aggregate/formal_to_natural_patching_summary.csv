@@ -1,2 +1,0 @@
-model,model_display_name,method,n_rows,n_samples,mean_absolute_recovery,max_absolute_recovery,mean_normalized_recovery
-qwen3_4b,Qwen3-4B,hf_last_token_formal_to_natural,576,16,-0.0224609375,3.71875,0.5156710417403121

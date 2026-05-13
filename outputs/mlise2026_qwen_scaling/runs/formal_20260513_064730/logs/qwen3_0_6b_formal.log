@@ -1,5 +1,0 @@
-nohup: ignoring input
-Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 10896.94it/s]
-[进度] model=qwen3_0_6b sample=formal mode=direct 待评测=640
-[进度] model=qwen3_0_6b sample=formal mode=structured 待评测=640
-[完成] 行为评测完成：qwen3_0_6b
