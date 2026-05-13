@@ -1,0 +1,4 @@
+model,dataset_variant,prompt_mode,parsed_label,n
+qwen3_4b,main,symbolic_solver_concise,invalid,18
+qwen3_4b,main,symbolic_solver_concise,no,417
+qwen3_4b,main,symbolic_solver_concise,yes,205

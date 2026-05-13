@@ -1,0 +1,4 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,prompt_condition,n,accuracy,parse_rate,invalid_rate,latency_sec
+qwen3_8b,Qwen3-8B,main,main,nl_binary_score,NL Binary Score,640,0.5546875,1.0,0.0,0.02132946955553052
+qwen3_8b,Qwen3-8B,main,main,nl_formal_binary_score,Formal Scaffold Binary Score,640,0.5359375,1.0,0.0,0.03014302936680906
+qwen3_8b,Qwen3-8B,main,main,symbolic_solver_concise_binary_score,Concise Symbolic Solver Binary Score,640,0.5828125,1.0,0.0,0.04302790798610658

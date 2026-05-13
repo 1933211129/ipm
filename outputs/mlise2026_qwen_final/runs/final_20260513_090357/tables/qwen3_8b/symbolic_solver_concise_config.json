@@ -1,0 +1,10 @@
+{
+  "run_id": "final_20260513_090357",
+  "model": "qwen3_8b",
+  "mode": "symbolic_solver_concise",
+  "sample_n": 640,
+  "batch_size": 2,
+  "max_new_tokens": 96,
+  "bootstrap": 0,
+  "created_at": "2026-05-13 12:27:18"
+}

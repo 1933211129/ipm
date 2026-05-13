@@ -1,0 +1,9 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,query_type,n,accuracy,parse_rate
+qwen3_4b,Qwen3-4B,main,main,symbolic_solver_concise,ate,100,0.76,0.99
+qwen3_4b,Qwen3-4B,main,main,symbolic_solver_concise,backadj,100,0.56,1.0
+qwen3_4b,Qwen3-4B,main,main,symbolic_solver_concise,correlation,100,0.6,0.96
+qwen3_4b,Qwen3-4B,main,main,symbolic_solver_concise,det-counterfactual,60,0.5333333333333333,1.0
+qwen3_4b,Qwen3-4B,main,main,symbolic_solver_concise,ett,60,0.36666666666666664,0.9666666666666667
+qwen3_4b,Qwen3-4B,main,main,symbolic_solver_concise,marginal,100,0.53,1.0
+qwen3_4b,Qwen3-4B,main,main,symbolic_solver_concise,nde,60,0.5166666666666667,0.8833333333333333
+qwen3_4b,Qwen3-4B,main,main,symbolic_solver_concise,nie,60,0.55,0.9333333333333333

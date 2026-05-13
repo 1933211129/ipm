@@ -1,0 +1,2 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,n_pairs,n_valid_pairs,strict_ccc,correct_flip_rate,wrong_flip_rate,invariant_yes_rate,invariant_no_rate,scca,signed_ccc,invalid_pair_rate
+qwen3_4b,Qwen3-4B,main,main,symbolic_solver_concise,358,338,0.46449704142011833,0.3520710059171598,0.11242603550295859,0.10059171597633136,0.4349112426035503,0.3520710059171598,0.23964497041420119,0.055865921787709494

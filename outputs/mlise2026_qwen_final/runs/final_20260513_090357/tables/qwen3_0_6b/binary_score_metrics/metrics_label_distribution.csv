@@ -1,0 +1,4 @@
+model,dataset_variant,prompt_mode,parsed_label,n
+qwen3_0_6b,main,nl_binary_score,yes,640
+qwen3_0_6b,main,nl_formal_binary_score,yes,640
+qwen3_0_6b,main,symbolic_solver_concise_binary_score,yes,640

@@ -2,217 +2,187 @@
 
 ## 实验设置
 
-本文使用 CLadder `full_v1.5_default` 构建因果推理评测子集。主评测集包含 640 个样本，覆盖 `marginal`、`correlation`、`ate`、`backadj`、`det-counterfactual`、`ett`、`nie` 和 `nde` 八类 query type。前四类 query type 各抽取 100 个样本，后四类各抽取 60 个样本，并在每个 query type 内保持 yes/no 标签平衡。鲁棒性实验使用 CLadder 的五个 stress split：`commonsense`、`anticommonsense`、`noncommonsense`、`easy` 和 `hard`，每个 split 抽取 100 个样本。
+本文在 CLadder `full_v1.5_default` 上构建平衡评测子集，共 640 个主评测样本。样本覆盖 `marginal`、`correlation`、`ate`、`backadj`、`det-counterfactual`、`ett`、`nie` 与 `nde` 八类查询，其中前四类各 100 个样本，后三阶反事实与中介类查询各 60 个样本，并在每个 query type 内保持 `yes/no` 标签平衡。评测模型为 Qwen3-0.6B、Qwen3-4B 与 Qwen3-8B，均使用服务器本地权重。所有行为实验使用贪心解码或受约束二分类打分，不引入人工修补答案。
 
-模型包括 Qwen3-0.6B、Qwen3-4B 和 Qwen3-8B。所有模型均从服务器本地权重加载，并采用确定性生成。输出解析优先匹配 `Final answer: yes/no`，其次匹配独立出现的 yes/no；无法解析的输出记为 invalid，并在 parse rate 中单独报告。
+输入条件分为三组。第一组为生成式基线，包括自然语言题干 `nl` 与加入变量、图结构和形式查询的 `nl_formal`。第二组为符号分解辅助输入 `symbolic_solver_concise`，该输入保留自然语言问题，并加入变量映射、因果图、形式查询、公式模板和概率事实，同时删除最终数值比较与最终答案。第三组为二分类似然打分条件，对 `yes` 和 `no` 两个候选答案进行条件 log-likelihood 比较，分别得到 `nl_binary_score`、`nl_formal_binary_score` 与 `symbolic_solver_concise_binary_score`。
 
-输入条件包括五种形式：`nl` 使用原始自然语言题干；`nl_var_query` 在自然语言题干后加入变量映射和 formal query；`nl_var_graph` 加入变量映射和 causal graph；`nl_formal` 同时加入变量映射、causal graph 和 formal query；`formula_only` 保留任务必要的事实条件、变量映射、因果图、formal query 与问题句。所有输入条件均不提供 oracle label 或完整推导步骤。
+## 指标定义
 
-## 评价指标
-
-给定模型 $m$、输入条件 $c$、样本集合 $D=\{(x_i,y_i)\}_{i=1}^{N}$，其中 $y_i\in\{\mathrm{yes},\mathrm{no}\}$，模型解析后的预测为 $\hat{y}_{i}^{m,c}$。Accuracy 定义为：
+给定模型 $m$、输入条件 $c$ 和样本集合 $D=\{(x_i,y_i)\}_{i=1}^{N}$，其中 $y_i\in\{\mathrm{yes},\mathrm{no}\}$。模型解析后的预测为 $\hat{y}_i^{(m,c)}$。准确率定义为：
 
 $$
-\mathrm{Acc}(m,c)=\frac{1}{N}\sum_{i=1}^{N}\mathbf{1}\left[\hat{y}_{i}^{m,c}=y_i\right].
+\mathrm{Acc}(m,c)=\frac{1}{N}\sum_{i=1}^N \mathbf{1}\left[\hat{y}_i^{(m,c)}=y_i\right].
 $$
 
-形式脚手架收益定义为某一形式输入条件相对自然语言条件的准确率差：
+形式脚手架或干预条件相对自然语言条件的收益定义为：
 
 $$
-\Delta_{\mathrm{scaffold}}(m,c)=\mathrm{Acc}(m,c)-\mathrm{Acc}(m,\mathrm{nl}).
+\Delta_{\mathrm{Acc}}(m,c)=\mathrm{Acc}(m,c)-\mathrm{Acc}(m,\mathrm{nl}).
 $$
 
-严格对照样本对集合定义为：
+严格对照 pair 集合定义为：
 
 $$
-\mathcal{P}=\{(i,j): s_i=s_j,\ q_i=q_j,\ f_i=f_j,\ y_i\neq y_j\},
+\mathcal{P}=\{(i,j):s_i=s_j,\ q_i=q_j,\ f_i=f_j,\ y_i\ne y_j\},
 $$
 
-其中 $s$、$q$、$f$ 分别表示 story id、query type 和 formal form。Strict Contrast Causal Consistency (CCC) 衡量模型预测是否随 gold label 相反的对照样本发生翻转：
+其中 $s$、$q$ 与 $f$ 分别表示 story id、query type 和 formal form。Strict Contrast Causal Consistency 衡量模型预测是否随 gold label 相反的对照样本发生翻转：
 
 $$
-\mathrm{CCC}(m,c)=\frac{1}{|\mathcal{P}|}\sum_{(i,j)\in\mathcal{P}}
-\mathbf{1}\left[\hat{y}_{i}^{m,c}\neq \hat{y}_{j}^{m,c}\right].
+\mathrm{CCC}(m,c)=\frac{1}{|\mathcal{P}|}\sum_{(i,j)\in\mathcal{P}}\mathbf{1}\left[\hat{y}_i^{(m,c)}\ne \hat{y}_j^{(m,c)}\right].
 $$
 
-为避免把错误翻转误解为正确因果判断，本文进一步定义：
+为区分正确翻转和错误翻转，定义：
 
 $$
-\mathrm{CorrectFlip}_{i,j}=
-\mathbf{1}\left[\hat{y}_{i}=y_i \land \hat{y}_{j}=y_j\right],
+\mathrm{CF}(m,c)=\frac{1}{|\mathcal{P}|}\sum_{(i,j)\in\mathcal{P}}\mathbf{1}\left[\hat{y}_i^{(m,c)}=y_i \land \hat{y}_j^{(m,c)}=y_j\right],
 $$
 
 $$
-\mathrm{WrongFlip}_{i,j}=
-\mathbf{1}\left[\hat{y}_{i}\neq y_i \land \hat{y}_{j}\neq y_j\right].
+\mathrm{WF}(m,c)=\frac{1}{|\mathcal{P}|}\sum_{(i,j)\in\mathcal{P}}\mathbf{1}\left[\hat{y}_i^{(m,c)}\ne y_i \land \hat{y}_j^{(m,c)}\ne y_j\right].
 $$
 
-Strict Correct Contrast Accuracy (SCCA) 与 Signed CCC 分别为：
+本文将 $\mathrm{SCCA}=\mathrm{CF}$，即 pair 内两个样本同时回答正确的严格对照准确率。二分类似然打分使用下式选择答案：
 
 $$
-\mathrm{SCCA}=\frac{1}{|\mathcal{P}|}\sum_{(i,j)\in\mathcal{P}}\mathrm{CorrectFlip}_{i,j},
-\qquad
-\mathrm{SignedCCC}=\mathrm{CorrectFlipRate}-\mathrm{WrongFlipRate}.
+\hat{y}=\arg\max_{a\in\{\mathrm{yes},\mathrm{no}\}}\log P_\theta\left(a\mid p,\ \text{``Final answer:''}\right),
 $$
 
-对 `nl` 与 `nl_formal` 的样本级变化，本文统计 rescue 与 harm：
+其中 $p$ 为对应输入条件下的提示文本。该解码方式把输出空间限制为二元答案集合，避免自由生成造成的格式漂移。
 
-$$
-\mathrm{Rescue}=\sum_i \mathbf{1}\left[\hat{y}_{i}^{\mathrm{nl}}\neq y_i \land \hat{y}_{i}^{\mathrm{nl\_formal}}=y_i\right],
-$$
+## 主结果
 
-$$
-\mathrm{Harm}=\sum_i \mathbf{1}\left[\hat{y}_{i}^{\mathrm{nl}}=y_i \land \hat{y}_{i}^{\mathrm{nl\_formal}}\neq y_i\right].
-$$
+表 1 给出生成式输入、符号分解辅助输入与二分类似然打分输入的总体指标。Qwen3-0.6B 在所有条件下接近随机水平，说明该规模模型难以利用 CLadder 中的形式结构。Qwen3-4B 的最高总体准确率来自 `nl_binary_score`，达到 0.6000，略高于自然语言生成式基线 0.5953。Qwen3-8B 的最高总体准确率来自 `symbolic_solver_concise_binary_score`，达到 0.5828，高于自然语言生成式基线 0.5609。
 
-隐藏层分析采用 residual stream patching。令 $M_y(z)$ 表示 gold label 相对另一个 yes/no label 的 logit margin。对第 $\ell$ 层 residual 输出进行 formal-to-natural patch 后，absolute recovery 与 normalized recovery 定义为：
+**表 1. 主评测条件下的总体指标**
 
-$$
-R_{\ell}^{\mathrm{abs}}=
-M_y(z_{\mathrm{patched},\ell})-M_y(z_{\mathrm{nl}}),
-$$
+| model_display_name   | prompt_condition                     |   n |   accuracy |   parse_rate |   strict_ccc |   correct_flip_rate |   wrong_flip_rate |   scca |   signed_ccc |
+|:---------------------|:-------------------------------------|----:|-----------:|-------------:|-------------:|--------------------:|------------------:|-------:|-------------:|
+| Qwen3-0.6B           | Natural Language                     | 640 |     0.5    |       1      |       0      |              0      |            0      | 0      |       0      |
+| Qwen3-0.6B           | NL + Formal Scaffold                 | 640 |     0.5    |       1      |       0      |              0      |            0      | 0      |       0      |
+| Qwen3-0.6B           | Concise Symbolic Solver              | 640 |     0.4953 |       0.9875 |       0      |              0      |            0      | 0      |       0      |
+| Qwen3-0.6B           | NL Binary Score                      | 640 |     0.5    |       1      |       0      |              0      |            0      | 0      |       0      |
+| Qwen3-0.6B           | Formal Scaffold Binary Score         | 640 |     0.5    |       1      |       0      |              0      |            0      | 0      |       0      |
+| Qwen3-0.6B           | Concise Symbolic Solver Binary Score | 640 |     0.5    |       1      |       0      |              0      |            0      | 0      |       0      |
+| Qwen3-4B             | Natural Language                     | 640 |     0.5953 |       1      |       0.4078 |              0.2905 |            0.1173 | 0.2905 |       0.1732 |
+| Qwen3-4B             | NL + Formal Scaffold                 | 640 |     0.5688 |       1      |       0.4078 |              0.2821 |            0.1257 | 0.2821 |       0.1564 |
+| Qwen3-4B             | Concise Symbolic Solver              | 640 |     0.5672 |       0.9719 |       0.4645 |              0.3521 |            0.1124 | 0.3521 |       0.2396 |
+| Qwen3-4B             | NL Binary Score                      | 640 |     0.6    |       1      |       0.405  |              0.3017 |            0.1034 | 0.3017 |       0.1983 |
+| Qwen3-4B             | Formal Scaffold Binary Score         | 640 |     0.5688 |       1      |       0.3911 |              0.2709 |            0.1201 | 0.2709 |       0.1508 |
+| Qwen3-4B             | Concise Symbolic Solver Binary Score | 640 |     0.5844 |       1      |       0.4693 |              0.338  |            0.1313 | 0.338  |       0.2067 |
+| Qwen3-8B             | Natural Language                     | 640 |     0.5609 |       1      |       0.4441 |              0.3017 |            0.1425 | 0.3017 |       0.1592 |
+| Qwen3-8B             | NL + Formal Scaffold                 | 640 |     0.5453 |       1      |       0.4721 |              0.3128 |            0.1592 | 0.3128 |       0.1536 |
+| Qwen3-8B             | Concise Symbolic Solver              | 640 |     0.5719 |       0.9656 |       0.5062 |              0.3789 |            0.1273 | 0.3789 |       0.2516 |
+| Qwen3-8B             | NL Binary Score                      | 640 |     0.5547 |       1      |       0.4441 |              0.3045 |            0.1397 | 0.3045 |       0.1648 |
+| Qwen3-8B             | Formal Scaffold Binary Score         | 640 |     0.5359 |       1      |       0.4609 |              0.2989 |            0.162  | 0.2989 |       0.1369 |
+| Qwen3-8B             | Concise Symbolic Solver Binary Score | 640 |     0.5828 |       1      |       0.4218 |              0.2849 |            0.1369 | 0.2849 |       0.148  |
 
-$$
-R_{\ell}^{\mathrm{norm}}=
-\frac{M_y(z_{\mathrm{patched},\ell})-M_y(z_{\mathrm{nl}})}
-{M_y(z_{\mathrm{nl\_formal}})-M_y(z_{\mathrm{nl}})}.
-$$
+图 1 与图 2 展示符号分解辅助输入的总体准确率和 query type 级收益。图 3 与图 4 展示生成式解码与二分类似然打分的准确率差异。
 
-所有 Accuracy、CCC、SCCA 和条件差异均使用 1000 次 bootstrap 估计 95% 置信区间；`nl` 与形式输入条件之间的配对差异同时报告 McNemar 近似检验。
+![Figure 1. Accuracy with Symbolic Solver](../figures/11_symbolic_solver_accuracy.png)
 
-## 主实验结果
+![Figure 2. Symbolic Solver Gain by Query Type](../figures/12_symbolic_solver_gain_by_query.png)
 
-表 1 给出三种主输入条件下的总体结果。Qwen3-0.6B 在多数条件下接近标签平衡基线。Qwen3-4B 在 `nl` 条件下达到最高总体 accuracy 0.5953；`nl_formal` 下降到 0.5687，`formula_only` 为 0.5641。Qwen3-8B 在 `nl` 条件下为 0.5609，在 `nl_formal` 条件下为 0.5453。完整形式脚手架没有带来稳定总体提升。
+![Figure 3. Generation vs Binary Scoring Accuracy](../figures/13_binary_score_accuracy.png)
 
-**表 1. 主输入条件下的总体行为结果**
+![Figure 4. Best Binary Scoring Gain over NL Generation](../figures/14_binary_score_gain.png)
 
-| model_display_name | prompt_mode  | accuracy | parse_rate | strict_ccc | correct_flip_rate | wrong_flip_rate | scca   | signed_ccc |
-| ------------------ | ------------ | -------- | ---------- | ---------- | ----------------- | --------------- | ------ | ---------- |
-| Qwen3-0.6B         | formula_only | 0.5062   | 1.0000     | 0.0112     | 0.0112            | 0.0000          | 0.0112 | 0.0112     |
-| Qwen3-0.6B         | nl           | 0.5000   | 1.0000     | 0.0000     | 0.0000            | 0.0000          | 0.0000 | 0.0000     |
-| Qwen3-0.6B         | nl_formal    | 0.5000   | 1.0000     | 0.0000     | 0.0000            | 0.0000          | 0.0000 | 0.0000     |
-| Qwen3-4B           | formula_only | 0.5641   | 1.0000     | 0.3771     | 0.2570            | 0.1201          | 0.2570 | 0.1369     |
-| Qwen3-4B           | nl           | 0.5953   | 1.0000     | 0.4078     | 0.2905            | 0.1173          | 0.2905 | 0.1732     |
-| Qwen3-4B           | nl_formal    | 0.5687   | 1.0000     | 0.4078     | 0.2821            | 0.1257          | 0.2821 | 0.1564     |
-| Qwen3-8B           | formula_only | 0.5531   | 1.0000     | 0.4078     | 0.2765            | 0.1313          | 0.2765 | 0.1453     |
-| Qwen3-8B           | nl           | 0.5609   | 1.0000     | 0.4441     | 0.3017            | 0.1425          | 0.3017 | 0.1592     |
-| Qwen3-8B           | nl_formal    | 0.5453   | 1.0000     | 0.4721     | 0.3128            | 0.1592          | 0.3128 | 0.1536     |
+## 干预效果分析
 
-![Figure 1. Accuracy by Input Condition](../figures/01_accuracy_by_input_condition.png)
+表 2 汇总自然语言生成和符号分解生成在准确率与严格对照指标上的差异。符号分解输入更稳定的作用体现在较大模型的对照级指标上。Qwen3-8B 在 `symbolic_solver_concise` 下的 SCCA 从 0.3017 提升到 0.3789，CCC 从 0.4441 提升到 0.5062。结合二分类似然打分后，Qwen3-8B 的总体准确率进一步达到 0.5828。Qwen3-4B 的符号分解生成没有提升总体准确率，但 SCCA 从 0.2905 提升到 0.3521，说明该输入改善了一部分严格对照 pair 的方向正确性。
 
-图 1 展示了不同模型和输入条件的 accuracy。虽然 4B 与 8B 均明显强于 0.6B，但更大的 8B 并未超过 4B。该结果表明，本实验中的主要现象不是单调规模收益，而是模型对形式输入条件的响应不稳定。
+**表 2. 符号分解辅助输入的准确率与严格对照指标**
 
-## 形式成分消融
+| model_display_name   |   nl_accuracy |   symbolic_solver_accuracy |   gain_vs_nl |   nl_strict_ccc |   symbolic_solver_strict_ccc |   nl_scca |   symbolic_solver_scca |
+|:---------------------|--------------:|---------------------------:|-------------:|----------------:|-----------------------------:|----------:|-----------------------:|
+| Qwen3-0.6B           |        0.5    |                     0.4953 |      -0.0047 |          0      |                       0      |    0      |                 0      |
+| Qwen3-4B             |        0.5953 |                     0.5672 |      -0.0281 |          0.4078 |                       0.4645 |    0.2905 |                 0.3521 |
+| Qwen3-8B             |        0.5609 |                     0.5719 |       0.0109 |          0.4441 |                       0.5062 |    0.3017 |                 0.3789 |
 
-表 2 展示了不同形式成分引入后的样本级变化。`nl_var_graph` 在 Qwen3-4B 和 Qwen3-8B 上的总体 accuracy 与 `nl` 相同，但两者均产生了预测迁移：Qwen3-4B 中 46 个样本改变预测，rescue 与 harm 均为 23；Qwen3-8B 中 48 个样本改变预测，rescue 与 harm 均为 24。这表明 causal graph 成分主要表现为正负效应相互抵消的结构扰动，而不是稳定的总体增益。
+**表 3. 二分类似然打分的总体比较**
 
-`nl_var_query`、`nl_formal` 和 `formula_only` 则呈现更明显的负净效应。Qwen3-4B 的 `nl_var_query` 改变 49 个样本，其中 rescue=16、harm=33；`nl_formal` 改变 69 个样本，其中 rescue=26、harm=43；`formula_only` 改变 92 个样本，其中 rescue=36、harm=56。Qwen3-8B 中，`formula_only` 改变 127 个样本，rescue=61、harm=66。由此可见，formal query 和完整形式包装相比 graph 成分更容易引入不稳定答案迁移。
+| model_display_name   |   nl_generation |   nl_formal_generation |   symbolic_generation |   nl_binary_score |   nl_formal_binary_score |   symbolic_binary_score |   best_binary_gain_vs_nl |
+|:---------------------|----------------:|-----------------------:|----------------------:|------------------:|-------------------------:|------------------------:|-------------------------:|
+| Qwen3-0.6B           |          0.5    |                 0.5    |                0.4953 |            0.5    |                   0.5    |                  0.5    |                   0      |
+| Qwen3-4B             |          0.5953 |                 0.5688 |                0.5672 |            0.6    |                   0.5688 |                  0.5844 |                   0.0047 |
+| Qwen3-8B             |          0.5609 |                 0.5453 |                0.5719 |            0.5547 |                   0.5359 |                  0.5828 |                   0.0219 |
 
-**表 2. 形式成分消融的样本级诊断结果**
+配对 bootstrap 的结果见表 4。Qwen3-8B 的 `symbolic_solver_concise_binary_score` 相对自然语言生成式基线的平均增益为 0.0219；在 640 个样本上，95% bootstrap 区间仍包含 0，因此本文将其表述为正向趋势，而不是统计显著提升。该结果说明，符号分解与受约束解码的组合比自由生成更接近可用的因果问答流程。
 
-| Model | Condition | Accuracy | ΔAcc vs. nl | Prediction Change Rate | Rescue | Harm | Net Rescue Rate |
-|---|---|---:|---:|---:|---:|---:|---:|
-| Qwen3-0.6B | nl_var_query | 0.5000 | 0.0000 | 0.0000 | 0 | 0 | 0.0000 |
-| Qwen3-0.6B | nl_var_graph | 0.5000 | 0.0000 | 0.0000 | 0 | 0 | 0.0000 |
-| Qwen3-0.6B | nl_formal | 0.5000 | 0.0000 | 0.0000 | 0 | 0 | 0.0000 |
-| Qwen3-0.6B | formula_only | 0.5062 | 0.0062 | 0.0062 | 4 | 0 | 0.0062 |
-| Qwen3-4B | nl_var_query | 0.5687 | -0.0266 | 0.0766 | 16 | 33 | -0.0266 |
-| Qwen3-4B | nl_var_graph | 0.5953 | 0.0000 | 0.0719 | 23 | 23 | 0.0000 |
-| Qwen3-4B | nl_formal | 0.5687 | -0.0266 | 0.1078 | 26 | 43 | -0.0266 |
-| Qwen3-4B | formula_only | 0.5641 | -0.0312 | 0.1438 | 36 | 56 | -0.0312 |
-| Qwen3-8B | nl_var_query | 0.5375 | -0.0234 | 0.1359 | 36 | 51 | -0.0234 |
-| Qwen3-8B | nl_var_graph | 0.5609 | 0.0000 | 0.0750 | 24 | 24 | 0.0000 |
-| Qwen3-8B | nl_formal | 0.5453 | -0.0156 | 0.0875 | 23 | 33 | -0.0156 |
-| Qwen3-8B | formula_only | 0.5531 | -0.0078 | 0.1984 | 61 | 66 | -0.0078 |
+**表 4. 相对自然语言生成式基线的配对 bootstrap 增益**
 
-![Figure 2. Scaffold Gain by Model](../figures/02_scaffold_gain_by_model.png)
+| model    | condition_a                          | condition_b   |   n |   acc_a |   acc_b |   paired_gain |   ci_low |   ci_high |   p_gain_le_0 |
+|:---------|:-------------------------------------|:--------------|----:|--------:|--------:|--------------:|---------:|----------:|--------------:|
+| qwen3_4b | nl_binary_score                      | nl            | 640 |  0.6    |  0.5953 |        0.0047 |  -0.0031 |    0.0125 |        0.1663 |
+| qwen3_4b | symbolic_solver_concise_binary_score | nl            | 640 |  0.5844 |  0.5953 |       -0.0109 |  -0.0453 |    0.0234 |        0.7526 |
+| qwen3_8b | symbolic_solver_concise              | nl            | 640 |  0.5719 |  0.5609 |        0.0109 |  -0.0297 |    0.0531 |        0.3122 |
+| qwen3_8b | symbolic_solver_concise_binary_score | nl            | 640 |  0.5828 |  0.5609 |        0.0219 |  -0.0109 |    0.0547 |        0.103  |
 
-## 细粒度任务分析
+## Query Type 细分
 
-表 3 给出 Qwen3-4B 与 Qwen3-8B 在不同 query type 上的 accuracy。ATE 是两个较大模型表现最好的类型；Qwen3-4B 与 Qwen3-8B 在 `nl` 条件下分别达到 0.740 与 0.760。相比之下，`backadj`、`ett` 以及部分 mediation/counterfactual 类问题更弱。形式脚手架对 `marginal` 有小幅正效应，但对 `correlation`、`nie`、`nde` 和 `ett` 等类型常出现负效应。
+表 5 展示 Qwen3-4B 与 Qwen3-8B 在不同 query type 上的结果。Qwen3-8B 的符号二分类打分在 `ate`、`nde`、`nie`、`marginal` 与 `backadj` 上超过自然语言生成式基线，其中 `nde` 从 0.6333 提升到 0.7667，`nie` 从 0.5667 提升到 0.6667。与此同时，`ett` 和 `det-counterfactual` 仍然较弱，说明当前符号分解对中介效应和部分平均处理效应形式更有效，而对 treatment-on-treated 形式仍未形成稳定收益。
 
-**表 3. Query type 维度的 accuracy**
+**表 5. Query type 级准确率**
 
-| query_type         | Qwen3-4B_nl | Qwen3-4B_nl_formal | Qwen3-8B_nl | Qwen3-8B_nl_formal |
-| ------------------ | ----------- | ------------------ | ----------- | ------------------ |
-| ate                | 0.740       | 0.730              | 0.760       | 0.710              |
-| backadj            | 0.520       | 0.520              | 0.440       | 0.450              |
-| correlation        | 0.650       | 0.560              | 0.550       | 0.550              |
-| det-counterfactual | 0.583       | 0.567              | 0.533       | 0.500              |
-| ett                | 0.467       | 0.400              | 0.450       | 0.433              |
-| marginal           | 0.530       | 0.570              | 0.530       | 0.560              |
-| nde                | 0.617       | 0.617              | 0.633       | 0.550              |
-| nie                | 0.617       | 0.517              | 0.567       | 0.550              |
+| model_display_name   | query_type         |   nl_generation |   symbolic_generation |   nl_binary_score |   symbolic_binary_score |
+|:---------------------|:-------------------|----------------:|----------------------:|------------------:|------------------------:|
+| Qwen3-4B             | ate                |          0.74   |                0.76   |            0.75   |                  0.78   |
+| Qwen3-4B             | backadj            |          0.52   |                0.56   |            0.52   |                  0.54   |
+| Qwen3-4B             | correlation        |          0.65   |                0.6    |            0.65   |                  0.62   |
+| Qwen3-4B             | det-counterfactual |          0.5833 |                0.5333 |            0.5833 |                  0.5333 |
+| Qwen3-4B             | ett                |          0.4667 |                0.3667 |            0.4833 |                  0.45   |
+| Qwen3-4B             | marginal           |          0.53   |                0.53   |            0.54   |                  0.53   |
+| Qwen3-4B             | nde                |          0.6167 |                0.5167 |            0.6333 |                  0.4833 |
+| Qwen3-4B             | nie                |          0.6167 |                0.55   |            0.6    |                  0.65   |
+| Qwen3-8B             | ate                |          0.76   |                0.82   |            0.76   |                  0.8    |
+| Qwen3-8B             | backadj            |          0.44   |                0.46   |            0.44   |                  0.48   |
+| Qwen3-8B             | correlation        |          0.55   |                0.5    |            0.55   |                  0.53   |
+| Qwen3-8B             | det-counterfactual |          0.5333 |                0.5833 |            0.4833 |                  0.5    |
+| Qwen3-8B             | ett                |          0.45   |                0.3333 |            0.4333 |                  0.35   |
+| Qwen3-8B             | marginal           |          0.53   |                0.5    |            0.52   |                  0.55   |
+| Qwen3-8B             | nde                |          0.6333 |                0.6833 |            0.6667 |                  0.7667 |
+| Qwen3-8B             | nie                |          0.5667 |                0.7    |            0.55   |                  0.6667 |
 
-![Figure 3. Accuracy by Query Type](../figures/05_query_type_accuracy_heatmap.png)
+## 白盒 Patching 结果
 
-图 3 的 heatmap 更直观地显示了错误分布并不均匀。任务类型差异使得单一总体 accuracy 容易掩盖模型的具体失败位置，因此后续分析不应只依赖平均值。
+白盒实验在 Qwen3-4B 上进行。实验选择自然语言条件回答错误、形式脚手架条件回答正确的样本，将形式输入在每层最后 token 的 residual stream patch 到自然语言输入中，并比较 gold-label logit margin 的恢复。该实验只用于机制探索，不把局部恢复解释为完整因果回路。
 
-## CCC 正误分解
+**表 6. Formal-to-natural residual stream patching 总体结果**
 
-CCC 衡量模型是否随严格对照发生预测翻转，但预测翻转本身不保证方向正确。表 1 中 Qwen3-8B 的 `nl_formal` CCC 为 0.4721，高于其 `nl` 条件的 0.4441；但对应的 wrong flip rate 也从 0.1425 增至 0.1592，signed CCC 反而从 0.1592 降至 0.1536。也就是说，形式脚手架提高了部分对照敏感性，但并未相应提高净正确翻转。
+| model    | model_display_name   | method                          |   n_rows |   n_samples |   mean_absolute_recovery |   max_absolute_recovery |   mean_normalized_recovery |
+|:---------|:---------------------|:--------------------------------|---------:|------------:|-------------------------:|------------------------:|---------------------------:|
+| qwen3_4b | Qwen3-4B             | hf_last_token_formal_to_natural |      576 |          16 |                  -0.0225 |                  3.7188 |                     0.5157 |
 
-![Figure 4. CCC Decomposition](../figures/04_ccc_decomposition.png)
+**表 7. Matched patch 与 random patch control**
 
-一个更强的负例来自 Qwen3-8B 在 `det-counterfactual` 的 `nl_formal` 条件下：该子类 CCC 为 1.0000，但 correct flip rate 为 0，wrong flip rate 为 1.0000。该现象表明，模型可能确实捕捉到了对照样本之间存在差异，但将差异映射到了错误答案方向。因此，CCC 必须与 correct flip、wrong flip、SCCA 和 signed CCC 一起报告。
+| model    | model_display_name   | patch_condition      |   n_rows |   n_samples |   mean_absolute_recovery |   median_absolute_recovery |   max_absolute_recovery |   positive_recovery_rate |   mean_normalized_recovery |
+|:---------|:---------------------|:---------------------|---------:|------------:|-------------------------:|---------------------------:|------------------------:|-------------------------:|---------------------------:|
+| qwen3_4b | Qwen3-4B             | matched              |      576 |          16 |                  -0.0225 |                     0      |                  3.7188 |                   0.4618 |                     0.5157 |
+| qwen3_4b | Qwen3-4B             | random               |      576 |          16 |                  -0.061  |                    -0.0312 |                  2.9375 |                   0.467  |                     0.3573 |
+| qwen3_4b | Qwen3-4B             | matched_minus_random |      576 |          16 |                   0.0385 |                     0.0312 |                  2.125  |                   0.5069 |                   nan      |
 
-## Rescue/Harm 与输入迁移轨迹
+**表 8. 平均 recovery 最高的五个层**
 
-表 4 展示了 `nl` 到 `nl_formal` 的样本级变化。Qwen3-4B 在形式脚手架下救回 26 个自然语言错误样本，但同时破坏 43 个自然语言正确样本；Qwen3-8B 救回 23 个样本，同时破坏 33 个样本。形式脚手架不是单向修复机制，而是在样本层面同时产生 rescue 与 harm。
+| model    | model_display_name   |   layer |   mean_recovery |   median_recovery |   max_recovery |   positive_recovery_rate |   mean_normalized_recovery |
+|:---------|:---------------------|--------:|----------------:|------------------:|---------------:|-------------------------:|---------------------------:|
+| qwen3_4b | Qwen3-4B             |      17 |          0.1094 |            0.125  |         2.125  |                   0.625  |                     0.492  |
+| qwen3_4b | Qwen3-4B             |      18 |          0.0957 |            0.0938 |         2.1562 |                   0.5    |                     0.6189 |
+| qwen3_4b | Qwen3-4B             |      28 |          0.0898 |           -0.0312 |         2      |                   0.5    |                     0.6074 |
+| qwen3_4b | Qwen3-4B             |      19 |          0.0801 |            0.0938 |         2.3438 |                   0.5625 |                     0.547  |
+| qwen3_4b | Qwen3-4B             |      16 |          0.0781 |            0.0781 |         1.75   |                   0.5625 |                     0.3198 |
 
-**表 4. Rescue/Harm 分析**
+![Figure 5. Layer-wise Patching Recovery](../figures/09_layerwise_patching_recovery.png)
 
-| model_display_name | rescue_count | harm_count | rescue_rate_over_nl_failures | harm_rate_over_nl_successes | net_rescue_rate |
-| ------------------ | ------------ | ---------- | ---------------------------- | --------------------------- | --------------- |
-| Qwen3-0.6B         | 0            | 0          | 0.0000                       | 0.0000                      | 0.0000          |
-| Qwen3-4B           | 26           | 43         | 0.1004                       | 0.1129                      | -0.0266         |
-| Qwen3-8B           | 23           | 33         | 0.0819                       | 0.0919                      | -0.0156         |
+![Figure 6. Formal-to-Natural Patching Recovery](../figures/10_formal_to_natural_patching_recovery.png)
 
-![Figure 5. Input Transition Patterns](../figures/06_input_transition_patterns.png)
-
-输入迁移轨迹进一步说明这种不稳定性。Qwen3-4B 的 C-C-C 比例为 47.5%，W-W-W 为 32.8%；Qwen3-8B 的 C-C-C 为 43.4%，W-W-W 为 33.1%。除稳定正确和稳定错误外，C-W-W、C-W-C、W-W-C 等轨迹也占有可见比例，说明形式输入会诱发答案迁移，但迁移方向并不稳定。
-
-## Stress Split 鲁棒性
-
-表 5 汇总了 stress split 上的表现。Qwen3-4B 的 `nl_formal` 平均 stress accuracy 从 0.488 提高到 0.508，但 worst split 仅为 0.480，跨 split 标准差从 0.013 增至 0.025。Qwen3-8B 的 `nl_formal` 平均 accuracy 与 `nl` 接近，但 worst split 从 0.460 降至 0.450，标准差从 0.021 增至 0.046。
-
-**表 5. Stress split 鲁棒性结果**
-
-| model_display_name | prompt_mode | commonsense_accuracy | anticommonsense_accuracy | noncommonsense_accuracy | easy_accuracy | hard_accuracy | mean_accuracy | worst_split_accuracy | std_across_splits |
-| ------------------ | ----------- | -------------------- | ------------------------ | ----------------------- | ------------- | ------------- | ------------- | -------------------- | ----------------- |
-| Qwen3-4B           | nl          | 0.510                | 0.470                    | 0.480                   | 0.490         | 0.490         | 0.488         | 0.470                | 0.013             |
-| Qwen3-4B           | nl_formal   | 0.550                | 0.520                    | 0.490                   | 0.480         | 0.500         | 0.508         | 0.480                | 0.025             |
-| Qwen3-8B           | nl          | 0.520                | 0.490                    | 0.490                   | 0.510         | 0.460         | 0.494         | 0.460                | 0.021             |
-| Qwen3-8B           | nl_formal   | 0.570                | 0.450                    | 0.470                   | 0.530         | 0.460         | 0.496         | 0.450                | 0.046             |
-
-![Figure 6. Stress Split Accuracy](../figures/07_stress_split_accuracy.png)
-
-该结果说明，形式脚手架在部分 split 上可能改善平均值，但没有稳定提升 worst-case performance，并且可能放大跨 split 方差。因此，形式结构提示在鲁棒性层面仍然不可靠。
-
-## 隐藏层 Patching 分析
-
-Patching 实验在 Qwen3-4B 上进行，共选择 16 个 `nl` 错误而 `nl_formal` 正确的样本，扫描 36 层 residual stream，得到 576 条 matched patching 结果。Random patch control 使用另一样本的 `nl_formal` residual 作为对照，也得到 576 条结果。
-
-**表 6. Matched patching 与 random control**
-
-| patch_condition      | n_samples | mean_absolute_recovery | median_absolute_recovery | max_absolute_recovery | positive_recovery_rate | mean_normalized_recovery |
-| -------------------- | --------- | ---------------------- | ------------------------ | --------------------- | ---------------------- | ------------------------ |
-| matched              | 16        | -0.0225                | 0.0000                   | 3.7188                | 0.4618                 | 0.5157                   |
-| random               | 16        | -0.0610                | -0.0312                  | 2.9375                | 0.4670                 | 0.3573                   |
-| matched_minus_random | 16        | 0.0385                 | 0.0312                   | 2.1250                | 0.5069                 |                          |
-
-![Figure 7. Layer-wise Patching Recovery](../figures/09_layerwise_patching_recovery.png)
-
-![Figure 8. Formal-to-Natural Patching Recovery Heatmap](../figures/10_formal_to_natural_patching_recovery.png)
-
-Matched patching 的 mean absolute recovery 为 -0.0225，整体均值接近零；但最大恢复量达到 3.7188，mean normalized recovery 为 0.5157。Random control 的 mean absolute recovery 为 -0.0610，matched-minus-random 的平均差为 0.0385。这一结果不支持强机制宣称，但可以作为探索性证据：匹配形式输入 residual 在部分层和样本上携带可转移的答案方向信号，不过该信号并未稳定转化为总体行为收益。
+Matched patch 的 mean normalized recovery 为 0.5157，高于 random control 的 0.3573；matched-minus-random 的平均 absolute recovery 为 0.0385。逐层结果显示第 16 至 19 层及第 28 层存在较高平均 recovery。这说明形式输入中的部分表示能够在残差流中转移到自然语言条件，但这种转移并不稳定，也不能单独解释所有行为收益。
 
 ## 结论
 
-本文实验表明，Qwen3 系列模型在 CLadder 因果推理任务上的困难不是单一的总体准确率不足，而表现为多层面的结构性不稳定。首先，错误在 query type 和 rung 上分布不均，ATE 相对容易，而 `backadj`、`ett` 和部分高阶 mediation/counterfactual 任务更容易失败。其次，严格对照一致性必须与正确性分开解释；较高的 CCC 可能由错误翻转贡献，不能直接作为正确因果推理能力的证据。第三，形式脚手架并不是稳定增益机制，它既能救回部分自然语言错误样本，也会破坏原本正确的样本。
+实验表明，CLadder 上的困难不只是模型规模不足，也包括输入表示和解码方式之间的不匹配。直接加入变量、图结构和形式查询并不会自动提升准确率；形式信息需要被组织为可执行的符号分解，并配合受约束的 yes/no 决策过程，才可能转化为行为收益。
 
-形式成分消融进一步说明，不同形式信息的影响不同。Causal graph 成分在 Qwen3-4B 和 Qwen3-8B 上基本不降低总体 accuracy，而 formal query 或完整形式包装更容易造成性能下降。这提示模型并非完全无法利用结构信息，但当前形式查询表达可能引入了额外的符号解析负担，使其难以稳定转化为正确答案。
+在三种模型中，Qwen3-0.6B 基本无法利用新增结构信息。Qwen3-4B 的最佳总体准确率来自自然语言条件下的二分类似然打分，达到 0.6000；其符号分解生成虽然降低总体准确率，但把 SCCA 从 0.2905 提升到 0.3521。Qwen3-8B 对干预更敏感：符号分解生成将 SCCA 从 0.3017 提升到 0.3789，符号分解加二分类似然打分将准确率从 0.5609 提升到 0.5828。该组合构成本文最主要的正向结果。
 
-隐藏层 patching 提供了谨慎的机制证据。Matched patching 相比 random control 有小幅平均优势，并在个别层和样本上出现明显恢复，但总体恢复不稳定。因此，本文不将其解释为完整因果回路，而将其视为形式输入在局部表示中包含可转移答案方向信号的探索性证据。
+从任务类型看，收益集中在 `ate`、`nde`、`nie` 等估计量较明确的查询上，而 `ett`、`correlation` 和部分反事实问题仍然不稳定。这说明符号分解辅助并非通用增强，而是一种有条件有效的因果问答接口：当问题可以被稳定映射到形式估计量和概率事实时，模型更容易给出正确方向；当查询语义需要更复杂的反事实解释或问题措辞与估计量方向存在张力时，模型仍会失败。
 
-本文仍有三点局限。第一，实验只覆盖 CLadder 一个数据集，不能代表所有真实因果问答场景。第二，模型均来自 Qwen3 同一家族，结论不能直接外推到跨架构比较。第三，patching 只在 Qwen3-4B 的 16 个样本上进行，适合作为机制探索而非强机制证明。后续工作可以扩展到更多因果基准、更多形式表示方式和更系统的表示层干预分析。
+本文的实验规模仍然有限。配对 bootstrap 显示主要准确率增益的置信区间包含 0，因此结论应表述为可复现的正向趋势与机制线索，而非强显著性结论。后续工作应扩大样本规模，并将符号分解从数据集自带 reasoning 字段替换为独立的自动解析器，以检验该方法在非模板化因果文本上的泛化能力。

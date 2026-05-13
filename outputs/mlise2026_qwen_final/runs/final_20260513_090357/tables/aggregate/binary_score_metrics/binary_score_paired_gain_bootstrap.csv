@@ -1,0 +1,5 @@
+model,condition_a,condition_b,n,acc_a,acc_b,paired_gain,ci_low,ci_high,p_gain_le_0
+qwen3_4b,nl_binary_score,nl,640,0.6,0.5953125,0.0046875,-0.003125,0.0125,0.1663
+qwen3_4b,symbolic_solver_concise_binary_score,nl,640,0.584375,0.5953125,-0.0109375,-0.0453125,0.0234375,0.7526
+qwen3_8b,symbolic_solver_concise,nl,640,0.571875,0.5609375,0.0109375,-0.0296875,0.053125,0.3122
+qwen3_8b,symbolic_solver_concise_binary_score,nl,640,0.5828125,0.5609375,0.021875,-0.0109375,0.0546875,0.103

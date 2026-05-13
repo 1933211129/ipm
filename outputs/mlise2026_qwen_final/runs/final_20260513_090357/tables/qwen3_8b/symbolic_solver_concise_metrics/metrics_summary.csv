@@ -1,0 +1,2 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,prompt_condition,n,accuracy,parse_rate,invalid_rate,latency_sec
+qwen3_8b,Qwen3-8B,main,main,symbolic_solver_concise,Concise Symbolic Solver,640,0.571875,0.965625,0.034375,0.916402773111804

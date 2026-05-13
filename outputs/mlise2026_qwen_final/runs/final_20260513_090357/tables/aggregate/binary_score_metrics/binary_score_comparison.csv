@@ -1,0 +1,4 @@
+model,model_display_name,nl_generation,nl_formal_generation,symbolic_generation,nl_binary_score,nl_formal_binary_score,symbolic_binary_score,best_binary_gain_vs_nl
+qwen3_0_6b,Qwen3-0.6B,0.5,0.5,0.4953125,0.5,0.5,0.5,0.0
+qwen3_4b,Qwen3-4B,0.5953125,0.56875,0.5671875,0.6,0.56875,0.584375,0.004687499999999956
+qwen3_8b,Qwen3-8B,0.5609375,0.5453125,0.571875,0.5546875,0.5359375,0.5828125,0.021874999999999978

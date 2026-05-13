@@ -1,0 +1,4 @@
+model,model_display_name,n_valid,prediction_change_count,prediction_change_rate,rescue_count,harm_count,net_rescue,net_rescue_rate
+qwen3_0_6b,Qwen3-0.6B,632,0,0.0,0,0,0,0.0
+qwen3_4b,Qwen3-4B,622,160,0.2572347266881029,77,83,-6,-0.00964630225080386
+qwen3_8b,Qwen3-8B,618,180,0.2912621359223301,98,82,16,0.025889967637540454
