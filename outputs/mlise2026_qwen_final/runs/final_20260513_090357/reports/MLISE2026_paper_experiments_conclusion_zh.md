@@ -10,73 +10,73 @@
 
 ## 评价指标
 
-给定模型 \(m\)、输入条件 \(c\)、样本集合 \(D=\{(x_i,y_i)\}_{i=1}^{N}\)，其中 \(y_i\in\{\mathrm{yes},\mathrm{no}\}\)，模型解析后的预测为 \(\hat{y}_{i}^{m,c}\)。Accuracy 定义为：
+给定模型 $m$、输入条件 $c$、样本集合 $D=\{(x_i,y_i)\}_{i=1}^{N}$，其中 $y_i\in\{\mathrm{yes},\mathrm{no}\}$，模型解析后的预测为 $\hat{y}_{i}^{m,c}$。Accuracy 定义为：
 
-\[
+$$
 \mathrm{Acc}(m,c)=\frac{1}{N}\sum_{i=1}^{N}\mathbf{1}\left[\hat{y}_{i}^{m,c}=y_i\right].
-\]
+$$
 
 形式脚手架收益定义为某一形式输入条件相对自然语言条件的准确率差：
 
-\[
+$$
 \Delta_{\mathrm{scaffold}}(m,c)=\mathrm{Acc}(m,c)-\mathrm{Acc}(m,\mathrm{nl}).
-\]
+$$
 
 严格对照样本对集合定义为：
 
-\[
+$$
 \mathcal{P}=\{(i,j): s_i=s_j,\ q_i=q_j,\ f_i=f_j,\ y_i\neq y_j\},
-\]
+$$
 
-其中 \(s\)、\(q\)、\(f\) 分别表示 story id、query type 和 formal form。Strict Contrast Causal Consistency (CCC) 衡量模型预测是否随 gold label 相反的对照样本发生翻转：
+其中 $s$、$q$、$f$ 分别表示 story id、query type 和 formal form。Strict Contrast Causal Consistency (CCC) 衡量模型预测是否随 gold label 相反的对照样本发生翻转：
 
-\[
+$$
 \mathrm{CCC}(m,c)=\frac{1}{|\mathcal{P}|}\sum_{(i,j)\in\mathcal{P}}
 \mathbf{1}\left[\hat{y}_{i}^{m,c}\neq \hat{y}_{j}^{m,c}\right].
-\]
+$$
 
 为避免把错误翻转误解为正确因果判断，本文进一步定义：
 
-\[
+$$
 \mathrm{CorrectFlip}_{i,j}=
 \mathbf{1}\left[\hat{y}_{i}=y_i \land \hat{y}_{j}=y_j\right],
-\]
+$$
 
-\[
+$$
 \mathrm{WrongFlip}_{i,j}=
 \mathbf{1}\left[\hat{y}_{i}\neq y_i \land \hat{y}_{j}\neq y_j\right].
-\]
+$$
 
 Strict Correct Contrast Accuracy (SCCA) 与 Signed CCC 分别为：
 
-\[
+$$
 \mathrm{SCCA}=\frac{1}{|\mathcal{P}|}\sum_{(i,j)\in\mathcal{P}}\mathrm{CorrectFlip}_{i,j},
 \qquad
 \mathrm{SignedCCC}=\mathrm{CorrectFlipRate}-\mathrm{WrongFlipRate}.
-\]
+$$
 
 对 `nl` 与 `nl_formal` 的样本级变化，本文统计 rescue 与 harm：
 
-\[
+$$
 \mathrm{Rescue}=\sum_i \mathbf{1}\left[\hat{y}_{i}^{\mathrm{nl}}\neq y_i \land \hat{y}_{i}^{\mathrm{nl\_formal}}=y_i\right],
-\]
+$$
 
-\[
+$$
 \mathrm{Harm}=\sum_i \mathbf{1}\left[\hat{y}_{i}^{\mathrm{nl}}=y_i \land \hat{y}_{i}^{\mathrm{nl\_formal}}\neq y_i\right].
-\]
+$$
 
-隐藏层分析采用 residual stream patching。令 \(M_y(z)\) 表示 gold label 相对另一个 yes/no label 的 logit margin。对第 \(\ell\) 层 residual 输出进行 formal-to-natural patch 后，absolute recovery 与 normalized recovery 定义为：
+隐藏层分析采用 residual stream patching。令 $M_y(z)$ 表示 gold label 相对另一个 yes/no label 的 logit margin。对第 $\ell$ 层 residual 输出进行 formal-to-natural patch 后，absolute recovery 与 normalized recovery 定义为：
 
-\[
+$$
 R_{\ell}^{\mathrm{abs}}=
 M_y(z_{\mathrm{patched},\ell})-M_y(z_{\mathrm{nl}}),
-\]
+$$
 
-\[
+$$
 R_{\ell}^{\mathrm{norm}}=
 \frac{M_y(z_{\mathrm{patched},\ell})-M_y(z_{\mathrm{nl}})}
 {M_y(z_{\mathrm{nl\_formal}})-M_y(z_{\mathrm{nl}})}.
-\]
+$$
 
 所有 Accuracy、CCC、SCCA 和条件差异均使用 1000 次 bootstrap 估计 95% 置信区间；`nl` 与形式输入条件之间的配对差异同时报告 McNemar 近似检验。
 
