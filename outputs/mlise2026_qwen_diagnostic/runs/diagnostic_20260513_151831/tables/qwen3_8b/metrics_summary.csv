@@ -1,0 +1,4 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,prompt_condition,n,accuracy,parse_rate,invalid_rate,latency_sec
+qwen3_8b,Qwen3-8B,main,main,formula_only,Formalized Input,640,0.5578125,1.0,0.0,0.045854369409426
+qwen3_8b,Qwen3-8B,main,main,nl,Natural Language,640,0.559375,1.0,0.0,0.03906377613566292
+qwen3_8b,Qwen3-8B,main,main,nl_formal,NL + Formal Scaffold,640,0.540625,1.0,0.0,0.04549288378111669

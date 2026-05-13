@@ -1,0 +1,7 @@
+nohup: ignoring input
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights: 100%|██████████| 399/399 [00:00<00:00, 6740.21it/s]
+[进度] model=qwen3_8b source=main mode=nl 待评测=640
+[进度] model=qwen3_8b source=main mode=nl_formal 待评测=640
+[进度] model=qwen3_8b source=main mode=formula_only 待评测=640
+[完成] 主行为诊断完成：qwen3_8b

@@ -1,0 +1,6 @@
+model,model_display_name,diagnostic_source,dataset_variant,n_valid_pairs,rescue_count,harm_count,rescue_rate_over_nl_failures,harm_rate_over_nl_successes,net_rescue_rate
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,100,0,0,0.0,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,100,0,0,0.0,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,100,0,0,0.0,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,100,0,0,0.0,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,100,0,0,0.0,0.0,0.0

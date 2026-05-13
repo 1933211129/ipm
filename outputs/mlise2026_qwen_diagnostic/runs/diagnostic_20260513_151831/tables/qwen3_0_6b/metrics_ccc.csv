@@ -1,0 +1,4 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,n_pairs,strict_ccc,invalid_pair_rate
+qwen3_0_6b,Qwen3-0.6B,main,main,formula_only,358,0.0111731843575419,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl,358,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_formal,358,0.0,0.0

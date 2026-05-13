@@ -1,0 +1,10 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,rung,n,accuracy,parse_rate
+qwen3_8b,Qwen3-8B,main,main,formula_only,1,200,0.54,1.0
+qwen3_8b,Qwen3-8B,main,main,formula_only,2,200,0.605,1.0
+qwen3_8b,Qwen3-8B,main,main,formula_only,3,240,0.5333333333333333,1.0
+qwen3_8b,Qwen3-8B,main,main,nl,1,200,0.545,1.0
+qwen3_8b,Qwen3-8B,main,main,nl,2,200,0.6,1.0
+qwen3_8b,Qwen3-8B,main,main,nl,3,240,0.5375,1.0
+qwen3_8b,Qwen3-8B,main,main,nl_formal,1,200,0.54,1.0
+qwen3_8b,Qwen3-8B,main,main,nl_formal,2,200,0.585,1.0
+qwen3_8b,Qwen3-8B,main,main,nl_formal,3,240,0.5041666666666667,1.0

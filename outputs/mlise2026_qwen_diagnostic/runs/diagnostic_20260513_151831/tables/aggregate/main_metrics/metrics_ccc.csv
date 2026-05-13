@@ -1,0 +1,10 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,n_pairs,strict_ccc,invalid_pair_rate
+qwen3_0_6b,Qwen3-0.6B,main,main,formula_only,358,0.0111731843575419,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl,358,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_formal,358,0.0,0.0
+qwen3_4b,Qwen3-4B,main,main,formula_only,358,0.3770949720670391,0.0
+qwen3_4b,Qwen3-4B,main,main,nl,358,0.40782122905027934,0.0
+qwen3_4b,Qwen3-4B,main,main,nl_formal,358,0.40782122905027934,0.0
+qwen3_8b,Qwen3-8B,main,main,formula_only,358,0.4245810055865922,0.0
+qwen3_8b,Qwen3-8B,main,main,nl,358,0.4553072625698324,0.0
+qwen3_8b,Qwen3-8B,main,main,nl_formal,358,0.4581005586592179,0.0

@@ -1,0 +1,7 @@
+diagnostic_source,dataset_variant,no,yes
+main,main,320,320
+stress,anticommonsense,50,50
+stress,commonsense,50,50
+stress,easy,50,50
+stress,hard,50,50
+stress,noncommonsense,50,50

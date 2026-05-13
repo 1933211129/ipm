@@ -1,0 +1,40 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,prompt_condition,n,accuracy,parse_rate,invalid_rate,latency_sec,strict_ccc,invalid_pair_rate
+qwen3_0_6b,Qwen3-0.6B,main,main,formula_only,Formalized Input,640,0.50625,1.0,0.0,0.020086267513215673,0.0111731843575419,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl,Natural Language,640,0.5,1.0,0.0,0.02235065707991448,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,main,main,nl_formal,NL + Formal Scaffold,640,0.5,1.0,0.0,0.02023406303433143,0.0,0.0
+qwen3_4b,Qwen3-4B,main,main,formula_only,Formalized Input,640,0.5640625,1.0,0.0,0.03552465375887546,0.3770949720670391,0.0
+qwen3_4b,Qwen3-4B,main,main,nl,Natural Language,640,0.5953125,1.0,0.0,0.03281950297696307,0.40782122905027934,0.0
+qwen3_4b,Qwen3-4B,main,main,nl_formal,NL + Formal Scaffold,640,0.56875,1.0,0.0,0.03637961333752168,0.40782122905027934,0.0
+qwen3_8b,Qwen3-8B,main,main,formula_only,Formalized Input,640,0.5578125,1.0,0.0,0.04585436940942595,0.4245810055865922,0.0
+qwen3_8b,Qwen3-8B,main,main,nl,Natural Language,640,0.559375,1.0,0.0,0.03906377613566288,0.4553072625698324,0.0
+qwen3_8b,Qwen3-8B,main,main,nl_formal,NL + Formal Scaffold,640,0.540625,1.0,0.0,0.04549288378111664,0.4581005586592179,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl,Natural Language,100,0.5,1.0,0.0,0.024439753735787186,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,anticommonsense,nl_formal,NL + Formal Scaffold,100,0.5,1.0,0.0,0.02116073578945356,0.0,0.0
+qwen3_4b,Qwen3-4B,stress,anticommonsense,nl,Natural Language,100,0.47,1.0,0.0,0.03849426073662466,0.0,0.0
+qwen3_4b,Qwen3-4B,stress,anticommonsense,nl_formal,NL + Formal Scaffold,100,0.52,1.0,0.0,0.033904766048653945,0.13636363636363635,0.0
+qwen3_8b,Qwen3-8B,stress,anticommonsense,nl,Natural Language,100,0.49,1.0,0.0,0.04514501937490417,0.45454545454545453,0.0
+qwen3_8b,Qwen3-8B,stress,anticommonsense,nl_formal,NL + Formal Scaffold,100,0.46,1.0,0.0,0.04261291306116611,0.22727272727272727,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl,Natural Language,100,0.5,1.0,0.0,0.020824220099602782,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,commonsense,nl_formal,NL + Formal Scaffold,100,0.5,1.0,0.0,0.019455221816897343,0.0,0.0
+qwen3_4b,Qwen3-4B,stress,commonsense,nl,Natural Language,100,0.51,1.0,0.0,0.031781548107392095,0.04,0.0
+qwen3_4b,Qwen3-4B,stress,commonsense,nl_formal,NL + Formal Scaffold,100,0.55,1.0,0.0,0.034259670189931014,0.12,0.0
+qwen3_8b,Qwen3-8B,stress,commonsense,nl,Natural Language,100,0.52,1.0,0.0,0.03485435800452246,0.16,0.0
+qwen3_8b,Qwen3-8B,stress,commonsense,nl_formal,NL + Formal Scaffold,100,0.59,1.0,0.0,0.043422454550163775,0.24,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl,Natural Language,100,0.5,1.0,0.0,0.01942515815608199,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,easy,nl_formal,NL + Formal Scaffold,100,0.5,1.0,0.0,0.018321990940603373,0.0,0.0
+qwen3_4b,Qwen3-4B,stress,easy,nl,Natural Language,100,0.49,1.0,0.0,0.029223102726391482,0.08333333333333333,0.0
+qwen3_4b,Qwen3-4B,stress,easy,nl_formal,NL + Formal Scaffold,100,0.48,1.0,0.0,0.0352283091540448,0.25,0.0
+qwen3_8b,Qwen3-8B,stress,easy,nl,Natural Language,100,0.51,1.0,0.0,0.034421767912572204,0.3333333333333333,0.0
+qwen3_8b,Qwen3-8B,stress,easy,nl_formal,NL + Formal Scaffold,100,0.56,1.0,0.0,0.04361497199046419,0.16666666666666666,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl,Natural Language,100,0.5,1.0,0.0,0.019503568484215014,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,hard,nl_formal,NL + Formal Scaffold,100,0.5,1.0,0.0,0.019054501889622717,0.0,0.0
+qwen3_4b,Qwen3-4B,stress,hard,nl,Natural Language,100,0.49,1.0,0.0,0.029204833416151762,0.058823529411764705,0.0
+qwen3_4b,Qwen3-4B,stress,hard,nl_formal,NL + Formal Scaffold,100,0.5,1.0,0.0,0.034852532267104795,0.058823529411764705,0.0
+qwen3_8b,Qwen3-8B,stress,hard,nl,Natural Language,100,0.45,1.0,0.0,0.0346971629268955,0.47058823529411764,0.0
+qwen3_8b,Qwen3-8B,stress,hard,nl_formal,NL + Formal Scaffold,100,0.45,1.0,0.0,0.04353356096893544,0.29411764705882354,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl,Natural Language,100,0.5,1.0,0.0,0.02134031912079077,0.0,0.0
+qwen3_0_6b,Qwen3-0.6B,stress,noncommonsense,nl_formal,NL + Formal Scaffold,100,0.5,1.0,0.0,0.018868369247065798,0.0,0.0
+qwen3_4b,Qwen3-4B,stress,noncommonsense,nl,Natural Language,100,0.48,1.0,0.0,0.030255385921336655,0.10344827586206896,0.0
+qwen3_4b,Qwen3-4B,stress,noncommonsense,nl_formal,NL + Formal Scaffold,100,0.49,1.0,0.0,0.03439463671878907,0.13793103448275862,0.0
+qwen3_8b,Qwen3-8B,stress,noncommonsense,nl,Natural Language,100,0.49,1.0,0.0,0.03457594200153831,0.4482758620689655,0.0
+qwen3_8b,Qwen3-8B,stress,noncommonsense,nl_formal,NL + Formal Scaffold,100,0.46,1.0,0.0,0.0473084826674312,0.3103448275862069,0.0

@@ -1,0 +1,11 @@
+model,model_display_name,diagnostic_source,dataset_variant,prompt_mode,n_pairs,strict_ccc,invalid_pair_rate
+qwen3_4b,Qwen3-4B,stress,anticommonsense,nl,22,0.0,0.0
+qwen3_4b,Qwen3-4B,stress,anticommonsense,nl_formal,22,0.13636363636363635,0.0
+qwen3_4b,Qwen3-4B,stress,commonsense,nl,25,0.04,0.0
+qwen3_4b,Qwen3-4B,stress,commonsense,nl_formal,25,0.12,0.0
+qwen3_4b,Qwen3-4B,stress,easy,nl,12,0.08333333333333333,0.0
+qwen3_4b,Qwen3-4B,stress,easy,nl_formal,12,0.25,0.0
+qwen3_4b,Qwen3-4B,stress,hard,nl,17,0.058823529411764705,0.0
+qwen3_4b,Qwen3-4B,stress,hard,nl_formal,17,0.058823529411764705,0.0
+qwen3_4b,Qwen3-4B,stress,noncommonsense,nl,29,0.10344827586206896,0.0
+qwen3_4b,Qwen3-4B,stress,noncommonsense,nl_formal,29,0.13793103448275862,0.0
